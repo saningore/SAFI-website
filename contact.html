@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact The Savannah Futures Institute in Accra about research, policy evidence, partnerships, funding, learning or media enquiries.">
+  <title>Contact SAFI | Research Partnerships and Media</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="inner-page">
+  <div id="site-header"></div>
+  <main id="main">
+    <section class="page-hero header-solid">
+      
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> <span>&rsaquo;</span> <span>Contact</span></nav>
+        
+        <h1>Contact The Savannah Futures Institute</h1>
+        <p class="lead">Have a research question, a partnership idea or an evidence need? Tell us about your organisation or community, the issue you want to address and how you would like to work with SAFI.</p>
+      </div>
+    </section>
+    <section class="page-content"><div class="container contact-grid">
+      <div class="contact-info content-body">
+        <div class="contact-detail"><strong>Location</strong><span>Accra, Ghana</span></div>
+        <div class="contact-detail"><strong>General enquiries</strong><a href="mailto:info@savannahfutures.org">info@savannahfutures.org</a></div>
+        <div class="contact-detail"><strong>Telephone</strong><span>[Approved public telephone — to be verified before launch]</span></div>
+        <div class="contact-detail"><strong>Office address</strong><span>[Verified address — to be confirmed before launch]</span></div>
+        <div class="info-box" style="margin-top:1.5rem;"><p>Please avoid including sensitive health information or confidential details about other people in this general enquiry form. A privacy notice will be published when contact arrangements are finalised.</p></div>
+      </div>
+      <form class="contact-form" id="contactForm" action="#" method="post">
+        <div class="form-success info-box" hidden role="status"><p><strong>Thank you for contacting SAFI.</strong> Your enquiry has been received.</p></div>
+        <div class="form-row"><label for="name">Name</label><input type="text" id="name" name="name" required autocomplete="name"></div>
+        <div class="form-row"><label for="email">Email</label><input type="email" id="email" name="email" required autocomplete="email"></div>
+        <div class="form-row"><label for="organisation">Organisation or community, if relevant</label><input type="text" id="organisation" name="organisation"></div>
+        <div class="form-row"><label for="topic">Enquiry topic</label>
+          <select id="topic" name="topic" required>
+            <option value="">Select a topic</option>
+            <option value="research">Research</option>
+            <option value="policy">Policy and evidence</option>
+            <option value="community">Community partnership</option>
+            <option value="funding">Funding</option>
+            <option value="learning">Learning and opportunities</option>
+            <option value="media">Media</option>
+            <option value="governance">Governance or concern</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-row"><label for="message">Message</label><textarea id="message" name="message" rows="5" required placeholder="Tell us about your enquiry..."></textarea></div>
+        <button type="submit" class="btn btn-primary btn-full">Send enquiry</button>
+        <p class="form-note">Form demonstration — connect to a tested backend before public launch.</p>
+      </form>
+    </div></section>
+
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/layout.js" data-page="contact"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
