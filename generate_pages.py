@@ -566,7 +566,7 @@ write(
     "partnerships.html",
     page_head(
         "Research Partnerships and Support | SAFI",
-        "Discuss research, policy, community, enterprise and funding partnerships with the Ghana-based Savannah Futures Institute.",
+        "Discuss research, policy, community, enterprise and funding partnerships with The Savannah Futures Institute, Ghana.",
         "partnerships",
     )
     + page_hero(

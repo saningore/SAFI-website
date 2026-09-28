@@ -47,7 +47,7 @@
       <div class="header-inner container">
         <a href="${base}index.html" class="logo" aria-label="SAFI Home">
           <span class="logo-mark">SAFI</span>
-          <span class="logo-text">Savannah Futures Institute</span>
+          <span class="logo-text">The Savannah Futures Institute</span>
         </a>
         <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
