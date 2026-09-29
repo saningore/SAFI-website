@@ -100,7 +100,7 @@ write(
         """
 <p class="lead">Our focus is the future of Africa's savanna regions and their connections with drylands, grasslands, wetlands, river basins and growing towns and cities.</p>
 <p>We are developing an interdisciplinary institution that brings scientific research into dialogue with indigenous knowledge and practical experience. Our research agenda starts with African priorities and seeks partnerships that build lasting capability within African institutions and communities.</p>
-<h2>Our vision</h2>
+<h2 id="mission-vision">Our vision</h2>
 <p>Healthy landscapes, healthy people, peaceful societies, thriving cultures and food-secure economies across Africa's savannas, contributing knowledge and solutions for resilient societies worldwide.</p>
 <h2>Our mission</h2>
 <p>To generate and connect African-led research, data, innovation and indigenous knowledge; turn evidence into useful policy and investment options; strengthen people and institutions; and build equitable partnerships for resilient savanna futures.</p>
