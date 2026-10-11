@@ -1,0 +1,187 @@
+SAFI Website: Editorial & Design Implementation Specification
+Developer-ready revision brief | Version 1.0 | 10 October 2026
+Website: https://safi-website-wheat.vercel.app/index.html
+Purpose: supply approved-direction draft copy, page architecture, heading levels, design rules, content governance and an actionable implementation checklist. All proposed partnerships remain explicitly subject to formal approval.
+1. Executive decisions
+• Use one institutional name consistently: The Savannah Futures Institute (SAFI).
+• Adopt a five-centre structure with one consistent name per centre across cards, menus, page titles and metadata.
+• Retain two strategic programme priorities as “proposed/in development”, not signed partnerships or operational projects.
+• Add visible People & Governance, Publications & Insights, and Partnerships routes or sections; publish only verified biographies, outputs and commitments.
+• Apply a coherent H1–H3 hierarchy, responsive grid, accessible contrast, consistent card dimensions and meaningful calls to action.
+2. Site architecture and navigation
+Primary menu
+Recommended submenu / content
+CTA
+Home
+Mission; rationale; centres; programmes; impact
+Explore our work
+About SAFI
+Who we are; vision; mission; values; governance
+Meet SAFI
+Research & Innovation
+Five centres; cross-disciplinary platforms
+Explore centres
+Programmes & Partnerships
+Proposed flagship programmes; opportunities; project stages
+Collaborate
+People & Governance
+Board; leadership; advisory network; governance policies
+Meet our team
+Insights & Publications
+Research papers; policy briefs; news; events
+Read insights
+Contact
+Enquiries; collaboration; media; location
+Contact SAFI
+Mobile navigation: collapsible menu with no more than seven top-level destinations. Place “Partner with SAFI” as a visually distinct header CTA if space permits.
+3. Homepage: final draft copy and exact heading levels
+Hero [H1]: The Savannah Futures Institute (SAFI)
+Eyebrow: Ghana-based • African-led • Research • Innovation • Policy
+Subheading: Research, innovation and policy for resilient savanna futures
+Body: The Savannah Futures Institute (SAFI) connects interdisciplinary research, indigenous knowledge and strategic partnerships to address challenges facing Africa’s savanna landscapes and communities. Our work spans climate and ecosystems, population health, food systems, peace and security, and cultural knowledge—turning evidence into practical innovation, informed policy and sustainable development.
+Primary CTA: Explore Our Research | Secondary CTA: Partner With SAFI
+Section [H2]: Africa’s Savannas: Landscapes, People and Futures
+Intro: Across Africa, savannas sustain food production, biodiversity, water resources, cultural heritage and regional trade. Yet climate variability, changing land use, health inequalities and insecurity are deeply interconnected. SAFI brings disciplines and communities together to develop responses that are grounded in evidence and local realities.
+Image: authentic savanna landscape; descriptive alt text; credited and licensed.
+Section [H2]: Our Vision for Resilient Societies
+Intro: Our work advances four connected outcomes:
+• [H3] Healthy Landscapes — Protecting ecosystems, water resources and productive land.
+• [H3] Healthy People — Advancing population health, prevention and resilient health systems.
+• [H3] Peaceful Societies — Supporting social cohesion, human security and constructive governance.
+• [H3] Inclusive Futures — Strengthening food systems, indigenous knowledge and economic opportunity.
+Section [H2]: Our Research and Innovation Centres
+Intro: Five specialist centres connect disciplinary depth with collaborative research, innovation and policy engagement.
+• [H3] Climate, Environment & Landscapes — Climate adaptation, biodiversity, wetlands, river basins and landscape resilience.
+• [H3] Population Health Innovation Systems — Environmental health, health equity, prevention and resilient health systems.
+• [H3] Peace, Security & Borderlands — Peacebuilding, conflict transformation, mobility, governance and human security.
+• [H3] Indigenous Knowledge, Governance & Culture — Living knowledge systems, customary governance, language and cultural heritage.
+• [H3] Food Futures & Economic Transformation — Food security, sustainable agriculture, bioeconomy, enterprise and inclusive livelihoods.
+CTA: Explore All Centres. Note: align the research landing page, which currently uses different extended centre titles, to this naming convention.
+Section [H2]: Strategic Programmes and Partnerships
+Intro: SAFI is developing collaborative programmes that combine research, institutional capacity and practical pathways to impact.
+[H3] Savanna Water, Indigenous Knowledge & Climate Resilience Initiative — A proposed flagship under discussion for a SAFI–Ghana National Commission for UNESCO strategic collaboration (2027–2030). Status label: Proposed collaboration; subject to agreement.
+[H3] Bawku Municipal Assets, Investment & Regeneration Programme (BAIRP), 2026–2030 — An evidence-led programme concept focused on recovery, livelihoods, responsible investment and peace-sensitive regeneration in Bawku Municipality and selected conflict-affected neighbouring areas. Status label: Programme concept; stakeholder engagement ongoing.
+CTA: View Programme Priorities
+Section [H2]: Our Research-to-Impact Approach
+Intro: SAFI combines scientific rigour, local knowledge and collaborative learning to support better decisions.
+• [H3] Co-define the Challenge — Identify needs and priorities with stakeholders.
+• [H3] Generate Evidence — Use interdisciplinary and context-sensitive methods.
+• [H3] Co-design Responses — Bring policy, practice and community perspectives together.
+• [H3] Test and Learn — Pilot innovations and assess feasibility and outcomes.
+• [H3] Share and Scale Learning — Translate findings into policy, practice and future partnerships.
+Section [H2]: People, Governance and Research Integrity
+Suggested copy: SAFI is building an accountable institutional model guided by research integrity, inclusive governance and transparent partnerships. Meet the people contributing to our strategic direction and programme development.
+CTA: People & Governance. Publish confirmed roles only; identify proposed appointments separately until accepted. Don’t put this on the website. Wait for biod and photos.
+Section [H2]: Insights, Evidence and Policy Dialogue
+Suggested copy: Explore research findings, policy perspectives, programme updates and opportunities for knowledge exchange. Display a “Coming soon” state until verified publications exist.
+CTA: View Insights
+Section [H2]: Collaborate With SAFI
+Suggested copy: We welcome equitable collaborations with universities, research organisations, public institutions, communities, development partners and responsible investors. Contact us to discuss shared research questions, programme development and knowledge exchange.
+CTA: Start a Partnership Conversation
+4. Inner-page editorial blueprints
+Page
+H1
+Recommended H2 sequence
+About
+About Savannah Futures Institute
+Who We Are; Vision and Mission; What Makes SAFI Distinctive; Our Values; Governance; Where We Work
+Research
+Research and Innovation Centres
+Our Interdisciplinary Model; Five Centres; Shared Platforms; Research Partnerships
+Centre detail
+[Exact Centre Name]
+Overview; Research Themes; Priority Questions; Current Work; Team; Partnerships; Outputs
+Programmes
+Strategic Programmes and Partnerships
+Programme Portfolio; Proposed UNESCO Collaboration; BAIRP; Collaboration Pathways; Development Status
+Programme detail
+[Programme Title]
+Rationale; Objectives; Geographic Focus; Workstreams; Intended Outcomes; Partnership Status; Next Steps
+People
+People and Governance
+Board of Trustees; Executive Leadership; Centre Leadership; Advisers; Governance and Integrity
+Insights
+Insights and Publications
+Research Publications; Policy Briefs; News and Events; Resources
+Contact
+Contact and Collaborate
+General Enquiries; Partnership Enquiries; Office Information; Contact Form
+5. Design system and alignment requirements
+Element
+Implementation specification
+Palette
+Forest #244B35; savanna #668C4A; earth gold #C3A25C; ivory #F6F3E9; charcoal #303B35
+Typography
+Inter or Source Sans 3; H1 44–52 px desktop, 32–38 px mobile; H2 30–36 px; H3 21–25 px; body 16–18 px
+Container
+Max width 1200 px; 24 px desktop side gutters; 16–20 px mobile
+Spacing
+8 px base rhythm; section vertical 64–88 px desktop, 40–56 px mobile
+Cards
+Equal height per row; consistent image ratio 4:3; heading and CTA aligned; 20–28 px internal padding
+Buttons
+One primary and one secondary style; consistent labels; visible keyboard focus
+Images
+Realistic licensed photography; avoid stock-like repetition; crop consistently; add alt text and captions when useful
+Accessibility
+WCAG 2.2 AA target; keyboard navigation; contrast testing; reduced motion; form labels
+Headings
+One H1 per page; H2 major sections; H3 subsections and cards; avoid jumping directly from H2 to H4
+Responsive
+Test at 360, 390, 768, 1024 and 1440 px; no horizontal overflow
+6. SEO and metadata samples
+Homepage title: The Savannah Futures Institute (SAFI) | Research, Innovation & Policy
+Meta description: The Savannah Futures Institute is a Ghana-based, African-led research and policy institute connecting climate, health, food systems, peace and indigenous knowledge.
+Research page title: Research & Innovation Centres | The Savannah Futures Institute
+Programme page title: Strategic Programmes & Partnerships | SAFI
+Apply unique titles, descriptions, canonical URLs, social preview images, descriptive link text, sitemap.xml, robots.txt and organisation schema where appropriate. Do not claim accreditation, partner endorsement or impact figures without evidence.
+7. Implementation priorities and acceptance criteria
+Priority
+Task
+Acceptance criterion
+P0
+Standardise centre and programme names
+Identical labels on homepage, menus, landing and detail pages
+P0
+Fix heading hierarchy
+Exactly one H1; logical H2/H3 sequence on every page
+P0
+Correct partnership status language
+No unapproved partnership presented as formalised
+P0
+Check links and contact paths
+All navigation, cards and CTAs resolve correctly
+P1
+Revise homepage content
+All approved copy inserted and proofread
+P1
+Unify typography, spacing and cards
+Consistent desktop and mobile layouts
+P1
+Add governance and insights navigation
+Pages exist with verified content or clear coming-soon state
+P1
+Accessibility and mobile QA
+Keyboard, contrast, alt text and five viewport tests pass
+P2
+SEO and performance
+Metadata, sitemap, compressed images and speed audit complete
+P2
+Analytics and maintenance
+Privacy-conscious analytics, owner and update cadence assigned
+8. Content verification and publication controls
+☐ Confirm legal/registered institutional name and approved tagline with SAFI leadership.
+☐ Confirm the authoritative five-centre names and centre leadership appointments.
+☐ Confirm governance biographies, titles, photographs and permissions before publication.
+☐ Validate the current status and approved wording of UNESCO-related discussions and BAIRP.
+☐ Verify contact address, email, privacy notice, cookie use and accessibility statement.
+☐ Keep a change log and assign an internal content owner and developer sign-off.
+9. Developer handover checklist
+☐ Create a staging branch and archive the current production version.
+☐ Implement content and navigation changes using reusable components.
+☐ Perform cross-page naming audit and automated link check.
+☐ Complete mobile and keyboard walkthrough and contrast check.
+☐ Request SAFI editorial and governance sign-off.
+☐ Deploy with rollback plan; verify live metadata and forms.
+Source and review scope
+Live homepage checked 10 October 2026: https://safi-website-wheat.vercel.app/index.html; research landing page checked: https://safi-website-wheat.vercel.app/research.html. This specification is an editorial and structural brief, not a full codebase or visual-browser audit. Other inner-page templates should be verified by the developer before launch.

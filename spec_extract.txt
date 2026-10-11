@@ -1,0 +1,648 @@
+THE SAVANNAH FUTURES INSTITUTE
+Reviewed Website Strategy, Structure & Content
+Integrated review and recommended public-facing website copy
+Prepared: 29 September 2026
+Research • Innovation • Indigenous Knowledge • Policy • Action
+1. Executive Summary
+The current SAFI website provides a strong conceptual foundation. It communicates a distinctive African-led focus on savanna landscapes and connects climate, health, food, peace, culture, indigenous knowledge and policy. The five-centre model and research-to-action approach are particularly strong institutional assets.
+The next stage should not simply add more pages. The website should evolve into a credible, human, evidence-oriented public platform that clearly answers five questions:
+Who is SAFI?
+What does SAFI uniquely do?
+Who are the people and institutions behind SAFI?
+What work is SAFI undertaking or developing?
+How can a researcher, government, community, funder, university or business work with SAFI?
+Recommended institutional proposition:
+SAFI connects knowledge, people and action to shape resilient savanna futures.
+The live homepage currently presents SAFI as a Ghana-based, African-led research, innovation and policy institute focused on inland and coastal savannas, with five connected research centres and a research-to-action model. The strategy below retains those strengths while making the institutional proposition clearer and more engaging.
+2. Review: Strengths to Retain and Gaps to Address
+Area
+Current Strength
+Recommended Direction
+Vision
+Clear African savanna focus and research/innovation orientation.
+Use a sharper one-sentence institutional proposition.
+Research model
+Five connected research centres provide a coherent interdisciplinary architecture.
+Make the five-centre model a central visual feature.
+Approach
+Frame → evidence → options → test → learn is clear and useful.
+Retain and brand it as SAFI’s research-to-action pathway.
+Content
+Strong scope across environment, health, food, peace and culture.
+Use shorter public-facing summaries with deeper technical content behind them.
+Credibility
+Institutional concept is well articulated.
+Add people, advisory network, partners, publications, projects and evidence of activity.
+Programmes
+Programme priorities are visible, including developing partnership and regeneration concepts.
+Separate completed, current and developing work so visitors understand status.
+Engagement
+Partnership invitation is present.
+Create a stronger Partner with SAFI pathway and clear partner categories.
+Contact
+Contact pathway exists.
+Remove all placeholders and connect the form to a tested backend before launch.
+Knowledge
+Research orientation is clear.
+Add a Knowledge Hub for publications, policy briefs, reports and case studies.
+Public visibility
+Strong foundation for institutional storytelling.
+Add News & Insights and regular updates.
+Launch note: the public website should not contain development placeholders such as “to be verified”, “to be confirmed” or “connect to a tested backend”. All contact details, forms and institutional claims should be verified before launch.
+3. Recommended SAFI Positioning
+Institutional name
+THE SAVANNAH FUTURES INSTITUTE (SAFI)
+Recommended strapline
+African-led research, innovation and action for resilient savanna futures
+Recommended core proposition
+The Savannah Futures Institute (SAFI) is a Ghana-based, African-led organisation working at the intersection of science, indigenous knowledge, innovation, policy and sustainable development. SAFI connects research with practical action to strengthen resilient landscapes, healthy communities, sustainable economies and peaceful societies.
+Short version
+SAFI connects knowledge, people and action to shape resilient savanna futures.
+Institutional pillars
+Research — generating rigorous, interdisciplinary and context-sensitive evidence.
+Innovation — developing and testing practical responses with communities and partners.
+Indigenous Knowledge — valuing living knowledge, cultural systems and locally grounded solutions.
+Policy — translating evidence into useful policy, strategy and decision support.
+Action — building partnerships, capability and practical pathways from knowledge to impact.
+4. Recommended Website Architecture
+Recommended primary navigation:
+ABOUT  |  RESEARCH  |  PROGRAMMES  |  IMPACT  |  KNOWLEDGE HUB  |  PARTNERSHIPS  |  PEOPLE  |  CONTACT
+Primary call-to-action: PARTNER WITH SAFI
+Recommended page structure
+Home
+About SAFI
+Leadership & People
+Advisory Board / Global Advisory Network
+Research — overview
+Five Research Centres
+Programmes
+Impact & Case Studies
+Knowledge Hub
+Partnerships
+News & Insights
+Opportunities / Join SAFI
+Contact
+Governance, Ethics, Safeguarding, Privacy and Data Protection
+5. Final Recommended Homepage Copy
+HERO
+Shaping Africa’s Savanna Futures
+African-led research, innovation, indigenous knowledge and policy for resilient landscapes, healthy communities, sustainable economies and peaceful societies.
+Buttons: Explore SAFI  |  Our Research  |  Partner With Us
+WHY SAVANNA FUTURES MATTER
+Why Africa’s Savannas Matter
+Savannas are living landscapes where people grow food, sustain livelihoods, exchange knowledge, protect biodiversity and build their futures. Grasslands, woodlands, rivers and wetlands connect people with nature, culture, health and economic opportunity. Changes in climate, land use, health and governance affect these relationships together.
+SAFI studies these connections so that decisions in one area can account for their consequences in others.
+WHO WE ARE
+Who We Are
+The Savannah Futures Institute (SAFI) is a Ghana-based, African-led organisation working at the intersection of science, indigenous knowledge, innovation, policy and sustainable development.
+SAFI connects knowledge about landscapes, health, food, peace, culture and economies to help communities and decision-makers shape resilient futures.
+WHAT WE DO
+What We Do
+Research • Innovation • Policy • Partnerships • Capacity Development • Community Engagement
+From generating evidence to testing practical responses, SAFI works with universities, governments, traditional institutions, communities, civil society, businesses and international partners.
+FIVE CENTRES
+Five Centres. One Connected Future.
+Climate, Environment & Landscape Futures — Climate change, ecosystems, water, biodiversity and landscape stewardship.Population Health Innovation Futures — Climate, environmental and social determinants of health and resilient health systems.Food Systems, Bioeconomy & Economic Transformation — Food security, sustainable livelihoods, local value retention and inclusive economic opportunity.Peace, Security & Borderland Futures — Governance, mobility, conflict transformation, social cohesion and human security.Indigenous Knowledge, Governance & Cultural Futures — Living knowledge, governance, language, heritage, identity and social change.
+OUR APPROACH
+From Knowledge to Action
+1. Frame the question — with the people who will use the findings.2. Generate evidence — interdisciplinary, rigorous and context-sensitive.3. Explore options — policy dialogue, innovation and stakeholder engagement.4. Test responses — living labs and community-based research.5. Learn and adapt — assess what works, what changes and what can be responsibly applied elsewhere.
+PROGRAMMES
+Programmes & Initiatives
+SAFI develops programmes that translate research and partnerships into practical action. Programme pages should clearly distinguish work that is completed, currently active and in development.
+Featured categories: Landscape & Climate Resilience • Health Innovation • Food & Bioeconomy • Peace & Borderlands • Cultural & Indigenous Knowledge • Local Regeneration & Investment
+IMPACT
+Evidence of Change
+SAFI measures impact through knowledge generated, capability strengthened, partnerships built, policies informed, innovations tested and community outcomes supported.
+Use verified figures and documented case studies only.
+KNOWLEDGE HUB
+Knowledge for Action
+Explore SAFI research, policy briefs, working papers, reports, case studies, datasets, commentaries, webinars and other knowledge resources.
+Buttons: Explore Publications  |  Read Policy Briefs  |  View Case Studies
+PARTNERSHIPS
+Work With SAFI
+Transformative savanna challenges require collaboration across disciplines, institutions and communities. SAFI welcomes partnerships that address clear questions, build lasting capability and contribute to practical solutions.
+Partner categories: Universities & Research Institutions • Government & Public Institutions • Traditional & Community Institutions • International Organisations • Civil Society • Business & Investors • Foundations & Philanthropy
+CLOSING CTA
+Build the Future With Us
+Whether you are a researcher, university, government institution, community organisation, investor, foundation or development partner, we welcome conversations that can turn knowledge into action.
+Button: Partner With SAFI
+6. Research Centre Page Framework
+Use one consistent template for all five centres so the website feels like one institution rather than five unrelated projects.
+Centre overview — 80–120 words.
+Why this area matters.
+Research priorities — 4–6 clearly defined themes.
+Methods and approaches.
+Current and developing projects.
+People and associates.
+Partners and networks.
+Selected publications / outputs.
+Opportunities for collaboration.
+Contact / centre lead.
+Suggested centre names
+Climate, Environment & Landscape Futures
+Population Health Innovation Futures
+Food Systems & Bioeconomy Transformation
+Peace, Security & Borderland Futures
+Indigenous Knowledge, Governance & Cultural Futures
+7. Programmes: Recommended Presentation
+Reorganise programme material around status so visitors do not confuse concepts in development with established activities.
+Status
+Website label
+What to show
+Completed
+Completed work
+Results, outputs, partners, lessons and evidence.
+Current
+Current programmes
+Objectives, activities, locations, partners, outputs and status.
+In development
+Programme concepts in development
+Purpose, proposed approach, potential partners and next steps.
+Flagship case-study format
+Programme title
+The challenge
+Why the issue matters
+Geographic focus
+SAFI approach
+Key partners
+Expected outputs and outcomes
+Current status
+How to engage
+8. People, Leadership & Advisory Network
+A major credibility upgrade is to make SAFI visibly human. Create a People page with professional photographs, short biographies, affiliations, expertise and roles.
+Executive Leadership
+Research Centre Leads
+Senior Associates / Fellows
+Global Advisory Board or Advisory Network
+Country and regional partners
+Young researchers / fellows, where applicable
+Only publish names, affiliations, titles and biographies after each person has approved the information and the relationship or appointment is accurately described.
+9. Knowledge Hub
+Research Reports
+Policy Briefs
+Working Papers
+Journal Publications
+Case Studies
+Datasets and Evidence Resources
+SAFI Commentaries
+Webinars and Events
+Annual Reports
+Each item should show title, date, author(s), centre/programme, short abstract and downloadable or viewable resource.
+10. Partnerships
+Partnerships for Knowledge, Innovation and Action
+Universities & Research Institutions
+Government & Public Institutions
+Traditional & Community Institutions
+International Organisations
+Civil Society & NGOs
+Business, Investment & Enterprise
+Foundations & Philanthropy
+Communities & Producer Organisations
+Use partner logos only where a formal relationship, permission and accurate institutional representation exist.
+11. Visual & Brand Direction
+The existing circular SAFI mark is clean and adaptable. Build a complete visual system around it rather than repeatedly redesigning the logo.
+Core visual idea: savanna systems, connection, regeneration and future.
+Photography: authentic African landscapes, Shea systems, farmers, researchers, communities, wildlife, water and young innovators.
+Avoid generic stock imagery that could represent any African NGO.
+Use a restrained natural palette: charcoal, forest green, savanna gold/ochre and warm off-white.
+Use generous whitespace and strong typography.
+Create consistent icons for the five centres.
+Use data visualisation and maps where they genuinely improve understanding.
+Shea can become a distinctive SAFI visual motif because it connects ecology, livelihoods, women’s economic empowerment, agroforestry, value chains and landscape restoration without relying on generic baobab/acacia imagery.
+12. Visual, Layout & Website Design Specification
+This section translates the visual and brand direction into a practical specification for the website designer and developer. The aim is to make SAFI credible, African-led, contemporary, evidence-oriented, human and future-facing without making the website visually crowded.
+12.1 Overall Design Direction
+• Design character: modern African institutional, research-led, warm, confident, natural and future-facing.
+• Visual principle: use the savanna as a living system rather than a decorative background. Images should show relationships between landscapes, people, knowledge, livelihoods, biodiversity and action.
+• Avoid generic NGO imagery, excessive stock photography, busy gradients, excessive animation, clip-art, culturally inappropriate decorative patterns and crowded information blocks.
+• Use generous whitespace, strong editorial hierarchy, authentic photography, restrained natural colours, clear cards, maps, diagrams and evidence-led visualisations.
+• Brand personality: credible for universities, governments and funders, while remaining accessible to communities, young researchers and the wider public.
+12.2 Recommended Font System
+Use a maximum of two font families. Recommended: Manrope for headings and Inter for body/interface text. If a single-family system is preferred, use Inter throughout.
+Element
+Recommended font
+Desktop
+Mobile
+Hero headline
+Manrope 700–800
+56–68 px
+36–44 px
+Page title / H1
+Manrope 700
+44–52 px
+32–38 px
+Section heading / H2
+Manrope 700
+32–38 px
+26–32 px
+Subheading / H3
+Manrope 650–700
+22–26 px
+20–23 px
+Body text
+Inter 400–450
+17–19 px
+16–18 px
+Lead paragraph
+Inter 450–500
+20–22 px
+18–20 px
+Navigation
+Inter 600
+15–16 px
+15–16 px
+Buttons / CTA
+Inter 650–700
+15–16 px
+15–16 px
+Caption / metadata
+Inter 400–500
+13–14 px
+12–14 px
+Typography rules: prefer sentence case for headings; keep body line length around 60–75 characters; use approximately 1.5 line spacing for body copy; and maintain strong contrast between headings, body text and metadata.
+12.3 Colour Palette
+Use a restrained palette inspired by savanna landscapes and regeneration. Exact colours should be implemented in the website design system and checked for accessibility.
+Role
+Colour
+Approx. HEX
+Use
+Primary dark
+Charcoal / deep earth
+#1F2A24
+Header text, footer, strong headings, dark sections
+Primary green
+Forest / savanna green
+#285C45
+Primary accents, links, buttons
+Savanna accent
+Ochre / warm gold
+#C7953E
+Highlights, icons, statistics, active states
+Background
+Warm off-white
+#F7F3EA
+Major page backgrounds
+White
+White
+#FFFFFF
+Cards, navigation, clean content
+Supporting green
+Muted sage
+#7C967D
+Secondary accents, charts, subtle backgrounds
+Do not make every section green or gold. Alternate white, warm off-white and occasional dark feature sections for visual rhythm.
+12.4 Global Page Layout
+• Maximum content width: approximately 1,200–1,280 px on large desktop screens.
+• Desktop side margins: approximately 5–7vw, reducing naturally on smaller screens.
+• Use a consistent 12-column grid on desktop; collapse to fewer columns on tablet and a single-column layout on mobile where appropriate.
+• Section vertical spacing: approximately 80–120 px desktop and 56–80 px mobile.
+• Card internal padding: approximately 24–32 px.
+• Use restrained 10–16 px corner radius; avoid excessive app-style rounding.
+• Use subtle borders and shadows rather than heavy outlines or strong drop shadows.
+• Every page should begin with a clear title/intro block and end with a relevant next action.
+12.5 Recommended Homepage Layout
+Section
+Layout
+Primary visual
+CTA / interaction
+Hero
+Full-width image or split image/text; 2-column desktop, stacked mobile
+Authentic savanna landscape with people/community activity
+Explore SAFI / Our Research / Partner With Us
+Why Savanna Futures Matter
+Text + 3–4 visual/stat cards
+Landscape, food, water, people or biodiversity detail
+Learn More
+Who We Are
+Two-column editorial section
+Researcher/community/fieldwork image
+About SAFI
+What We Do
+Six compact pillar cards
+Simple line icons
+Explore Our Work
+Five Centres
+Central five-part visual architecture
+Five consistent centre icons + ecosystem diagram
+Explore the Centres
+From Knowledge to Action
+Horizontal 5-step pathway; vertical mobile
+Minimal process graphic
+Our Approach
+Featured Programmes
+3-card editorial grid
+One authentic image per programme
+View Programmes
+Evidence of Change
+Large case-study feature + 2 supporting cards
+Field image, map or verified metric
+Explore Impact
+Knowledge Hub
+4-card resource grid
+Document thumbnails or category icons
+Explore Knowledge
+Partnerships
+Partner categories + verified logo strip
+Verified partner logos
+Partner With SAFI
+Closing CTA
+Full-width dark/landscape section
+Wide savanna image with subtle overlay
+Partner With SAFI
+12.6 Image Strategy — What to Use
+Photography should be one of SAFI's strongest credibility and emotional assets. Prioritise original SAFI field photography and properly licensed partner/community images wherever possible.
+Website area
+Recommended image
+Visual message
+Hero
+Wide 16:9 or 21:9 image; people in landscape, field research, farming, water, dialogue or restoration
+A living savanna system with visible human connection
+Research Centres
+One distinctive image per centre, consistent crop and quality
+Climate: landscape/water; Health: community/health; Food: farming/value chain; Peace: dialogue; Indigenous Knowledge: knowledge holders/cultural practice
+Programmes
+Real project/activity images
+Field activity, workshops, monitoring, community engagement or enterprise
+People
+Professional head-and-shoulders or environmental portraits
+Natural light and consistent treatment; avoid mismatched passport-style photos
+Knowledge Hub
+Document covers, maps or topic images
+Clean thumbnails rather than cluttered screenshots
+Impact
+Human-centred evidence image supported by metric/map
+Show change or process, not only posed group photographs
+12.7 Alternative Images / Image Backup Plan
+Where original SAFI photography is not yet available, use a controlled secondary image library rather than arbitrary stock photography. Every image should be checked for licensing, geographic relevance, cultural appropriateness and factual accuracy.
+• Savanna landscape — seasonal grassland/woodland mosaic, river, wetland or agricultural landscape.
+• Shea landscape — shea trees, shea parklands, women processing shea or community agroforestry.
+• People and knowledge — farmers, researchers, community meetings, traditional knowledge transmission or youth innovation.
+• Biodiversity — locally relevant plants, wildlife, wetlands or ecosystem interactions.
+• Research and innovation — field sampling, GIS/mapping, health research, workshops or innovation demonstrations.
+• Maps and diagrams — use a custom SAFI map or diagram where a photograph would be generic or misleading.
+• If no suitable photograph exists, a clean data visualisation, map, illustration or typographic feature is preferable to irrelevant stock imagery.
+12.8 Image Treatment & Technical Standards
+• Use consistent aspect ratios: approximately 16:9 for hero/feature images, 4:3 or 3:2 for cards, and 1:1 for people profiles where appropriate.
+• Use modern compressed formats such as WebP or AVIF where supported, with appropriate fallbacks.
+• Prepare responsive image sizes rather than serving one very large image to all devices.
+• Use focal-point cropping so people, faces, trees and important landscape features are not cut off on mobile.
+• Apply light colour correction only; avoid heavy filters that alter the natural appearance of landscapes or people.
+• Every meaningful image must have concise, descriptive alternative text. Decorative images should use empty alt text.
+• Add photographer/source credits where required by licence or institutional policy.
+12.9 Five-Centre Visual Identity
+The five research centres should share one visual language. Do not create five unrelated logos. Use a common organic line-icon system, with each centre distinguished by a simple symbol and restrained accent treatment.
+Centre
+Suggested symbol
+Image direction
+Climate, Environment & Landscape Futures
+Leaf + water/landscape lines
+Landscape, water, biodiversity, restoration
+Population Health Innovation Futures
+Connected people/health motif
+Community health, field research, resilient services
+Food Systems & Bioeconomy Transformation
+Seed/grain + circular motif
+Farming, processing, markets, food value chains
+Peace, Security & Borderland Futures
+Linked pathways / bridge motif
+Dialogue, mobility, borderlands, community cohesion
+Indigenous Knowledge, Governance & Cultural Futures
+Tree/root or knowledge-circle motif
+Knowledge holders, cultural practice, heritage, governance
+12.10 Icons, Graphics & Data Visualisation
+• Use one consistent line-icon family with organic geometry.
+• Icons should support understanding, not act merely as decoration.
+• Use maps for geographic scope, project locations and regional relationships.
+• Use simple charts for verified impact data; label sources and dates clearly.
+• Use diagrams to explain the five-centre model and research-to-action pathway.
+• Avoid 3D charts, decorative infographics, excessive animation and data visualisations without a clear communication purpose.
+12.11 Page-by-Page Visual Treatment
+Page
+Recommended visual layout
+Priority visual asset
+About SAFI
+Editorial narrative with identity blocks and institutional proposition
+Leadership/fieldwork image + simple institutional diagram
+People
+Filterable profile cards leading to profiles
+Consistent professional portraits
+Research
+Overview of research model followed by five centre cards
+Five-centre systems diagram
+Each Centre
+Hero + priorities + methods + projects + people + outputs + collaboration CTA
+Distinctive centre image + icon
+Programmes
+Status-filtered cards: Completed / Current / In Development
+Real programme images and status labels
+Impact
+Case studies with evidence blocks and maps/metrics
+Human-centred case-study photography
+Knowledge Hub
+Search/filter interface with category cards and resource list
+Consistent report/document thumbnails
+Partnerships
+Partner categories + collaboration pathways
+Verified partner logos and collaboration imagery
+News & Insights
+Editorial news grid with featured story
+Current field/research images
+Contact
+Simple enquiry form + verified institutional details
+Minimal; prioritise usability over imagery
+12.12 Navigation, Buttons & Interaction
+• Keep the main navigation simple: ABOUT | RESEARCH | PROGRAMMES | IMPACT | KNOWLEDGE HUB | PARTNERSHIPS | PEOPLE | CONTACT.
+• Use 'Partner With SAFI' as the principal highlighted CTA in the navigation.
+• Primary buttons: filled green. Secondary buttons: outlined green or text link with arrow.
+• Use consistent CTA language: Explore, Learn More, Read, View Case Study, Download, Partner With SAFI.
+• Avoid generic buttons such as 'Click Here'.
+• On mobile, use a clean menu with the Partner With SAFI action still easy to reach.
+• Use subtle hover states and short transitions; avoid distracting animations.
+12.13 Mobile-First Layout
+• Design mobile layouts first, then expand to tablet and desktop.
+• Hero text should remain readable without covering faces or important landscape features.
+• Stack cards vertically and avoid horizontal scrolling except for deliberate, accessible carousels.
+• Maintain comfortable touch targets for buttons and links.
+• Use accordions for long technical content where appropriate.
+• Ensure tables, maps and data graphics have mobile alternatives or usable horizontal scrolling.
+• Do not hide essential information on mobile merely to simplify the design.
+12.14 Recommended Homepage Image Set
+For the first production version, commission or select a coherent image set rather than choosing images independently page by page:
+1. Wide hero image — people + savanna landscape.
+2. Landscape/ecosystem image — climate and environment.
+3. Community/health image — people-centred research.
+4. Food/agroforestry image — preferably featuring shea systems where appropriate.
+5. Peace/community dialogue image.
+6. Indigenous knowledge/cultural heritage image.
+7. Three to six programme/project images.
+8. Professional portraits for leadership and centre leads.
+9. Two to three general fieldwork/research images for reusable sections.
+10. One strong closing image suitable for a dark-overlay CTA.
+12.15 Design Quality Control Before Launch
+• Check the website at approximately 375 px, 768 px, 1024 px and large desktop widths.
+• Check every page for consistent heading sizes, spacing, buttons and image crops.
+• Check that all images have appropriate alt text and licensing/source records.
+• Check contrast for text placed over photographs.
+• Check that the same image is not repeatedly used across multiple major sections unless intentionally used as a signature image.
+• Check that all five research centres have equal visual weight and consistent page structure.
+• Check that the homepage communicates the SAFI story within the first screenful and remains scannable throughout.
+• Check performance after images are uploaded; large images should not materially slow mobile loading.
+• Conduct a review with at least one researcher, one non-specialist visitor and one potential partner/funder before final launch.
+13. User Experience & Technical Requirements
+Mobile-first responsive design.
+Fast-loading compressed images and modern image formats.
+Accessible colour contrast and readable typography.
+Clear keyboard navigation and meaningful alternative text for images.
+Consistent page titles, metadata and structured headings.
+Search engine-friendly URLs and page descriptions.
+Social sharing metadata for news and publications.
+Working enquiry form with confirmation message and tested email routing.
+Spam protection on public forms.
+Privacy notice and data protection information.
+Cookie/analytics configuration appropriate to the jurisdictions in which SAFI operates.
+Secure hosting, HTTPS and regular backups.
+Analytics dashboard to monitor traffic, downloads, enquiries and engagement.
+14. Contact Page: Final Launch Standard
+The public Contact page should contain only verified information.
+Official institutional email address.
+Verified postal/office address where appropriate.
+Verified telephone/WhatsApp number where appropriate.
+Working enquiry form.
+General enquiries category.
+Research collaboration category.
+Partnership/funding category.
+Media enquiries category.
+Careers/opportunities category.
+Privacy statement and consent language.
+Do not publish development notes such as “to be verified”, “to be confirmed” or “connect to a tested backend”. These are internal production notes and should be removed before launch.
+15. Institutional Trust & Governance Pages
+About / Legal Status
+Governance
+Board / Advisory Network
+Research Ethics
+Safeguarding
+Data Protection & Privacy
+Conflicts of Interest
+Financial / Annual Reporting, where applicable
+Complaints / Feedback
+Partnership Principles
+These pages are particularly important if SAFI intends to work with universities, government institutions, communities, international funders and research participants.
+16. Search & Discoverability
+Search themes should reflect SAFI’s actual work and geographic scope, rather than keyword stuffing.
+Savanna research Africa
+Savanna climate resilience Ghana
+African savanna ecosystems
+Indigenous knowledge Ghana
+Climate and health Africa
+Food systems savanna regions
+Peace and borderlands research
+Savanna biodiversity and livelihoods
+African-led research and innovation
+Ghana research partnerships
+Each page should have a unique title, concise meta description, descriptive headings and a clear internal linking path.
+17. Final Pre-Launch Checklist
+☐ Approve SAFI positioning and strapline.
+☐ Approve navigation and sitemap.
+☐ Approve homepage copy.
+☐ Confirm legal/institutional status wording.
+☐ Verify all contact details.
+☐ Create official institutional email addresses.
+☐ Complete Leadership / People profiles.
+☐ Confirm Advisory Board / Advisory Network wording and permissions.
+☐ Confirm five centre names and centre leads.
+☐ Classify programmes as completed, current or in development.
+☐ Create at least 3 strong case studies where evidence is available.
+☐ Create Knowledge Hub structure.
+☐ Create News & Insights structure.
+☐ Connect and test all forms.
+☐ Add privacy, safeguarding and governance pages.
+☐ Optimise mobile experience.
+☐ Check accessibility.
+☐ Compress and optimise images.
+☐ Configure analytics and search indexing.
+☐ Proofread all pages and links.
+☐ Remove every placeholder and internal production note.
+☐ Conduct a final independent user test before launch.
+18. Final Strategic Recommendation
+SAFI should resist the temptation to make the website simply bigger. Its strength is the connected institutional idea: savanna landscapes are simultaneously environmental, social, cultural, health, economic and governance systems.
+The website should tell one coherent story: SAFI connects knowledge, people and action to shape resilient savanna futures.
+The five research centres provide the intellectual structure; programmes demonstrate practical application; people and partners provide credibility; the Knowledge Hub provides evidence; and case studies demonstrate impact. This creates a clear journey from identity → research → action → evidence → partnership.
+Recommended homepage closing line
+Healthy landscapes. Healthy people. Peaceful communities. Resilient futures.
+This line can serve as a memorable SAFI brand statement while the longer institutional proposition explains how SAFI achieves it.
+---TABLE---
+Area | Current Strength | Recommended Direction
+Vision | Clear African savanna focus and research/innovation orientation. | Use a sharper one-sentence institutional proposition.
+Research model | Five connected research centres provide a coherent interdisciplinary architecture. | Make the five-centre model a central visual feature.
+Approach | Frame → evidence → options → test → learn is clear and useful. | Retain and brand it as SAFI’s research-to-action pathway.
+Content | Strong scope across environment, health, food, peace and culture. | Use shorter public-facing summaries with deeper technical content behind them.
+Credibility | Institutional concept is well articulated. | Add people, advisory network, partners, publications, projects and evidence of activity.
+Programmes | Programme priorities are visible, including developing partnership and regeneration concepts. | Separate completed, current and developing work so visitors understand status.
+Engagement | Partnership invitation is present. | Create a stronger Partner with SAFI pathway and clear partner categories.
+Contact | Contact pathway exists. | Remove all placeholders and connect the form to a tested backend before launch.
+Knowledge | Research orientation is clear. | Add a Knowledge Hub for publications, policy briefs, reports and case studies.
+Public visibility | Strong foundation for institutional storytelling. | Add News & Insights and regular updates.
+---TABLE---
+Status | Website label | What to show
+Completed | Completed work | Results, outputs, partners, lessons and evidence.
+Current | Current programmes | Objectives, activities, locations, partners, outputs and status.
+In development | Programme concepts in development | Purpose, proposed approach, potential partners and next steps.
+---TABLE---
+Element | Recommended font | Desktop | Mobile
+Hero headline | Manrope 700–800 | 56–68 px | 36–44 px
+Page title / H1 | Manrope 700 | 44–52 px | 32–38 px
+Section heading / H2 | Manrope 700 | 32–38 px | 26–32 px
+Subheading / H3 | Manrope 650–700 | 22–26 px | 20–23 px
+Body text | Inter 400–450 | 17–19 px | 16–18 px
+Lead paragraph | Inter 450–500 | 20–22 px | 18–20 px
+Navigation | Inter 600 | 15–16 px | 15–16 px
+Buttons / CTA | Inter 650–700 | 15–16 px | 15–16 px
+Caption / metadata | Inter 400–500 | 13–14 px | 12–14 px
+---TABLE---
+Role | Colour | Approx. HEX | Use
+Primary dark | Charcoal / deep earth | #1F2A24 | Header text, footer, strong headings, dark sections
+Primary green | Forest / savanna green | #285C45 | Primary accents, links, buttons
+Savanna accent | Ochre / warm gold | #C7953E | Highlights, icons, statistics, active states
+Background | Warm off-white | #F7F3EA | Major page backgrounds
+White | White | #FFFFFF | Cards, navigation, clean content
+Supporting green | Muted sage | #7C967D | Secondary accents, charts, subtle backgrounds
+---TABLE---
+Section | Layout | Primary visual | CTA / interaction
+Hero | Full-width image or split image/text; 2-column desktop, stacked mobile | Authentic savanna landscape with people/community activity | Explore SAFI / Our Research / Partner With Us
+Why Savanna Futures Matter | Text + 3–4 visual/stat cards | Landscape, food, water, people or biodiversity detail | Learn More
+Who We Are | Two-column editorial section | Researcher/community/fieldwork image | About SAFI
+What We Do | Six compact pillar cards | Simple line icons | Explore Our Work
+Five Centres | Central five-part visual architecture | Five consistent centre icons + ecosystem diagram | Explore the Centres
+From Knowledge to Action | Horizontal 5-step pathway; vertical mobile | Minimal process graphic | Our Approach
+Featured Programmes | 3-card editorial grid | One authentic image per programme | View Programmes
+Evidence of Change | Large case-study feature + 2 supporting cards | Field image, map or verified metric | Explore Impact
+Knowledge Hub | 4-card resource grid | Document thumbnails or category icons | Explore Knowledge
+Partnerships | Partner categories + verified logo strip | Verified partner logos | Partner With SAFI
+Closing CTA | Full-width dark/landscape section | Wide savanna image with subtle overlay | Partner With SAFI
+---TABLE---
+Website area | Recommended image | Visual message
+Hero | Wide 16:9 or 21:9 image; people in landscape, field research, farming, water, dialogue or restoration | A living savanna system with visible human connection
+Research Centres | One distinctive image per centre, consistent crop and quality | Climate: landscape/water; Health: community/health; Food: farming/value chain; Peace: dialogue; Indigenous Knowledge: knowledge holders/cultural practice
+Programmes | Real project/activity images | Field activity, workshops, monitoring, community engagement or enterprise
+People | Professional head-and-shoulders or environmental portraits | Natural light and consistent treatment; avoid mismatched passport-style photos
+Knowledge Hub | Document covers, maps or topic images | Clean thumbnails rather than cluttered screenshots
+Impact | Human-centred evidence image supported by metric/map | Show change or process, not only posed group photographs
+---TABLE---
+Centre | Suggested symbol | Image direction
+Climate, Environment & Landscape Futures | Leaf + water/landscape lines | Landscape, water, biodiversity, restoration
+Population Health Innovation Futures | Connected people/health motif | Community health, field research, resilient services
+Food Systems & Bioeconomy Transformation | Seed/grain + circular motif | Farming, processing, markets, food value chains
+Peace, Security & Borderland Futures | Linked pathways / bridge motif | Dialogue, mobility, borderlands, community cohesion
+Indigenous Knowledge, Governance & Cultural Futures | Tree/root or knowledge-circle motif | Knowledge holders, cultural practice, heritage, governance
+---TABLE---
+Page | Recommended visual layout | Priority visual asset
+About SAFI | Editorial narrative with identity blocks and institutional proposition | Leadership/fieldwork image + simple institutional diagram
+People | Filterable profile cards leading to profiles | Consistent professional portraits
+Research | Overview of research model followed by five centre cards | Five-centre systems diagram
+Each Centre | Hero + priorities + methods + projects + people + outputs + collaboration CTA | Distinctive centre image + icon
+Programmes | Status-filtered cards: Completed / Current / In Development | Real programme images and status labels
+Impact | Case studies with evidence blocks and maps/metrics | Human-centred case-study photography
+Knowledge Hub | Search/filter interface with category cards and resource list | Consistent report/document thumbnails
+Partnerships | Partner categories + collaboration pathways | Verified partner logos and collaboration imagery
+News & Insights | Editorial news grid with featured story | Current field/research images
+Contact | Simple enquiry form + verified institutional details | Minimal; prioritise usability over imagery
