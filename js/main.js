@@ -19,9 +19,14 @@
 
   function onScroll() {
     if (!header) return;
-    if (isInnerPage || window.scrollY > 60) {
+    if (isInnerPage) {
       header.classList.add('scrolled');
-    } else if (!isInnerPage && window.scrollY <= 60) {
+      return;
+    }
+    /* Solid header once past the hero so nav stays readable over light sections */
+    if (window.scrollY > 8) {
+      header.classList.add('scrolled');
+    } else {
       header.classList.remove('scrolled');
     }
   }
