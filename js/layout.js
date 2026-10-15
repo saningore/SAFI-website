@@ -174,7 +174,7 @@
         <div class="footer-brand">
           <img src="${base}assets/images/safi-logo.png" width="56" height="56" alt="" style="margin-bottom:1rem;filter:brightness(0) invert(1);opacity:0.9;">
           <p><strong>The Savannah Futures Institute</strong> connects knowledge, people and action to shape resilient savanna futures.</p>
-          <p class="footer-tagline-inline">Healthy landscapes. Healthy people. Peaceful communities. Resilient futures.</p>
+          <p class="footer-tagline-inline">Healthy landscapes. Healthy people. Peaceful communities. Resilient savanna ecosystem.</p>
         </div>
         <div class="footer-links">
           <h4>Institute</h4>

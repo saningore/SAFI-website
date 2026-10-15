@@ -10,16 +10,17 @@
   const yearEl = document.getElementById('year');
   const contactForm = document.getElementById('contactForm');
   const isInnerPage = document.body.classList.contains('inner-page');
+  const isImmersiveInner = document.body.classList.contains('people-page--immersive');
 
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  if (isInnerPage && header) {
+  if (isInnerPage && header && !isImmersiveInner) {
     header.classList.add('header-solid', 'scrolled');
   }
 
   function onScroll() {
     if (!header) return;
-    if (isInnerPage) {
+    if (isInnerPage && !isImmersiveInner) {
       header.classList.add('scrolled');
       return;
     }

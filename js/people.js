@@ -1,31 +1,13 @@
 /**
- * SAFI People directory — filter, sort and paginate published profiles.
- * Add entries to SAFI_PEOPLE only after leadership approval (photo + biography).
+ * SAFI People directory — search, filter, sort and paginate (SEI-style listing).
  */
 (function () {
   'use strict';
 
-  /** @type {Array<{id:string,name:string,role:string,roleGroup:string,centre:string,location:string,photo?:string,profileUrl?:string}>} */
-  const SAFI_PEOPLE = [];
-
-  const ROLE_GROUPS = [
-    { id: '', label: 'All role groups' },
-    { id: 'board', label: 'Board of Trustees' },
-    { id: 'executive', label: 'Executive Leadership' },
-    { id: 'centre', label: 'Centre Leadership' },
-    { id: 'advisers', label: 'Advisers & Fellows' },
-    { id: 'operations', label: 'Operations & Support' },
-  ];
-
-  const CENTRES = [
-    { id: '', label: 'All centres' },
-    { id: 'climate', label: 'Climate, Environment & Landscapes' },
-    { id: 'health', label: 'Population Health Innovation Systems' },
-    { id: 'peace', label: 'Peace, Security & Borderlands' },
-    { id: 'indigenous', label: 'Indigenous Knowledge, Governance & Culture' },
-    { id: 'food', label: 'Food Futures & Economic Transformation' },
-    { id: 'institute', label: 'Institute leadership & operations' },
-  ];
+  const data = window.SAFI_PEOPLE_DATA || { people: [], centres: [], roleGroups: [] };
+  const SAFI_PEOPLE = data.people;
+  const ROLE_GROUPS = data.roleGroups;
+  const CENTRES = data.centres;
 
   const PAGE_SIZE = 18;
   const PLACEHOLDER_SVG =
@@ -40,6 +22,9 @@
     sort: document.getElementById('people-sort'),
     apply: document.getElementById('people-apply'),
     reset: document.getElementById('people-reset'),
+    search: document.getElementById('people-search-input'),
+    searchBtn: document.getElementById('people-search-btn'),
+    searchForm: document.getElementById('people-search-form'),
   };
 
   if (!els.grid) return;
@@ -48,6 +33,7 @@
     centre: '',
     role: '',
     sort: 'name-asc',
+    keyword: '',
     page: 1,
   };
 
@@ -55,30 +41,81 @@
     return CENTRES.find((c) => c.id === id)?.label || id;
   }
 
+  function roleGroupLabel(id) {
+    return ROLE_GROUPS.find((r) => r.id === id)?.label || id;
+  }
+
+  function profileHref(person) {
+    if (person.profileUrl) return person.profileUrl;
+    return `people-profile.html?id=${encodeURIComponent(person.id)}`;
+  }
+
   function populateSelect(select, options) {
     select.innerHTML = options.map((o) => `<option value="${o.id}">${o.label}</option>`).join('');
+  }
+
+  function readPageFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const p = parseInt(params.get('current-page') || params.get('page') || '1', 10);
+    return Number.isFinite(p) && p > 0 ? p : 1;
+  }
+
+  function syncUrl() {
+    const list = filteredPeople();
+    const totalPages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
+    const params = new URLSearchParams(window.location.search);
+    if (state.page > 1 && state.page <= totalPages) {
+      params.set('current-page', String(state.page));
+    } else {
+      params.delete('current-page');
+      params.delete('page');
+    }
+    const qs = params.toString();
+    const hash = '#listing';
+    const next = `${window.location.pathname}${qs ? `?${qs}` : ''}${hash}`;
+    if (`${window.location.pathname}${window.location.search}${window.location.hash}` !== next) {
+      history.replaceState(null, '', next);
+    }
   }
 
   function readFiltersFromForm() {
     state.centre = els.centre.value;
     state.role = els.role.value;
     state.sort = els.sort.value;
+    state.keyword = (els.search?.value || '').trim();
     state.page = 1;
     render();
   }
 
   function resetFilters() {
-    state = { centre: '', role: '', sort: 'name-asc', page: 1 };
+    state = { centre: '', role: '', sort: 'name-asc', keyword: '', page: 1 };
     els.centre.value = '';
     els.role.value = '';
     els.sort.value = 'name-asc';
+    if (els.search) els.search.value = '';
     render();
   }
 
+  function personSearchText(p) {
+    return [
+      p.name,
+      p.role,
+      p.location,
+      p.department,
+      centreLabel(p.centre),
+      roleGroupLabel(p.roleGroup),
+    ]
+      .filter(Boolean)
+      .join(' ')
+      .toLowerCase();
+  }
+
   function filteredPeople() {
+    const kw = state.keyword.toLowerCase();
     return SAFI_PEOPLE.filter((p) => {
       if (state.centre && p.centre !== state.centre) return false;
       if (state.role && p.roleGroup !== state.role) return false;
+      if (kw && !personSearchText(p).includes(kw)) return false;
       return true;
     }).sort((a, b) => {
       const cmp = a.name.localeCompare(b.name, undefined, { sensitivity: 'base' });
@@ -90,30 +127,30 @@
     const photo = person.photo
       ? `<img src="${person.photo}" alt="" width="72" height="72" loading="lazy">`
       : `<span class="people-avatar-placeholder">${PLACEHOLDER_SVG}</span>`;
-    const nameHtml = person.profileUrl
-      ? `<a href="${person.profileUrl}">${person.name}</a>`
-      : person.name;
+    const dept = person.department || roleGroupLabel(person.roleGroup);
+    const href = profileHref(person);
+    const centre = centreLabel(person.centre);
 
     return `
       <article class="people-card reveal" data-id="${person.id}">
-        <div class="people-card-accent" aria-hidden="true"></div>
         <div class="people-card-inner">
           <div class="people-card-photo">${photo}</div>
           <div class="people-card-body">
-            <h3>${nameHtml}</h3>
+            <h3><a href="${href}">${person.name}</a></h3>
             <p class="people-card-role">${person.role}</p>
-            <p class="people-card-unit">${centreLabel(person.centre)}</p>
-            <p class="people-card-location">${person.location}</p>
+            <p class="people-card-unit">${dept}</p>
+            <p class="people-card-location">${centre}</p>
+            ${person.location && person.location !== centre ? `<p class="people-card-location">${person.location}</p>` : ''}
           </div>
         </div>
       </article>`;
   }
 
   function renderEmpty() {
-    const hasFilters = state.centre || state.role;
-    const title = hasFilters ? 'No profiles match your filters' : 'Team profiles publishing soon';
+    const hasFilters = state.centre || state.role || state.keyword;
+    const title = hasFilters ? 'No profiles match your search' : 'Team profiles publishing soon';
     const detail = hasFilters
-      ? 'Try resetting filters or check back as confirmed appointments are added.'
+      ? 'Try different keywords, reset filters, or check back as confirmed appointments are added.'
       : 'Confirmed appointments, biographies and photographs will appear here once approved by the Executive Director. Proposed advisers will not be listed as appointed.';
 
     return `
@@ -140,6 +177,15 @@
     els.pagination.innerHTML = html;
   }
 
+  function renderMeta(total, totalPages) {
+    const profileWord = total === 1 ? 'profile' : 'profiles';
+    if (total === 0) {
+      els.meta.innerHTML = `<strong>0 ${profileWord}</strong> <span class="people-meta-sep">/</span> Directory ready for verified appointments`;
+      return;
+    }
+    els.meta.innerHTML = `<strong>${total} ${profileWord}</strong> <span class="people-meta-sep">/</span> ${state.page} of ${totalPages} pages`;
+  }
+
   function render() {
     const list = filteredPeople();
     const total = list.length;
@@ -155,13 +201,9 @@
       els.grid.innerHTML = pageItems.map(renderCard).join('');
     }
 
-    const profileWord = total === 1 ? 'profile' : 'profiles';
-    els.meta.textContent =
-      total === 0
-        ? `0 ${profileWord} · Directory ready for verified appointments`
-        : `${total} ${profileWord} · Page ${state.page} of ${totalPages}`;
-
+    renderMeta(total, totalPages);
     renderPagination(totalPages);
+    syncUrl();
 
     els.grid.querySelectorAll('.reveal').forEach((el) => {
       requestAnimationFrame(() => el.classList.add('visible'));
@@ -171,12 +213,25 @@
   populateSelect(els.centre, CENTRES);
   populateSelect(els.role, ROLE_GROUPS);
 
+  state.page = readPageFromUrl();
+
   els.apply.addEventListener('click', readFiltersFromForm);
   els.reset.addEventListener('click', resetFilters);
   els.sort.addEventListener('change', () => {
     state.sort = els.sort.value;
+    state.page = 1;
     render();
   });
+
+  if (els.searchForm) {
+    els.searchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      readFiltersFromForm();
+    });
+  }
+  if (els.searchBtn) {
+    els.searchBtn.addEventListener('click', readFiltersFromForm);
+  }
 
   els.pagination.addEventListener('click', (e) => {
     const btn = e.target.closest('button[data-page]');
@@ -188,7 +243,7 @@
     else if (val === 'next') state.page = Math.min(totalPages, state.page + 1);
     else state.page = parseInt(val, 10);
     render();
-    els.grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById('listing')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
   render();

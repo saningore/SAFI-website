@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Profile — The Savannah Futures Institute">
+  <title>Profile | The Savannah Futures Institute</title>
+  <link rel="icon" href="assets/images/safi-logo.png" type="image/png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="inner-page people-profile-page">
+  <div id="site-header"></div>
+  <main id="main">
+    <div id="people-profile-root" hidden>
+      <section class="people-profile-hero">
+        <div class="container people-profile-hero-grid">
+          <div class="people-profile-hero-text">
+            <nav class="breadcrumbs breadcrumbs--light" aria-label="Breadcrumb"><a href="index.html">Home</a> <span>&rsaquo;</span> <a href="people.html#listing">People</a></nav>
+            <h1 id="profile-name"></h1>
+            <p class="people-profile-role" id="profile-role"></p>
+            <p class="people-profile-dept" id="profile-dept"></p>
+            <div class="people-profile-details">
+              <div class="people-profile-detail-block">
+                <h2>Centre</h2>
+                <p id="profile-centre"></p>
+              </div>
+              <div class="people-profile-detail-block">
+                <h2>Contact details</h2>
+                <ul class="people-profile-contact" id="profile-contact"></ul>
+              </div>
+            </div>
+          </div>
+          <div class="people-profile-photo-wrap">
+            <div class="people-profile-photo" id="profile-photo"></div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container content-body people-profile-bio">
+          <div id="profile-bio"></div>
+          <p class="people-profile-back"><a href="people.html#listing">&larr; Back to people</a></p>
+        </div>
+      </section>
+    </div>
+
+    <section class="section" id="people-profile-missing" hidden>
+      <div class="container">
+        <div class="people-empty">
+          <h3>Profile not found</h3>
+          <p>This profile is not published or the link may be outdated.</p>
+          <p><a href="people.html#listing" class="btn btn-primary">View all people</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/layout.js" data-page="about-people"></script>
+  <script src="js/people-data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/people-profile.js"></script>
+</body>
+</html>
