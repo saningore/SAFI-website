@@ -6,15 +6,16 @@
   'use strict';
 
   global.SAFI_IMAGES = {
+    heroRiver: 'assets/images/people/savanna-river.png',
     climate: 'assets/images/people/savanna-aerial-green.png',
     climateWide: 'assets/images/people/research-landscape-wide.png',
-    health: 'assets/images/people/women-community-procession.png',
-    food: 'assets/images/people/granaries-thatched.png',
+    health: 'assets/images/people/field-palms-research-site.png',
+    food: 'assets/images/people/goats-pasture.png',
     foodLivestock: 'assets/images/people/goats-pasture.png',
-    peace: 'assets/images/people/cultural-gathering-wide.png',
-    indigenous: 'assets/images/people/leadership-traditional-dress.png',
-    platforms: 'assets/images/people/hero-community-gathering.png',
-    water: 'assets/images/people/fishing-livelihoods.png',
+    peace: 'assets/images/people/men-smocks-procession.png',
+    indigenous: 'assets/images/people/women-carrying-pots.png',
+    platforms: 'assets/images/people/leadership-group-five.png',
+    water: 'assets/images/people/landscape-thatched-compound.png',
     waterLandscape: 'assets/images/people/landscape-thatched-compound.png',
     wildlife: 'assets/images/people/elephants-savanna-road.png',
     community: 'assets/images/people/hero-community-gathering.png',
@@ -25,6 +26,6 @@
     institute: 'assets/images/people/leadership-group-five.png',
     enterprise: 'assets/images/people/rural-settlement-motorcycle.png',
     cultureProcession: 'assets/images/people/men-smocks-procession.png',
-    palms: 'assets/images/people/doum-palms-vertical.png',
+    river: 'assets/images/people/savanna-river.png',
   };
 })(typeof window !== 'undefined' ? window : globalThis);
