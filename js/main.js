@@ -36,7 +36,7 @@
   onScroll();
 
   function isMobileNav() {
-    return window.matchMedia('(max-width: 991px)').matches;
+    return window.matchMedia('(max-width: 1180px)').matches;
   }
 
   function closeAllDropdowns(except) {

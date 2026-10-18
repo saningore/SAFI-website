@@ -74,6 +74,7 @@
         { label: 'BAIRP programme concept', href: `${base}programmes-bairp.html`, pages: ['programmes-bairp'] },
       ],
     },
+    { id: 'academy', label: 'Academy', href: `${base}academy.html` },
     {
       id: 'resources',
       label: 'Resources',
@@ -81,7 +82,6 @@
         { label: 'Knowledge Hub', href: `${base}knowledge.html`, pages: ['knowledge'] },
         { label: 'Publications', href: `${base}publications.html`, pages: ['publications'] },
         { label: 'News & Insights', href: `${base}insights.html`, pages: ['insights'] },
-        { label: 'Opportunities', href: `${base}academy.html`, pages: ['academy'] },
       ],
     },
     { id: 'impact', label: 'Impact', href: `${base}impact.html` },
@@ -102,7 +102,7 @@
       return page === 'programmes' || page.startsWith('programmes-');
     }
     if (item.id === 'resources') {
-      return page === 'knowledge' || page === 'publications' || page === 'insights' || page === 'academy';
+      return page === 'knowledge' || page === 'publications' || page === 'insights';
     }
     if (item.id === 'partnerships' && page === 'partnerships') return true;
     if (item.id === 'partner' && page === 'partnerships') return true;
@@ -182,6 +182,7 @@
             <li><a href="${base}about.html">About</a></li>
             <li><a href="${base}people.html">People</a></li>
             <li><a href="${base}governance.html">Governance</a></li>
+            <li><a href="${base}academy.html">Academy</a></li>
             <li><a href="${base}impact.html">Impact</a></li>
             <li><a href="${base}contact.html">Contact</a></li>
           </ul>
@@ -200,7 +201,7 @@
             <li><a href="${base}knowledge.html">Knowledge Hub</a></li>
             <li><a href="${base}publications.html">Publications</a></li>
             <li><a href="${base}insights.html">News &amp; Insights</a></li>
-            <li><a href="${base}academy.html">Opportunities</a></li>
+            <li><a href="${base}academy.html">Academy</a></li>
           </ul>
         </div>
       </div>
