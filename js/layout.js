@@ -150,7 +150,7 @@
 
   const headerHtml = `
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header" id="header">
+    <header class="site-header${page === 'home' ? ' site-header--home' : ''}" id="header">
       <div class="header-inner container">
         <a href="${base}index.html" class="logo" aria-label="The Savannah Futures Institute — Home">
           <img class="logo-img" src="${base}assets/images/safi-logo.png" width="44" height="44" alt="">
