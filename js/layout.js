@@ -13,6 +13,7 @@
     '<path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
   const navItems = [
+    { id: 'home', label: 'Home', href: `${base}index.html` },
     {
       id: 'about',
       label: 'About',
