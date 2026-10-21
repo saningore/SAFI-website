@@ -68,9 +68,19 @@
       children: [
         { label: 'Programme overview', href: `${base}programmes.html`, pages: ['programmes'] },
         {
-          label: 'UNESCO collaboration (proposed)',
+          label: 'Water & climate resilience (proposed)',
           href: `${base}programmes-unesco-collaboration.html`,
           pages: ['programmes-unesco'],
+        },
+        {
+          label: 'Eastern Corridor food logistics (proposed)',
+          href: `${base}programmes-eastern-corridor.html`,
+          pages: ['programmes-eastern-corridor'],
+        },
+        {
+          label: 'Red Volta forest recovery (proposed)',
+          href: `${base}programmes-red-volta.html`,
+          pages: ['programmes-red-volta'],
         },
         { label: 'BAIRP programme concept', href: `${base}programmes-bairp.html`, pages: ['programmes-bairp'] },
       ],
@@ -88,7 +98,6 @@
     { id: 'impact', label: 'Impact', href: `${base}impact.html` },
     { id: 'partnerships', label: 'Partnerships', href: `${base}partnerships.html` },
     { id: 'contact', label: 'Contact', href: `${base}contact.html` },
-    { id: 'partner', label: 'Partner with SAFI', href: `${base}partnerships.html`, cta: true },
   ];
 
   function isParentActive(item) {
@@ -106,7 +115,6 @@
       return page === 'knowledge' || page === 'publications' || page === 'insights';
     }
     if (item.id === 'partnerships' && page === 'partnerships') return true;
-    if (item.id === 'partner' && page === 'partnerships') return true;
     if (item.id === 'impact' && page === 'impact') return true;
     if (item.id === 'contact' && page === 'contact') return true;
     return false;
@@ -183,26 +191,25 @@
             <li><a href="${base}about.html">About</a></li>
             <li><a href="${base}people.html">People</a></li>
             <li><a href="${base}governance.html">Governance</a></li>
-            <li><a href="${base}academy.html">Academy</a></li>
-            <li><a href="${base}impact.html">Impact</a></li>
             <li><a href="${base}contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-links">
           <h4>Research &amp; programmes</h4>
           <ul>
+            <li><a href="${base}partnerships.html">Partnerships</a></li>
             <li><a href="${base}research.html">Research</a></li>
             <li><a href="${base}programmes.html">Programmes</a></li>
-            <li><a href="${base}partnerships.html">Partnerships</a></li>
+            <li><a href="${base}impact.html">Impact</a></li>
           </ul>
         </div>
         <div class="footer-links">
           <h4>Resources</h4>
           <ul>
             <li><a href="${base}knowledge.html">Knowledge Hub</a></li>
+            <li><a href="${base}academy.html">Academy</a></li>
             <li><a href="${base}publications.html">Publications</a></li>
             <li><a href="${base}insights.html">News &amp; Insights</a></li>
-            <li><a href="${base}academy.html">Academy</a></li>
           </ul>
         </div>
       </div>
