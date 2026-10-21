@@ -32,10 +32,23 @@
   let state = {
     centre: '',
     role: '',
-    sort: 'name-asc',
+    sort: 'listed',
     keyword: '',
     page: 1,
   };
+
+  function escapeHtml(text) {
+    return String(text)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function whatsappHref(person) {
+    const digits = String(person.phone || '').replace(/\D/g, '');
+    return digits ? `https://wa.me/${digits}` : '';
+  }
 
   function centreLabel(id) {
     return CENTRES.find((c) => c.id === id)?.label || id;
@@ -88,18 +101,32 @@
   }
 
   function resetFilters() {
-    state = { centre: '', role: '', sort: 'name-asc', keyword: '', page: 1 };
+    state = { centre: '', role: '', sort: 'listed', keyword: '', page: 1 };
     els.centre.value = '';
     els.role.value = '';
-    els.sort.value = 'name-asc';
+    els.sort.value = 'listed';
     if (els.search) els.search.value = '';
     render();
+  }
+
+  function appointmentLabel(person) {
+    if (person.formalAppointment) return person.formalAppointment;
+    if (person.appointment) return `${person.appointment} appointment`;
+    if (person.roleGroup) return roleGroupLabel(person.roleGroup);
+    return '';
   }
 
   function personSearchText(p) {
     return [
       p.name,
       p.role,
+      p.appointment,
+      p.formalAppointment,
+      p.affiliation,
+      ...(p.specialisms || []),
+      ...(p.bio || []),
+      p.phone,
+      p.email,
       p.location,
       p.department,
       centreLabel(p.centre),
@@ -118,6 +145,7 @@
       if (kw && !personSearchText(p).includes(kw)) return false;
       return true;
     }).sort((a, b) => {
+      if (state.sort === 'listed') return (a.order || 0) - (b.order || 0);
       const cmp = a.name.localeCompare(b.name, undefined, { sensitivity: 'base' });
       return state.sort === 'name-desc' ? -cmp : cmp;
     });
@@ -125,22 +153,36 @@
 
   function renderCard(person) {
     const photo = person.photo
-      ? `<img src="${person.photo}" alt="" width="72" height="72" loading="lazy">`
+      ? `<img src="${escapeHtml(person.photo)}" alt="" width="72" height="72" loading="lazy">`
       : `<span class="people-avatar-placeholder">${PLACEHOLDER_SVG}</span>`;
-    const dept = person.department || roleGroupLabel(person.roleGroup);
     const href = profileHref(person);
-    const centre = centreLabel(person.centre);
+    const appointment = appointmentLabel(person);
+    const wa = whatsappHref(person);
+    const tel = String(person.phone || '').replace(/\s/g, '');
+    const contact = [];
+    if (wa && person.phone) {
+      contact.push(
+        `<a href="${wa}" rel="noopener noreferrer">WhatsApp</a> <a href="tel:${escapeHtml(tel)}">${escapeHtml(person.phone)}</a>`
+      );
+    }
+    const emailLine = person.email
+      ? `<p class="people-card-contact"><a href="mailto:${escapeHtml(person.email)}">${escapeHtml(person.email)}</a></p>`
+      : '<p class="people-card-contact people-field-pending">Official email to be added</p>';
 
     return `
-      <article class="people-card reveal" data-id="${person.id}">
+      <article class="people-card reveal" data-id="${escapeHtml(person.id)}">
         <div class="people-card-inner">
           <div class="people-card-photo">${photo}</div>
           <div class="people-card-body">
-            <h3><a href="${href}">${person.name}</a></h3>
-            <p class="people-card-role">${person.role}</p>
-            <p class="people-card-unit">${dept}</p>
-            <p class="people-card-location">${centre}</p>
-            ${person.location && person.location !== centre ? `<p class="people-card-location">${person.location}</p>` : ''}
+            <h3><a href="${href}">${escapeHtml(person.name)}</a></h3>
+            ${person.role
+              ? `<p class="people-card-role">${escapeHtml(person.role)}</p>`
+              : '<p class="people-card-role people-field-pending">Role to be added</p>'}
+            ${appointment
+              ? `<p class="people-card-appointment">${escapeHtml(appointment)}</p>`
+              : '<p class="people-card-contact people-field-pending">Appointment to be added</p>'}
+            ${contact.length ? `<p class="people-card-contact">${contact.join('')}</p>` : ''}
+            ${emailLine}
           </div>
         </div>
       </article>`;
