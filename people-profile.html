@@ -17,18 +17,20 @@
           <div class="people-profile-hero-text">
             <nav class="breadcrumbs breadcrumbs--light" aria-label="Breadcrumb"><a href="index.html">Home</a> <span>&rsaquo;</span> <a href="people.html#listing">People</a></nav>
             <h1 id="profile-name"></h1>
+            <p class="people-profile-fullname" id="profile-full-name" hidden></p>
             <p class="people-profile-role" id="profile-role"></p>
             <p class="people-profile-dept" id="profile-dept"></p>
+            <p class="people-profile-title" id="profile-professional-title" hidden></p>
             <div class="people-profile-details">
-              <div class="people-profile-detail-block">
+              <div class="people-profile-detail-block" id="profile-appointment-block">
                 <h2>Formal appointment</h2>
-                <p id="profile-appointment"></p>
+                <div id="profile-appointment"></div>
               </div>
-              <div class="people-profile-detail-block">
+              <div class="people-profile-detail-block" id="profile-affiliation-block">
                 <h2>Affiliation</h2>
                 <p id="profile-affiliation"></p>
               </div>
-              <div class="people-profile-detail-block">
+              <div class="people-profile-detail-block" id="profile-contact-block">
                 <h2>Contact details</h2>
                 <ul class="people-profile-contact" id="profile-contact"></ul>
               </div>
@@ -41,12 +43,18 @@
       </section>
       <section class="section">
         <div class="container content-body people-profile-bio">
-          <h2>Biography</h2>
-          <div id="profile-bio"></div>
-          <h2>Specialisms</h2>
-          <div id="profile-specialisms"></div>
-          <h2>Links</h2>
-          <div id="profile-links"></div>
+          <div id="profile-bio-section">
+            <h2>Biography</h2>
+            <div id="profile-bio"></div>
+          </div>
+          <div id="profile-specialisms-section">
+            <h2>Specialisms</h2>
+            <div id="profile-specialisms"></div>
+          </div>
+          <div id="profile-links-section">
+            <h2>Links</h2>
+            <div id="profile-links"></div>
+          </div>
           <p class="people-profile-back"><a href="people.html#listing">&larr; Back to people</a></p>
         </div>
       </section>

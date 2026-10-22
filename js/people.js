@@ -1,13 +1,14 @@
 /**
- * SAFI People directory — search, filter, sort and paginate (SEI-style listing).
+ * SAFI People directory — ranked bands, search, filter and sort.
  */
 (function () {
   'use strict';
 
-  const data = window.SAFI_PEOPLE_DATA || { people: [], centres: [], roleGroups: [] };
+  const data = window.SAFI_PEOPLE_DATA || { people: [], centres: [], tiers: [] };
   const SAFI_PEOPLE = data.people;
-  const ROLE_GROUPS = data.roleGroups;
-  const CENTRES = data.centres;
+  const ROLE_GROUPS = data.roleGroups || [];
+  const CENTRES = data.centres || [];
+  const TIERS = data.tiers || [];
 
   const PAGE_SIZE = 18;
   const PLACEHOLDER_SVG =
@@ -58,6 +59,10 @@
     return ROLE_GROUPS.find((r) => r.id === id)?.label || id;
   }
 
+  function tierById(id) {
+    return TIERS.find((tier) => tier.id === id);
+  }
+
   function profileHref(person) {
     if (person.profileUrl) return person.profileUrl;
     return `people-profile.html?id=${encodeURIComponent(person.id)}`;
@@ -73,9 +78,17 @@
     return Number.isFinite(p) && p > 0 ? p : 1;
   }
 
+  function pageCount(list) {
+    const bands = TIERS.filter((tier) => tier.id && !tier.featured);
+    const pages = bands.map((tier) => {
+      const count = list.filter((person) => person.tier === tier.id).length;
+      return Math.ceil(count / PAGE_SIZE);
+    });
+    return Math.max(1, ...pages);
+  }
+
   function syncUrl() {
-    const list = filteredPeople();
-    const totalPages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
+    const totalPages = pageCount(filteredPeople());
     const params = new URLSearchParams(window.location.search);
     if (state.page > 1 && state.page <= totalPages) {
       params.set('current-page', String(state.page));
@@ -116,45 +129,64 @@
     return '';
   }
 
-  function personSearchText(p) {
+  function personSearchText(person) {
+    const appointmentText = (person.appointments || []).flatMap((item) => [item.label, item.text]);
     return [
-      p.name,
-      p.role,
-      p.appointment,
-      p.formalAppointment,
-      p.affiliation,
-      ...(p.specialisms || []),
-      ...(p.bio || []),
-      p.phone,
-      p.email,
-      p.location,
-      p.department,
-      centreLabel(p.centre),
-      roleGroupLabel(p.roleGroup),
+      person.name,
+      person.fullName,
+      person.role,
+      person.professionalTitle,
+      person.summary,
+      ...(person.secondaryRoles || []),
+      person.appointment,
+      person.formalAppointment,
+      ...appointmentText,
+      person.affiliation,
+      ...(person.specialisms || []),
+      ...(person.bio || []),
+      person.phone,
+      person.email,
+      person.location,
+      person.department,
+      centreLabel(person.centre),
+      roleGroupLabel(person.roleGroup),
+      tierById(person.tier)?.label,
     ]
       .filter(Boolean)
       .join(' ')
       .toLowerCase();
   }
 
+  function comparePeople(a, b) {
+    if (state.sort === 'listed') {
+      return (a.order || 0) - (b.order || 0) || a.name.localeCompare(b.name, undefined, { sensitivity: 'base' });
+    }
+    const cmp = a.name.localeCompare(b.name, undefined, { sensitivity: 'base' });
+    return state.sort === 'name-desc' ? -cmp : cmp;
+  }
+
   function filteredPeople() {
     const kw = state.keyword.toLowerCase();
-    return SAFI_PEOPLE.filter((p) => {
-      if (state.centre && p.centre !== state.centre) return false;
-      if (state.role && p.roleGroup !== state.role) return false;
-      if (kw && !personSearchText(p).includes(kw)) return false;
+    return SAFI_PEOPLE.filter((person) => {
+      if (state.centre && person.centre !== state.centre) return false;
+      if (state.role && person.tier !== state.role) return false;
+      if (kw && !personSearchText(person).includes(kw)) return false;
       return true;
-    }).sort((a, b) => {
-      if (state.sort === 'listed') return (a.order || 0) - (b.order || 0);
-      const cmp = a.name.localeCompare(b.name, undefined, { sensitivity: 'base' });
-      return state.sort === 'name-desc' ? -cmp : cmp;
     });
   }
 
+  function peopleInTier(list, tierId) {
+    return list.filter((person) => person.tier === tierId).sort(comparePeople);
+  }
+
+  function photoHtml(person, size, loading) {
+    if (person.photo) {
+      return `<img src="${escapeHtml(person.photo)}" alt="" width="${size}" height="${size}" loading="${loading || 'lazy'}">`;
+    }
+    return `<span class="people-avatar-placeholder">${PLACEHOLDER_SVG}</span>`;
+  }
+
   function renderCard(person) {
-    const photo = person.photo
-      ? `<img src="${escapeHtml(person.photo)}" alt="" width="72" height="72" loading="lazy">`
-      : `<span class="people-avatar-placeholder">${PLACEHOLDER_SVG}</span>`;
     const href = profileHref(person);
     const appointment = appointmentLabel(person);
     const wa = whatsappHref(person);
@@ -172,7 +204,7 @@
     return `
       <article class="people-card reveal" data-id="${escapeHtml(person.id)}">
         <div class="people-card-inner">
-          <div class="people-card-photo">${photo}</div>
+          <div class="people-card-photo">${photoHtml(person, 72)}</div>
           <div class="people-card-body">
             <h3><a href="${href}">${escapeHtml(person.name)}</a></h3>
             ${person.role
@@ -186,6 +218,31 @@
           </div>
         </div>
       </article>`;
+  }
+
+  function renderFeature(person) {
+    const href = profileHref(person);
+    const also = (person.secondaryRoles || []).filter(Boolean);
+    return `
+      <article class="people-feature reveal">
+        <a class="people-feature-photo" href="${href}" tabindex="-1" aria-hidden="true">${photoHtml(person, 168, 'eager')}</a>
+        <div class="people-feature-body">
+          <h2><a href="${href}">${escapeHtml(person.name)}</a></h2>
+          ${person.role ? `<p class="people-feature-role">${escapeHtml(person.role)}</p>` : ''}
+          ${also.map((role) => `<p class="people-feature-also">${escapeHtml(role)}</p>`).join('')}
+          ${person.professionalTitle ? `<p class="people-feature-title">${escapeHtml(person.professionalTitle)}</p>` : ''}
+          ${person.summary ? `<p class="people-feature-summary">${escapeHtml(person.summary)}</p>` : ''}
+          <p class="people-feature-more"><a href="${href}">View profile</a></p>
+        </div>
+      </article>`;
+  }
+
+  function renderBand(tier, people) {
+    return `
+      <section class="people-band" aria-labelledby="band-${escapeHtml(tier.id)}">
+        <h2 id="band-${escapeHtml(tier.id)}" class="people-band-title">${escapeHtml(tier.label)}</h2>
+        <div class="people-grid">${people.map(renderCard).join('')}</div>
+      </section>`;
   }
 
   function renderEmpty() {
@@ -225,35 +282,51 @@
       els.meta.innerHTML = `<strong>0 ${profileWord}</strong> <span class="people-meta-sep">/</span> Directory ready for verified appointments`;
       return;
     }
+    if (totalPages <= 1) {
+      els.meta.innerHTML = `<strong>${total} ${profileWord}</strong>`;
+      return;
+    }
     els.meta.innerHTML = `<strong>${total} ${profileWord}</strong> <span class="people-meta-sep">/</span> ${state.page} of ${totalPages} pages`;
   }
 
-  function render() {
-    const list = filteredPeople();
-    const total = list.length;
-    const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
-    if (state.page > totalPages) state.page = totalPages;
-
-    const start = (state.page - 1) * PAGE_SIZE;
-    const pageItems = list.slice(start, start + PAGE_SIZE);
-
-    if (total === 0) {
-      els.grid.innerHTML = renderEmpty();
-    } else {
-      els.grid.innerHTML = pageItems.map(renderCard).join('');
-    }
-
-    renderMeta(total, totalPages);
-    renderPagination(totalPages);
-    syncUrl();
-
+  function revealCards() {
     els.grid.querySelectorAll('.reveal').forEach((el) => {
       requestAnimationFrame(() => el.classList.add('visible'));
     });
   }
 
+  function render() {
+    const list = filteredPeople();
+    const total = list.length;
+    const totalPages = pageCount(list);
+    if (state.page > totalPages) state.page = totalPages;
+    const start = (state.page - 1) * PAGE_SIZE;
+
+    if (total === 0) {
+      els.grid.innerHTML = renderEmpty();
+    } else {
+      const html = TIERS.filter((tier) => tier.id).map((tier) => {
+        const people = peopleInTier(list, tier.id);
+        if (!people.length) return '';
+        if (tier.featured) {
+          if (state.page !== 1) return '';
+          return people.map(renderFeature).join('');
+        }
+        const visible = people.slice(start, start + PAGE_SIZE);
+        if (!visible.length) return '';
+        return renderBand(tier, visible);
+      }).join('');
+      els.grid.innerHTML = html;
+    }
+
+    renderMeta(total, totalPages);
+    renderPagination(totalPages);
+    syncUrl();
+    revealCards();
+  }
+
   populateSelect(els.centre, CENTRES);
-  populateSelect(els.role, ROLE_GROUPS);
+  populateSelect(els.role, TIERS);
 
   state.page = readPageFromUrl();
 
@@ -278,8 +351,7 @@
   els.pagination.addEventListener('click', (e) => {
     const btn = e.target.closest('button[data-page]');
     if (!btn || btn.disabled) return;
-    const list = filteredPeople();
-    const totalPages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
+    const totalPages = pageCount(filteredPeople());
     const val = btn.dataset.page;
     if (val === 'prev') state.page = Math.max(1, state.page - 1);
     else if (val === 'next') state.page = Math.min(totalPages, state.page + 1);

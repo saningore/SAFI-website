@@ -19,6 +19,15 @@
     return `<p class="people-field-pending">${escapeHtml(text)}</p>`;
   }
 
+  function showSection(section, html) {
+    if (!section) return;
+    if (!html) {
+      section.hidden = true;
+      return;
+    }
+    section.hidden = false;
+  }
+
   if (!id || !root) {
     if (missing) missing.hidden = false;
     return;
@@ -43,6 +52,17 @@
   }
 
   document.getElementById('profile-name').textContent = person.name;
+
+  const fullNameEl = document.getElementById('profile-full-name');
+  if (fullNameEl) {
+    if (person.fullName && person.fullName !== person.name) {
+      fullNameEl.hidden = false;
+      fullNameEl.textContent = person.fullName;
+    } else {
+      fullNameEl.hidden = true;
+    }
+  }
+
   const roleEl = document.getElementById('profile-role');
   if (person.role) {
     roleEl.textContent = person.role;
@@ -51,35 +71,72 @@
     roleEl.textContent = 'Role to be added';
     roleEl.classList.add('people-field-pending');
   }
+
   const deptEl = document.getElementById('profile-dept');
+  const secondaryRoles = (person.secondaryRoles || []).filter(Boolean);
   const department = person.department || '';
-  if (department && !person.role.includes(department)) {
+  if (secondaryRoles.length) {
+    deptEl.hidden = false;
+    deptEl.textContent = secondaryRoles.join('; ');
+  } else if (department && !(person.role || '').includes(department)) {
+    deptEl.hidden = false;
     deptEl.textContent = department;
   } else {
     deptEl.hidden = true;
   }
 
+  const titleEl = document.getElementById('profile-professional-title');
+  if (titleEl) {
+    if (person.professionalTitle) {
+      titleEl.hidden = false;
+      titleEl.textContent = person.professionalTitle;
+    } else {
+      titleEl.hidden = true;
+    }
+  }
+
   const appointmentEl = document.getElementById('profile-appointment');
-  const formalAppointment = person.formalAppointment
-    || (person.appointment ? `${person.appointment} appointment` : '');
-  if (formalAppointment) {
-    appointmentEl.textContent = formalAppointment;
-    appointmentEl.classList.remove('people-field-pending');
+  const appointmentBlock = document.getElementById('profile-appointment-block');
+  const appointmentItems = (person.appointments || []).filter((item) => item && item.text);
+  let appointmentHtml = '';
+  if (appointmentItems.length) {
+    appointmentHtml = `<ul class="people-profile-appointment-list">${appointmentItems
+      .map((item) => {
+        const label = item.label
+          ? `<span class="people-profile-appointment-label">${escapeHtml(item.label)}</span>`
+          : '';
+        return `<li>${label}${escapeHtml(item.text)}</li>`;
+      })
+      .join('')}</ul>`;
   } else {
-    appointmentEl.textContent = 'To be added';
-    appointmentEl.classList.add('people-field-pending');
+    const formalAppointment = person.formalAppointment
+      || (person.appointment ? `${person.appointment} appointment` : '');
+    if (formalAppointment) appointmentHtml = `<p>${escapeHtml(formalAppointment)}</p>`;
+    else if (!person.published) appointmentHtml = pending('To be added');
+  }
+  if (appointmentHtml) {
+    if (appointmentBlock) appointmentBlock.hidden = false;
+    appointmentEl.innerHTML = appointmentHtml;
+  } else if (appointmentBlock) {
+    appointmentBlock.hidden = true;
   }
 
   const affiliationEl = document.getElementById('profile-affiliation');
+  const affiliationBlock = document.getElementById('profile-affiliation-block');
   if (person.affiliation) {
+    if (affiliationBlock) affiliationBlock.hidden = false;
     affiliationEl.textContent = person.affiliation;
     affiliationEl.classList.remove('people-field-pending');
+  } else if (person.published) {
+    if (affiliationBlock) affiliationBlock.hidden = true;
   } else {
+    if (affiliationBlock) affiliationBlock.hidden = false;
     affiliationEl.textContent = 'To be added';
     affiliationEl.classList.add('people-field-pending');
   }
 
   const contact = document.getElementById('profile-contact');
+  const contactBlock = document.getElementById('profile-contact-block');
   const items = [];
   const digits = String(person.phone || '').replace(/\D/g, '');
   if (digits && person.phone) {
@@ -94,42 +151,71 @@
     items.push(
       `<li><a href="mailto:${escapeHtml(person.email)}">${escapeHtml(person.email)}</a></li>`
     );
-  } else {
+  } else if (!person.published) {
     items.push('<li class="people-field-pending">Official email to be added</li>');
   }
-  contact.innerHTML = items.join('');
+  if (items.length) {
+    if (contactBlock) contactBlock.hidden = false;
+    contact.innerHTML = items.join('');
+  } else if (person.published) {
+    if (contactBlock) contactBlock.hidden = true;
+  } else {
+    if (contactBlock) contactBlock.hidden = false;
+    contact.innerHTML = '<li class="people-field-pending">Official email to be added</li>';
+  }
 
   const photoEl = document.getElementById('profile-photo');
   if (person.photo) {
-    photoEl.innerHTML = `<img src="${escapeHtml(person.photo)}" alt="" width="280" height="280" loading="eager">`;
+    photoEl.innerHTML = `<img src="${escapeHtml(person.photo)}" alt="" width="280" height="280">`;
   } else {
     photoEl.innerHTML = `<span class="people-avatar-placeholder">${PLACEHOLDER_SVG}</span>`;
   }
 
+  const bioSection = document.getElementById('profile-bio-section');
   const bioEl = document.getElementById('profile-bio');
   const paragraphs = person.bio || [];
-  bioEl.innerHTML = paragraphs.length
-    ? paragraphs.map((t) => `<p>${escapeHtml(t)}</p>`).join('')
-    : pending('Biography will be added when approved for publication.');
+  if (paragraphs.length) {
+    showSection(bioSection, true);
+    bioEl.innerHTML = paragraphs.map((t) => `<p>${escapeHtml(t)}</p>`).join('');
+  } else if (person.published) {
+    showSection(bioSection, false);
+  } else {
+    showSection(bioSection, true);
+    bioEl.innerHTML = pending('Biography will be added when approved for publication.');
+  }
 
+  const specialismsSection = document.getElementById('profile-specialisms-section');
   const specialismsEl = document.getElementById('profile-specialisms');
   const specialisms = person.specialisms || [];
-  specialismsEl.innerHTML = specialisms.length
-    ? `<ul>${specialisms.map((t) => `<li>${escapeHtml(t)}</li>`).join('')}</ul>`
-    : pending('To be added.');
+  if (specialisms.length) {
+    showSection(specialismsSection, true);
+    specialismsEl.innerHTML = `<ul>${specialisms.map((t) => `<li>${escapeHtml(t)}</li>`).join('')}</ul>`;
+  } else if (person.published) {
+    showSection(specialismsSection, false);
+  } else {
+    showSection(specialismsSection, true);
+    specialismsEl.innerHTML = pending('To be added.');
+  }
 
+  const linksSection = document.getElementById('profile-links-section');
   const linksEl = document.getElementById('profile-links');
   const links = (person.links || []).filter((link) => link && link.url);
   if (person.linkedin) links.push({ label: 'LinkedIn', url: person.linkedin });
   if (person.orcid) links.push({ label: 'ORCID', url: person.orcid });
-  linksEl.innerHTML = links.length
-    ? `<ul class="people-profile-contact">${links
-        .map(
-          (link) =>
-            `<li><a href="${escapeHtml(link.url)}" rel="noopener noreferrer">${escapeHtml(link.label || link.url)}</a></li>`
-        )
-        .join('')}</ul>`
-    : pending('Institutional profile, ORCID or LinkedIn will be added when available.');
+  if (links.length) {
+    showSection(linksSection, true);
+    linksEl.innerHTML = `<ul class="people-profile-contact">${links
+      .map(
+        (link) =>
+          `<li><a href="${escapeHtml(link.url)}" rel="noopener noreferrer">${escapeHtml(link.label || link.url)}</a></li>`
+      )
+      .join('')}</ul>`;
+  } else if (person.published) {
+    showSection(linksSection, false);
+  } else {
+    showSection(linksSection, true);
+    linksEl.innerHTML = pending('Institutional profile, ORCID or LinkedIn will be added when available.');
+  }
 
   root.hidden = false;
 })();

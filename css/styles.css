@@ -913,6 +913,39 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
   font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--color-text-muted);
 }
+.people-directory { display: flex; flex-direction: column; gap: 2.25rem; }
+.people-band-title {
+  font-family: var(--font-display); font-size: 1.35rem; font-weight: 700;
+  color: var(--color-primary-dark); margin: 0 0 0.35rem;
+}
+.people-feature {
+  display: grid; grid-template-columns: 168px minmax(0, 1fr); gap: 1.25rem 1.75rem;
+  align-items: center; padding: 0.25rem 0 1.75rem; border-bottom: 1px solid var(--color-border);
+}
+.people-feature-photo {
+  width: 168px; height: 168px; border-radius: 50%; overflow: hidden; display: block;
+  border: 3px solid rgba(40, 92, 69, 0.12); background: var(--color-bg-alt);
+}
+.people-feature-photo img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 22%;
+}
+.people-feature-photo .people-avatar-placeholder {
+  width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+  color: var(--color-sage); background: linear-gradient(145deg, #e8e4da, #f7f3ea);
+}
+.people-feature-photo .people-avatar-placeholder svg { width: 64px; height: 64px; opacity: 0.55; }
+.people-feature-body h2 {
+  font-family: var(--font-display); font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: 700; line-height: 1.2; margin: 0 0 0.4rem; color: var(--color-primary-dark);
+}
+.people-feature-body h2 a { color: var(--color-primary); text-decoration: none; }
+.people-feature-body h2 a:hover { color: var(--color-primary-light); text-decoration: underline; }
+.people-feature-role { font-size: 1.0625rem; font-weight: 700; margin: 0 0 0.2rem; color: var(--color-text); }
+.people-feature-also { margin: 0 0 0.2rem; color: var(--color-text); }
+.people-feature-title { margin: 0.35rem 0 0.85rem; color: var(--color-text-muted); font-size: 0.9375rem; }
+.people-feature-summary { margin: 0 0 0.85rem; max-width: 42rem; color: var(--color-text); line-height: 1.6; }
+.people-feature-more { margin: 0; }
+.people-feature-more a { font-weight: 700; }
 .people-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 2.5rem;
 }
@@ -937,7 +970,8 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
 }
 .people-card-body h3 a { color: var(--color-primary); text-decoration: none; }
 .people-card-body h3 a:hover { color: var(--color-primary-light); text-decoration: underline; }
-#main .people-card-body p {
+#main .people-card-body p,
+#main .people-feature-body p {
   text-align: start; text-justify: auto; hyphens: manual; text-wrap: pretty;
 }
 .people-card-role { font-size: 0.875rem; color: var(--color-text); margin: 0 0 0.25rem; line-height: 1.45; }
@@ -950,6 +984,7 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
 #main .people-card-contact { font-size: 0.8125rem; line-height: 1.5; margin-bottom: 0.15rem; }
 #main .people-profile-hero p,
 #main .people-profile-contact li,
+#main .people-profile-appointment-list li,
 #main .people-profile-bio .people-field-pending {
   text-align: start; text-justify: auto; hyphens: manual;
 }
@@ -1027,7 +1062,19 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
   font-weight: 700; color: var(--color-primary-dark); margin: 0 0 0.5rem; line-height: 1.15;
 }
 .people-profile-role { font-size: 1.125rem; font-weight: 700; margin: 0 0 0.35rem; color: var(--color-text); }
-.people-profile-dept { font-size: 1rem; color: var(--color-text-muted); margin: 0 0 1.75rem; }
+.people-profile-fullname { margin: -0.15rem 0 0.65rem; font-size: 0.9375rem; color: var(--color-text-muted); }
+.people-profile-dept { font-size: 1rem; color: var(--color-text); margin: 0 0 0.35rem; }
+.people-profile-title { margin: 0.15rem 0 0; font-size: 1rem; color: var(--color-text-muted); }
+.people-profile-details { margin-top: 1.5rem; }
+.people-profile-appointment-list { list-style: none; margin: 0; padding: 0; }
+.people-profile-appointment-list li {
+  margin: 0 0 0.75rem; font-weight: 600; color: var(--color-primary-dark);
+}
+.people-profile-appointment-list li:last-child { margin-bottom: 0; }
+.people-profile-appointment-label {
+  display: block; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.2rem;
+}
 .people-profile-details {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem 2.5rem;
 }
@@ -1047,7 +1094,7 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
   width: 100%; max-width: 280px; aspect-ratio: 1; border-radius: 50%; overflow: hidden;
   margin-left: auto; border: 3px solid rgba(40, 92, 69, 0.12); background: var(--color-surface);
 }
-.people-profile-photo img { width: 100%; height: 100%; object-fit: cover; }
+.people-profile-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; }
 .people-profile-photo .people-avatar-placeholder { width: 100%; height: 100%; }
 .people-profile-photo .people-avatar-placeholder svg { width: 48%; height: 48%; }
 .people-profile-bio { max-width: 720px; }
@@ -1058,6 +1105,8 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
   .people-profile-hero-grid { grid-template-columns: 1fr; }
   .people-profile-photo { margin: 0 auto; }
   .people-grid { grid-template-columns: 1fr; }
+  .people-feature { grid-template-columns: 1fr; justify-items: start; }
+  .people-feature-photo { margin: 0 auto 0.25rem; }
 }
 
 @media (max-width: 1024px) and (min-width: 769px) {
