@@ -6,55 +6,32 @@
   <meta name="description" content="Profile — The Savannah Futures Institute">
   <title>Profile | The Savannah Futures Institute</title>
   <link rel="icon" href="assets/images/safi-logo.png" type="image/png">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=people-profile-layout-9">
 </head>
 <body class="inner-page people-profile-page">
   <div id="site-header"></div>
   <main id="main">
     <div id="people-profile-root" hidden>
-      <section class="people-profile-hero">
-        <div class="container people-profile-hero-grid">
-          <div class="people-profile-hero-text">
-            <nav class="breadcrumbs breadcrumbs--light" aria-label="Breadcrumb"><a href="index.html">Home</a> <span>&rsaquo;</span> <a href="people.html#listing">People</a></nav>
-            <h1 id="profile-name"></h1>
-            <p class="people-profile-fullname" id="profile-full-name" hidden></p>
-            <p class="people-profile-role" id="profile-role"></p>
-            <p class="people-profile-dept" id="profile-dept"></p>
-            <p class="people-profile-title" id="profile-professional-title" hidden></p>
-            <div class="people-profile-details">
-              <div class="people-profile-detail-block" id="profile-appointment-block">
-                <h2>Formal appointment</h2>
-                <div id="profile-appointment"></div>
+      <section class="people-profile-hero people-profile-spec-hero">
+        <div class="container">
+          <nav class="breadcrumbs breadcrumbs--light" aria-label="Breadcrumb"><a href="index.html">Home</a> <span>&rsaquo;</span> <a href="people.html#listing">People</a></nav>
+          <div class="people-profile-layout">
+            <h1 class="people-profile-layout-name" id="profile-name"></h1>
+            <aside class="people-profile-layout-aside" aria-label="Portrait">
+              <div class="people-profile-photo-stack">
+                <div class="people-profile-photo people-profile-photo--spec" id="profile-photo"></div>
+                <p class="people-profile-role-banner" id="profile-role-banner"></p>
               </div>
-              <div class="people-profile-detail-block" id="profile-affiliation-block">
-                <h2>Affiliation</h2>
-                <p id="profile-affiliation"></p>
-              </div>
-              <div class="people-profile-detail-block" id="profile-contact-block">
-                <h2>Contact details</h2>
-                <ul class="people-profile-contact" id="profile-contact"></ul>
-              </div>
-            </div>
-          </div>
-          <div class="people-profile-photo-wrap">
-            <div class="people-profile-photo" id="profile-photo"></div>
+            </aside>
+            <div class="people-profile-spec-primary" id="profile-spec-primary" aria-label="Appointment details"></div>
+            <div class="people-profile-spec-bio" id="profile-spec-bio" aria-label="Biography"></div>
           </div>
         </div>
       </section>
-      <section class="section">
-        <div class="container content-body people-profile-bio">
-          <div id="profile-bio-section">
-            <h2>Biography</h2>
-            <div id="profile-bio"></div>
-          </div>
-          <div id="profile-specialisms-section">
-            <h2>Specialisms</h2>
-            <div id="profile-specialisms"></div>
-          </div>
-          <div id="profile-links-section">
-            <h2>Links</h2>
-            <div id="profile-links"></div>
-          </div>
+
+      <section class="section people-profile-spec-body">
+        <div class="container">
+          <div class="people-profile-spec-secondary" id="profile-spec-secondary" aria-label="Biography and links"></div>
           <p class="people-profile-back"><a href="people.html#listing">&larr; Back to people</a></p>
         </div>
       </section>
@@ -72,7 +49,8 @@
   </main>
   <div id="site-footer"></div>
   <script src="js/layout.js" data-page="about-people"></script>
-  <script src="js/people-data.js"></script>
+  <script src="js/people-data.js?v=affiliation-1"></script>
+  <script src="js/people-utils.js"></script>
   <script src="js/main.js"></script>
   <script src="js/people-profile.js"></script>
 </body>

@@ -9,7 +9,7 @@
     tiers: [
       { id: '', label: 'All groups' },
       { id: 'executive-director', label: 'Executive Director', featured: true },
-      { id: 'executive-team', label: 'Executive Team' },
+      { id: 'executive-team', label: 'Research Centre Management' },
       { id: 'directors', label: 'Directors' },
       { id: 'deputy-directors', label: 'Deputy Directors' },
       { id: 'heads', label: 'Heads of Units' },
@@ -21,9 +21,13 @@
       {
         id: 'john-atibilla',
         name: 'Dr John M. Atibila',
+        profileRoleBanner: 'Executive Director',
         fullName: 'John Mbabugri Atibila',
         professionalTitle: 'Senior Fellow; Sustainability Strategist and Innovation and Impact Advisor',
+        publicationTitle:
+          'Dr John M. Atibila — Senior Fellow; Sustainability Strategist and Innovation and Impact Advisor',
         role: 'Executive Director',
+        safiRole: 'Executive Director; Acting Director, Climate, Environment and Landscapes.',
         secondaryRoles: ['Acting Director, Climate, Environment and Landscapes'],
         appointment: 'Executive',
         formalAppointment: 'Executive Director, responsible for institutional leadership, strategic development and partnerships.',
@@ -38,7 +42,7 @@
           },
           {
             label: 'Governance',
-            text: 'Sitting Member of the Board of Trustees.',
+            text: 'Sitting Member of Board of Trustees',
           },
         ],
         tier: 'executive-director',
@@ -47,12 +51,11 @@
         centre: 'climate',
         phone: '',
         email: '',
-        affiliation: 'The Savannah Futures Institute (SAFI)',
+        affiliation: 'Scotland Rural College, United Kingdom',
+        affiliationDisplay: 'Academic fellow, Scotland Rural College, United Kingdom',
         specialisms: [
-          'Savanna landscapes: drylands, wetlands, and river basins',
-          'Social–ecological systems',
-          'Climate resilience and sustainable food systems',
-          'Research, innovation and policy impact',
+          'Savanna landscapes: drylands, wetland, and river basins; social–ecological systems',
+          'Climate resilience and sustainable food systems; research, innovation and policy impact',
         ],
         links: [],
         photo: 'assets/images/people/john-atibila.jpg',
@@ -66,9 +69,11 @@
       {
         id: 'agoswin-musah',
         name: 'Dr. Anthony Agoswin Musah',
-        role: 'Executive Secretary / Director of Cultural Innovations',
+        profileRoleBanner: 'Director of Cultural Innovations',
+        role: 'Director of Cultural Innovations',
+        safiRole: 'Director of Cultural Innovations',
         appointment: 'Executive',
-        formalAppointment: 'Senior Research Fellow',
+        formalAppointment: 'Secretary to Board of Directors',
         tier: 'executive-team',
         roleGroup: 'executive',
         department: 'Cultural Innovations',
@@ -76,6 +81,8 @@
         phone: '+233 54 168 7100',
         email: '',
         affiliation: 'Language Centre, University of Ghana',
+        affiliationDisplay:
+          'Senior Research Fellow, Language Centre, University of Ghana',
         specialisms: ['Linguistics', 'Culture', 'Peace Studies'],
         links: [
           {

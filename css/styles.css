@@ -38,7 +38,7 @@ body {
   background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
 }
-#main p,
+#main p:not(.people-profile-role-banner),
 #main li,
 .content-body p,
 .content-body li,
@@ -530,14 +530,34 @@ ul { list-style: none; }
 .page-hero {
   position: relative; padding: calc(var(--header-height) + 4rem) 0 4rem;
   background: var(--color-primary-dark); color: #fff; overflow: hidden;
+  text-align: left;
 }
 .page-hero.has-image { padding: calc(var(--header-height) + 5rem) 0 5rem; }
 .page-hero-bg { position: absolute; inset: 0; }
 .page-hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.35; }
 .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(13,40,24,0.75), rgba(13,40,24,0.92)); }
-.page-hero .container { position: relative; z-index: 2; max-width: 780px; }
+.page-hero .container {
+  position: relative;
+  z-index: 2;
+  max-width: none;
+  width: min(100% - 2.5rem, var(--container));
+}
+.page-hero .breadcrumbs,
+.page-hero h1,
+.page-hero .lead {
+  text-align: left;
+  text-justify: auto;
+  hyphens: manual;
+  text-wrap: wrap;
+}
 .page-hero h1 { font-family: var(--font-display); font-size: clamp(2.25rem, 4.5vw, 3.25rem); font-weight: 600; line-height: 1.15; margin-bottom: 1rem; }
 .page-hero .lead { color: rgba(255,255,255,0.85); margin-bottom: 0; font-size: 1.125rem; }
+#main .page-hero .lead {
+  text-align: left;
+  text-justify: auto;
+  hyphens: manual;
+  text-wrap: wrap;
+}
 
 .breadcrumbs { font-size: 0.8125rem; margin-bottom: 1rem; color: rgba(255,255,255,0.6); }
 .breadcrumbs a { color: var(--color-accent-light); }
@@ -918,9 +938,256 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
   font-family: var(--font-display); font-size: 1.35rem; font-weight: 700;
   color: var(--color-primary-dark); margin: 0 0 0.35rem;
 }
+.people-page .people-listing-panel-wrap,
+.people-page .people-results-bar { display: none; }
+.people-page .people-listing-body { padding-top: 2.25rem; }
+.people-executive-block { text-align: center; }
+.people-executive-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.875rem, 4vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: 0.02em;
+  color: var(--color-primary-dark);
+  margin: 0 0 clamp(1.5rem, 3vw, 2.25rem);
+  text-align: center;
+}
+.people-executive-heading::after {
+  content: "";
+  display: block;
+  width: min(5.5rem, 28vw);
+  height: 5px;
+  margin: 1rem auto 0;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-primary) 100%);
+}
+.people-executive-org {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  column-gap: clamp(2rem, 7vw, 4.5rem);
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 clamp(0.25rem, 2vw, 1rem);
+}
+.people-executive-org-slot--left { justify-self: start; }
+.people-executive-org-slot--center { justify-self: center; }
+.people-executive-org-slot--right { justify-self: end; }
+.people-directory-below {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding-top: clamp(2rem, 4vw, 2.75rem);
+  border-top: 1px solid var(--color-border);
+}
+.people-directory-band { margin-bottom: clamp(2rem, 4vw, 2.75rem); }
+.people-directory-band:last-child { margin-bottom: 0; }
+.people-directory-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.8vw, 1.875rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--color-primary-dark);
+  text-align: center;
+  margin: 0 0 1.5rem;
+}
+.people-research-operations-heading {
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: 1.25rem;
+}
+.people-operations-tier-headings {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: end;
+  width: 100%;
+  max-width: min(var(--container), 100%);
+  margin: 0 auto;
+  gap: clamp(0.5rem, 2vw, 1.5rem);
+}
+.people-operations-tier-column { min-width: 0; }
+.people-operations-subheading {
+  font-family: var(--font-display);
+  font-size: clamp(0.975rem, 1.9vw, 1.22rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-primary-dark);
+  margin: 0;
+}
+.people-operations-tier-status {
+  margin: 0.45rem 0 0;
+  font-size: clamp(0.75rem, 1.25vw, 0.875rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-primary);
+}
+.people-operations-tier-column--1 { text-align: left; justify-self: start; }
+.people-operations-tier-column--2 {
+  text-align: left;
+  justify-self: start;
+  transform: translateX(clamp(0.35rem, 2vw, 1rem));
+}
+.people-operations-tier-column--3 { text-align: center; justify-self: center; }
+.people-operations-tier-column--4 { text-align: right; justify-self: end; }
+.people-operations-recruiting-summary {
+  max-width: 40rem;
+  margin: clamp(1.35rem, 3vw, 1.85rem) auto 0;
+  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  text-align: center;
+  text-wrap: balance;
+}
+.people-operations-recruiting-summary a {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+.people-operations-recruiting-summary a:hover {
+  color: var(--color-primary-light);
+}
+#main .people-operations-tier-status,
+#main .people-operations-recruiting-summary {
+  text-align: inherit;
+  text-justify: auto;
+  hyphens: manual;
+}
+#main .people-operations-recruiting-summary { text-align: center; }
+#main .people-operations-tier-column--1 .people-operations-tier-status,
+#main .people-operations-tier-column--1 .people-operations-subheading { text-align: left; }
+#main .people-operations-tier-column--2 .people-operations-tier-status,
+#main .people-operations-tier-column--2 .people-operations-subheading { text-align: left; }
+#main .people-operations-tier-column--3 .people-operations-tier-status,
+#main .people-operations-tier-column--3 .people-operations-subheading { text-align: center; }
+#main .people-operations-tier-column--4 .people-operations-tier-status,
+#main .people-operations-tier-column--4 .people-operations-subheading { text-align: right; }
+.people-executive-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.35rem 1.75rem;
+}
+.people-executive-grid .people-executive-card {
+  flex: 0 1 17.5rem;
+  width: 100%;
+  max-width: 17.5rem;
+}
+.people-executive-grid.people-research-centre-row {
+  display: grid;
+  flex-wrap: unset;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: stretch;
+  width: 100%;
+  max-width: min(var(--container), 100%);
+  margin: 0 auto;
+  gap: clamp(0.5rem, 1.25vw, 1rem);
+}
+.people-research-centre-row .people-executive-card {
+  justify-self: center;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  flex: unset;
+  padding: 1.05rem 0.65rem 1.2rem;
+}
+.people-research-centre-row .people-feature.people-feature--lead .people-feature-photo {
+  width: 92px;
+  height: 92px;
+}
+.people-research-centre-row .people-feature.people-feature--lead .people-feature-photo .people-avatar-placeholder svg {
+  width: 38px;
+  height: 38px;
+}
+.people-research-centre-row .people-feature.people-feature--lead .people-feature-name {
+  font-size: clamp(0.9rem, 1.35vw, 1.0625rem);
+}
+.people-research-centre-row .people-feature.people-feature--lead .people-feature-role {
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+.people-executive-card {
+  text-align: center;
+  width: 100%;
+  max-width: 17.5rem;
+  padding: 1.35rem 1.25rem 1.5rem;
+  background: linear-gradient(165deg, rgba(40, 92, 69, 0.07) 0%, rgba(255, 255, 255, 0.98) 42%, #fff 100%);
+  border: 1px solid rgba(40, 92, 69, 0.16);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
 .people-feature {
   display: grid; grid-template-columns: 168px minmax(0, 1fr); gap: 1.25rem 1.75rem;
   align-items: center; padding: 0.25rem 0 1.75rem; border-bottom: 1px solid var(--color-border);
+}
+.people-feature.people-feature--lead {
+  display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+  padding: 0; border-bottom: none;
+}
+.people-feature.people-feature--lead .people-feature-body { text-align: center; }
+.people-feature.people-feature--lead .people-feature-photo {
+  width: 112px; height: 112px; border-width: 2px;
+}
+.people-feature.people-feature--lead .people-feature-photo .people-avatar-placeholder svg {
+  width: 44px; height: 44px;
+}
+.people-feature.people-feature--lead .people-feature-name {
+  font-family: var(--font-display); font-size: clamp(1.125rem, 2vw, 1.35rem);
+  font-weight: 700; line-height: 1.25; margin: 0 0 0.25rem; color: var(--color-primary-dark);
+}
+.people-feature.people-feature--lead .people-feature-name a {
+  color: var(--color-primary); text-decoration: none;
+}
+.people-feature.people-feature--lead .people-feature-name a:hover {
+  color: var(--color-primary-light); text-decoration: underline;
+}
+.people-feature.people-feature--lead .people-feature-photo {
+  text-decoration: none; transition: box-shadow var(--transition), transform var(--transition);
+}
+.people-feature.people-feature--lead .people-feature-photo:hover {
+  box-shadow: 0 8px 28px rgba(40, 92, 69, 0.22);
+  transform: scale(1.02);
+}
+.people-feature.people-feature--lead .people-feature-role {
+  margin: 0; font-size: 0.875rem; line-height: 1.4; font-weight: 600;
+}
+/* Executive Director — wider horizontal card; same photo height as flanking cards */
+.people-executive-card.people-feature--lead.people-executive-card--center {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.15rem;
+  width: min(100%, 34rem);
+  max-width: none;
+  padding: 1.35rem 1.65rem 1.35rem 1.35rem;
+  background: linear-gradient(90deg, rgba(40, 92, 69, 0.1) 0%, rgba(255, 255, 255, 1) 38%);
+  border: 2px solid rgba(40, 92, 69, 0.26);
+  border-left: 4px solid var(--color-accent);
+  box-shadow: var(--shadow-lg);
+}
+.people-executive-card.people-feature--lead.people-executive-card--center .people-feature-photo {
+  width: 112px;
+  height: 112px;
+  flex-shrink: 0;
+  border-width: 3px;
+  border-color: rgba(40, 92, 69, 0.22);
+}
+.people-executive-card.people-feature--lead.people-executive-card--center .people-feature-body {
+  text-align: left;
+  flex: 1;
+  min-width: 0;
+}
+.people-executive-card.people-feature--lead.people-executive-card--center .people-feature-name {
+  font-size: clamp(1.2rem, 2.1vw, 1.45rem);
+  font-weight: 800;
+}
+.people-executive-card.people-feature--lead.people-executive-card--center .people-feature-role {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+.people-executive-card.people-feature--lead.people-executive-card--center .people-feature-photo:hover {
+  box-shadow: 0 10px 32px rgba(40, 92, 69, 0.26);
+}
+#main .people-executive-card.people-executive-card--center .people-feature-body p {
+  text-align: left;
 }
 .people-feature-photo {
   width: 168px; height: 168px; border-radius: 50%; overflow: hidden; display: block;
@@ -974,6 +1241,7 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
 #main .people-feature-body p {
   text-align: start; text-justify: auto; hyphens: manual; text-wrap: pretty;
 }
+#main .people-feature--lead .people-feature-body p { text-align: center; }
 .people-card-role { font-size: 0.875rem; color: var(--color-text); margin: 0 0 0.25rem; line-height: 1.45; }
 #main .people-card-role { font-size: 0.875rem; line-height: 1.45; margin-bottom: 0.25rem; }
 .people-card-appointment {
@@ -982,7 +1250,7 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
 }
 #main .people-card-appointment { font-size: 0.75rem; line-height: 1.4; margin-bottom: 0.45rem; }
 #main .people-card-contact { font-size: 0.8125rem; line-height: 1.5; margin-bottom: 0.15rem; }
-#main .people-profile-hero p,
+#main .people-profile-hero:not(.people-profile-spec-hero) p,
 #main .people-profile-contact li,
 #main .people-profile-appointment-list li,
 #main .people-profile-bio .people-field-pending {
@@ -1101,12 +1369,295 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
 .people-profile-bio p { color: var(--color-text-muted); line-height: 1.75; margin-bottom: 1.25rem; }
 .people-profile-back { margin-top: 2rem; }
 
+/* People profile — spec layout (fields 1–5 left, portrait right) */
+.people-profile-page {
+  font-size: 1.125rem;
+}
+.people-profile-page #people-profile-root {
+  background: var(--color-bg);
+}
+.people-profile-page .people-profile-hero {
+  background: transparent;
+  border-bottom: none;
+}
+.people-profile-page .people-profile-spec-body {
+  background: transparent;
+  padding-top: 1.25rem;
+}
+.people-profile-spec-hero {
+  padding-bottom: 1rem;
+}
+.people-profile-spec-hero .breadcrumbs {
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+}
+.people-profile-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(168px, 220px);
+  grid-template-areas:
+    "profile-name profile-photo"
+    "profile-fields profile-photo"
+    "profile-bio profile-bio";
+  gap: 2rem 2.75rem;
+  align-items: start;
+}
+.people-profile-layout-name {
+  grid-area: profile-name;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.8vw, 2.55rem);
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--color-primary-dark);
+  margin: 0 0 0.25rem;
+  text-align: left;
+}
+.people-profile-spec-primary {
+  grid-area: profile-fields;
+  padding-top: 0.75rem;
+}
+.people-profile-spec-primary .people-profile-spec-field:first-child {
+  margin-top: 0.5rem;
+}
+.people-profile-spec-bio {
+  grid-area: profile-bio;
+  grid-column: 1 / -1;
+  width: 100%;
+  min-width: 0;
+  padding-top: 1rem;
+}
+.people-profile-spec-bio .people-profile-spec-field {
+  width: 100%;
+  max-width: none;
+  margin-bottom: 0;
+}
+.people-profile-spec-bio .people-profile-spec-value {
+  width: 100%;
+  max-width: none;
+}
+.people-profile-page .people-profile-spec-hero .people-profile-spec-value p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: manual;
+  text-wrap: wrap;
+  width: 100%;
+  max-width: none;
+}
+.people-profile-layout-aside {
+  grid-area: profile-photo;
+  justify-self: end;
+  width: 100%;
+  max-width: 220px;
+}
+.people-profile-photo-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.people-profile-role-banner {
+  margin: 0.75rem 0 0;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(1.125rem, 2vw, 1.3125rem);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+.people-profile-photo.people-profile-photo--spec {
+  width: 100%;
+  max-width: 220px;
+  margin: 0;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius);
+  border: 1px solid rgba(40, 92, 69, 0.14);
+  box-shadow: var(--shadow);
+}
+.people-profile-photo--spec img {
+  object-position: center 15%;
+}
+.people-profile-spec-primary .people-profile-spec-field {
+  margin-bottom: 1.15rem;
+}
+.people-profile-spec-primary .people-profile-spec-field:last-child {
+  margin-bottom: 0;
+}
+.people-profile-spec-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+.people-profile-spec-secondary {
+  max-width: none;
+  width: 100%;
+}
+.people-profile-spec-field {
+  margin-bottom: 1.5rem;
+}
+.people-profile-spec-field:last-child {
+  margin-bottom: 0;
+}
+.people-profile-spec-label {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--color-primary-dark);
+  margin: 0 0 0.35rem;
+}
+.people-profile-spec-value {
+  font-size: 1.125rem;
+  line-height: 1.68;
+  color: var(--color-text);
+}
+.people-profile-spec-value p {
+  margin: 0 0 0.65rem;
+  color: var(--color-text);
+}
+.people-profile-spec-value p:last-child {
+  margin-bottom: 0;
+}
+.people-profile-appointment-line strong {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+.people-profile-spec-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+}
+.people-profile-spec-list li {
+  margin-bottom: 0.35rem;
+  padding: 0;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: manual;
+  width: 100%;
+}
+.people-profile-spec-list li:last-child {
+  margin-bottom: 0;
+}
+.people-profile-link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.people-profile-link-list li {
+  margin-bottom: 0.45rem;
+}
+.people-profile-link-list a {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+.people-profile-link-list a:hover {
+  color: var(--color-primary-light);
+}
+#main .people-profile-spec-value p,
+#main .people-profile-spec-value li,
+#main .people-profile-appointment-line {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  text-wrap: normal;
+  max-width: none;
+}
+#main .people-profile-layout-name {
+  text-align: left;
+  text-justify: auto;
+  hyphens: manual;
+}
+#main .people-profile-role-banner {
+  text-align: center;
+  text-justify: auto;
+  hyphens: manual;
+}
+#main .people-profile-spec-value .people-field-pending {
+  text-align: start;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+@media (max-width: 860px) {
+  .people-profile-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "profile-name"
+      "profile-photo"
+      "profile-fields"
+      "profile-bio";
+    gap: 0;
+  }
+  .people-profile-layout-aside {
+    justify-self: center;
+    margin: 0.75rem 0 1.25rem;
+  }
+  .people-profile-layout-name {
+    margin-bottom: 0.75rem;
+  }
+  .people-profile-spec-primary {
+    padding-top: 1rem;
+    margin-top: 0.25rem;
+  }
+}
+
 @media (max-width: 768px) {
   .people-profile-hero-grid { grid-template-columns: 1fr; }
   .people-profile-photo { margin: 0 auto; }
   .people-grid { grid-template-columns: 1fr; }
-  .people-feature { grid-template-columns: 1fr; justify-items: start; }
-  .people-feature-photo { margin: 0 auto 0.25rem; }
+  .people-feature:not(.people-feature--lead) { grid-template-columns: 1fr; justify-items: start; }
+  .people-feature:not(.people-feature--lead) .people-feature-photo { margin: 0 auto 0.25rem; }
+  .people-executive-org {
+    grid-template-columns: 1fr;
+    row-gap: 1.25rem;
+    max-width: 17.5rem;
+  }
+  .people-executive-org-slot--left,
+  .people-executive-org-slot--center,
+  .people-executive-org-slot--right { justify-self: center; }
+  .people-research-centre-row {
+    grid-template-columns: 1fr;
+    max-width: 17.5rem;
+  }
+  .people-research-centre-row .people-executive-card { justify-self: center; max-width: 17.5rem; }
+  .people-operations-tier-headings {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 0.75rem;
+  }
+  .people-operations-tier-column--1,
+  .people-operations-tier-column--2,
+  .people-operations-tier-column--3,
+  .people-operations-tier-column--4 {
+    text-align: center;
+    justify-self: center;
+    transform: none;
+  }
+  #main .people-operations-tier-column--1 .people-operations-tier-status,
+  #main .people-operations-tier-column--1 .people-operations-subheading,
+  #main .people-operations-tier-column--2 .people-operations-tier-status,
+  #main .people-operations-tier-column--2 .people-operations-subheading,
+  #main .people-operations-tier-column--3 .people-operations-tier-status,
+  #main .people-operations-tier-column--3 .people-operations-subheading,
+  #main .people-operations-tier-column--4 .people-operations-tier-status,
+  #main .people-operations-tier-column--4 .people-operations-subheading {
+    text-align: center;
+  }
+  .people-executive-card.people-feature--lead.people-executive-card--center {
+    flex-direction: column;
+    width: 100%;
+    max-width: 17.5rem;
+    padding: 1.35rem 1.25rem 1.5rem;
+    border-left: 1px solid rgba(40, 92, 69, 0.16);
+    border-top: 4px solid var(--color-accent);
+  }
+  .people-executive-card.people-feature--lead.people-executive-card--center .people-feature-body {
+    text-align: center;
+  }
+  #main .people-executive-card.people-executive-card--center .people-feature-body p {
+    text-align: center;
+  }
 }
 
 @media (max-width: 1024px) and (min-width: 769px) {
@@ -1579,6 +2130,13 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
     text-justify: auto;
     hyphens: manual;
   }
+  .people-profile-page #main .people-profile-spec-value p,
+  .people-profile-page #main .people-profile-spec-value li {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: manual;
+    text-wrap: wrap;
+  }
   #main .programme-card-home-body p:not(.programme-card-tagline) {
     text-align: justify;
     text-justify: inter-word;
@@ -1627,8 +2185,15 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
 .org-level, .org-lead-row, .org-pair {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
   position: relative;
+  gap: 0;
+}
+.org-lead-row,
+.org-pair {
+  flex-wrap: wrap;
+  max-width: 100%;
 }
 .org-down {
   width: 2px;
@@ -1718,19 +2283,18 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
 .org-card--lead { background: #f4f8f5; }
 .org-card--wide { width: min(100%, 28rem); }
 .org-card--dashed { border-style: dashed; border-color: var(--color-sage); background: var(--color-bg-alt); box-shadow: none; }
-.org-aside {
-  position: absolute;
-  left: calc(50% + 15.75rem);
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  width: min(16.5rem, 28vw);
+.org-card--aside {
+  width: min(16.5rem, 42vw);
+  flex: 0 0 auto;
 }
 .org-link-dashed {
-  flex: 0 0 2.25rem;
+  flex: 0 0 clamp(2rem, 5vw, 4.5rem);
+  width: clamp(2rem, 5vw, 4.5rem);
+  height: 0;
+  border: 0;
   border-top: 2px dashed var(--org-line);
+  align-self: center;
+  margin: 0;
 }
 .org-legend {
   display: flex;
@@ -1759,13 +2323,18 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
 .org-swatch--dashed { border-top-style: dashed; }
 
 @media (max-width: 1100px) {
-  .org-aside {
-    position: static;
-    transform: none;
+  .org-card--aside {
     width: min(100%, 28rem);
-    margin-top: 0.85rem;
   }
   .org-lead-row, .org-pair { flex-direction: column; align-items: center; }
+  .org-lead-row .org-link-dashed,
+  .org-pair .org-link-dashed {
+    flex: 0 0 auto;
+    width: 0;
+    height: clamp(1.25rem, 4vw, 2rem);
+    border-top: 0;
+    border-left: 2px dashed var(--org-line);
+  }
   .org-row--5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .org-row--5::before { display: none; }
   .org-row--5 .org-stem { display: none; }
@@ -1779,7 +2348,7 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
   .org-row--2,
   .org-row--5 { grid-template-columns: 1fr; padding-top: 0; }
   .org-row::before, .org-stem, .org-down, .org-link-dashed { display: none; }
-  .org-card--board, .org-card--lead, .org-card--wide, .org-aside { width: 100%; }
+  .org-card--board, .org-card--lead, .org-card--wide, .org-card--aside { width: 100%; }
   .org-card { text-align: start; }
   #main .org-card p { text-align: start; }
   .org + .org-legend { margin-top: 1rem; }
