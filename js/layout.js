@@ -45,12 +45,12 @@
           pages: ['research-peace'],
         },
         {
-          label: 'Indigenous Knowledge & Culture',
+          label: 'Culture, Indigenous Knowledge & Governance',
           href: `${base}research-indigenous-knowledge.html`,
           pages: ['research-knowledge'],
         },
         {
-          label: 'Food Futures & Economic Transformation',
+          label: 'Food Systems & Bioeconomy',
           href: `${base}research-food-economy.html`,
           pages: ['research-food'],
         },

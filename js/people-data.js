@@ -261,8 +261,8 @@
       { id: 'climate', label: 'Climate, Environment and Landscapes' },
       { id: 'health', label: 'Savanna Health Futures' },
       { id: 'peace', label: 'Peace, Security and Borderlands' },
-      { id: 'indigenous', label: 'Culture, Traditional Governance and Indigenous Knowledge' },
-      { id: 'food', label: 'Food Futures and Economic Transformation' },
+      { id: 'indigenous', label: 'Culture, Indigenous Knowledge and Governance' },
+      { id: 'food', label: 'Food Systems and Bioeconomy' },
       { id: 'institute', label: 'Institute leadership' },
     ],
   };
