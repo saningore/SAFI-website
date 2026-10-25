@@ -653,6 +653,63 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
 .page-hero-bg img.img-focus-top { object-position: center 25%; }
 .page-hero-bg img.img-focus-center { object-position: center 50%; }
 .page-hero-bg img.img-focus-aerial { object-position: center 45%; }
+.page-hero--about.page-hero--split {
+  padding: calc(var(--header-height) + 2.75rem) 0 3rem;
+  background: linear-gradient(105deg, var(--color-primary-dark) 0%, #163528 52%, #1a3d2e 100%);
+}
+.page-hero-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, min(42vw, 400px));
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+.page-hero-split-copy {
+  min-width: 0;
+}
+.page-hero-split-media {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+.page-hero-split-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(520px, 72vh);
+  object-fit: contain;
+  object-position: center center;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.page-hero-split-caption {
+  margin: 0.75rem 0 0;
+  font-size: 0.8125rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.72);
+  text-align: center;
+  line-height: 1.45;
+}
+.split-media--about-landscape {
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: 0;
+}
+.split-media--about-landscape img.img-about-landscape-full {
+  aspect-ratio: auto;
+  width: auto;
+  max-width: min(22.5rem, 100%);
+  height: auto;
+  max-height: min(32rem, 62vh);
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+  margin: 0;
+  background: transparent;
+  vertical-align: top;
+}
 .centre-card-body, .programme-card-home-body, .platform-card-body {
   padding: 1.5rem; flex: 1; display: flex; flex-direction: column;
 }
@@ -2059,6 +2116,13 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
   .page-hero { padding: calc(var(--header-height) + 2.25rem) 0 2.25rem; }
   .page-hero.has-image { padding: calc(var(--header-height) + 2.5rem) 0 2.5rem; }
   .page-hero h1 { font-size: clamp(1.75rem, 8vw, 2.25rem); }
+  .page-hero-split {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  .page-hero-split-media img {
+    max-height: min(480px, 65vh);
+  }
   .page-content { padding: 2.5rem 0 3rem; }
   .cta-band { padding: 2.75rem 1rem; }
   .cta-hero { padding: 3.25rem 0; }

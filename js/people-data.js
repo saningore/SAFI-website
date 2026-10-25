@@ -69,11 +69,16 @@
       {
         id: 'agoswin-musah',
         name: 'Dr. Anthony Agoswin Musah',
+        displayName: 'Anthony A. Musah PhD',
         profileRoleBanner: 'Director of Cultural Innovations',
+        fullName: 'Anthony Agoswin Musah',
+        professionalTitle: 'Senior Research Fellow',
+        publicationTitle: 'Anthony A. Musah (PhD)',
         role: 'Director of Cultural Innovations',
-        safiRole: 'Director of Cultural Innovations',
+        safiRole:
+          'Director: Cultural Innovations, bringing expertise in indigenous languages, culture and peace studies to SAFI\u2019s research and community engagement.',
         appointment: 'Executive',
-        formalAppointment: 'Secretary to Board of Directors',
+        formalAppointment: 'Secretary, Board of Directors, with executive roles',
         tier: 'executive-team',
         roleGroup: 'executive',
         department: 'Cultural Innovations',
@@ -83,10 +88,14 @@
         affiliation: 'Language Centre, University of Ghana',
         affiliationDisplay:
           'Senior Research Fellow, Language Centre, University of Ghana',
-        specialisms: ['Linguistics', 'Culture', 'Peace Studies'],
+        specialisms: [
+          'Linguistics and multilingual communication',
+          'Indigenous languages and culture',
+          'Peace studies',
+        ],
         links: [
           {
-            label: 'Google Scholar',
+            label: 'Google Scholar — A. Agoswin Musah',
             url: 'https://scholar.google.com/citations?user=x0CyMRwAAAAJ&hl=en',
           },
           {
@@ -94,32 +103,51 @@
             url: 'https://orcid.org/0000-0002-8317-1088',
           },
           {
-            label: 'LinkedIn',
+            label: 'LinkedIn — A. Agoswin Musah',
             url: 'https://www.linkedin.com/in/a-agoswin-musah-phd-6b10ba67',
           },
         ],
         photo: 'assets/images/people/agoswin-musah.jpg',
         bio: [
-          'Anthony Agoswin Musah is a Senior Research Fellow with a passion for understanding how language shapes people\'s lives, particularly in multilingual communities across Ghana. His work explores the ways indigenous languages are used in cultural, social, and development communication. Through his research, he highlights the value of local linguistic resources in fostering inclusive and effective community living.',
+          'Anthony A. Musah is a Senior Research Fellow at University of Ghana, whose work examines how language shapes people\u2019s lives, particularly in multilingual communities across Ghana. His research explores the role of indigenous languages in cultural, social and development communication, highlighting how local linguistic resources support inclusive community life. At SAFI, he contributes expertise in linguistics, culture and peace studies to advance cultural innovation and community engagement.',
         ],
+        published: true,
         order: 1,
       },
       {
         id: 'francis-ayarna',
-        name: 'Francis Ayarna',
+        name: 'Francis Ayarna Anambe',
+        displayName: 'Francis Ayarna Anambe, CA (Ghana)',
+        profileRoleBanner: 'Director of Finance and Administration',
+        fullName: 'Francis Ayarna Anambe',
+        professionalTitle: 'Chartered Accountant',
+        publicationTitle: 'Francis Ayarna Anambe, CA (Ghana) — Chartered Accountant',
         role: 'Director of Finance and Administration',
+        safiRole:
+          'Leads SAFI\u2019s financial planning, accounting, audit coordination and administration, ensuring sound financial management, accountability and statutory compliance.',
         appointment: 'Executive',
+        formalAppointment: 'Director of Finance and Administration — Executive Management Team.',
         tier: 'executive-team',
         roleGroup: 'executive',
         department: 'Finance and Administration',
         centre: 'institute',
         phone: '+233 24 493 3767',
         email: '',
-        affiliation: '',
-        specialisms: [],
+        affiliation:
+          'University of Professional Studies, Accra; University of Ghana Business School; Institute of Chartered Accountants, Ghana; Institute of Internal Auditors',
+        affiliationDisplay:
+          'University of Professional Studies, Accra (UPSA); University of Ghana Business School (UGBS); Institute of Chartered Accountants, Ghana (ICAG); Institute of Internal Auditors (IIA)',
+        specialisms: [
+          'Financial management and accounting',
+          'Auditing and investigations',
+          'Project management and donor funding accountability',
+        ],
         links: [],
         photo: '',
-        bio: [],
+        bio: [
+          'Francis Ayarna Anambe is a Chartered Accountant with more than 20 years\u2019 experience spanning public sector financial management, auditing, marketing and administration, including roles at Tema Oil Refinery, Ghana Cocoa Board and GOIL. Following retirement, he moved into consultancy through Synergy Consulting Services and ICDC, contributing to assignments under the Ministry of Local Government and Rural Development involving donor and grant funding from organisations including UNDP, the World Bank and the International Development Association (IDA). At SAFI, he brings this experience to strengthening financial governance, institutional administration and the accountable management of research and development funding.',
+        ],
+        published: true,
         order: 2,
       },
       {
@@ -161,19 +189,44 @@
       {
         id: 'magdalene-ayamga',
         name: 'Magdalene Ayamga',
-        role: 'Deputy Director of Savanna Health Futures',
+        displayName: 'Magdalene Ayamga (PhD Candidate)',
+        profileRoleBanner: 'Associate Fellow & Deputy Director, Savanna Health Innovation Futures',
+        fullName: 'Magdalene Ayamga',
+        professionalTitle: 'Livelihood and Economic Development Officer',
+        publicationTitle:
+          'Magdalene Ayamga (PhD Candidate) — Livelihood and Economic Development Officer',
+        role: 'Associate Fellow & Deputy Director, Savanna Health Innovation Futures',
+        safiRole:
+          'Associate Fellow & Deputy Director, Savanna Health Innovation Futures. Contributes expertise in livelihoods, WASH, gender and community well-being.',
         appointment: 'Research',
+        appointments: [
+          {
+            label: 'Executive',
+            text: 'Deputy Director, Savanna Health Innovation Futures',
+          },
+          { label: 'Research', text: 'Associate Fellow' },
+          { label: 'Governance', text: 'Treasurer' },
+        ],
         tier: 'deputy-directors',
         roleGroup: 'centre',
-        department: 'Savanna Health Futures',
+        department: 'Savanna Health Innovation Futures',
         centre: 'health',
         phone: '+233 24 519 1901',
         email: '',
-        affiliation: '',
-        specialisms: [],
+        affiliation: 'World Vision Ghana',
+        affiliationDisplay:
+          'World Vision Ghana — Livelihood and Economic Development Officer',
+        specialisms: [
+          'Sustainable livelihoods, financial inclusion and inclusive markets',
+          'WASH, menstrual health and community well-being',
+          'Gender equality, disability and social inclusion',
+        ],
         links: [],
         photo: '',
-        bio: [],
+        bio: [
+          'Magdalene Ayamga is a development professional with experience in sustainable livelihoods, household economic empowerment, financial inclusion, and water, sanitation and hygiene (WASH). At World Vision Ghana, she supports savings groups, inclusive market access and entrepreneurship, integrating gender equality, disability and social inclusion into community interventions. She is pursuing a PhD examining menstrual hygiene management in Wa East District, Ghana, with a focus on community practices, policy effectiveness and sustainable approaches to menstrual health and well-being.',
+        ],
+        published: true,
         order: 1,
       },
       {

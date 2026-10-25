@@ -19,6 +19,7 @@
 
   function formatDisplayName(person) {
     if (!person) return '';
+    if (person.displayName) return person.displayName;
     if (hasDoctorTitle(person.name)) return formatDoctorDisplayName(person);
     return person.profileHeadline || person.name || '';
   }
