@@ -54,12 +54,7 @@
           href: `${base}research-food-economy.html`,
           pages: ['research-food'],
         },
-        { label: 'Shared platforms', href: `${base}research-platforms.html`, pages: ['research-platforms'] },
-        {
-          label: 'Food systems — field video',
-          href: `${base}research-food-economy.html#food-field-video`,
-          pages: ['research-food'],
-        },
+        { label: 'Sustainability and Resilience', href: `${base}research-platforms.html`, pages: ['research-platforms'] },
       ],
     },
     {
