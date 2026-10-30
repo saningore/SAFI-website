@@ -292,7 +292,7 @@
     if (!hasAnyone) return '';
     return `
       <div class="people-executive-block" aria-labelledby="people-executive-heading">
-        <h2 id="people-executive-heading" class="people-executive-heading">Executive Management Team</h2>
+        <h2 id="people-executive-heading" class="people-executive-heading">Administration Unit</h2>
         <div class="people-executive-org" role="list">
           ${EXEC_ORGANOGRAM.map((entry) => renderExecutiveOrgSlot(list, entry)).join('')}
         </div>
