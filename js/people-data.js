@@ -143,7 +143,7 @@
           'Project management and donor funding accountability',
         ],
         links: [],
-        photo: '',
+        photo: 'assets/images/people/francis-ayarna-anambe.jpg',
         bio: [
           'Francis Ayarna Anambe is a Chartered Accountant with more than 20 years\u2019 experience spanning public sector financial management, auditing, marketing and administration, including roles at Tema Oil Refinery, Ghana Cocoa Board and GOIL. Following retirement, he moved into consultancy through Synergy Consulting Services and ICDC, contributing to assignments under the Ministry of Local Government and Rural Development involving donor and grant funding from organisations including UNDP, the World Bank and the International Development Association (IDA). At SAFI, he brings this experience to strengthening financial governance, institutional administration and the accountable management of research and development funding.',
         ],
@@ -232,20 +232,113 @@
       {
         id: 'samuel-amidini-aningore',
         name: 'Samuel Amidini Aningore',
+        displayName: 'Samuel Amidini Aningore',
+        profileRoleBanner: 'Head of IT and Digital Communications',
+        fullName: 'Samuel Amidini Aningore',
+        professionalTitle: 'Software Engineer',
+        publicationTitle: 'Samuel Amidini Aningore — Software Engineer',
         role: 'Head of IT and Digital Communications',
+        safiRole:
+          'Leads SAFI\u2019s information technology, digital platforms and communications\u2014ensuring reliable systems, secure digital infrastructure and an effective online presence that support research, programmes and institutional operations.',
         appointment: 'Executive',
+        formalAppointment: 'Head of IT and Digital Communications — Heads of Units.',
         tier: 'heads',
         roleGroup: 'executive',
         department: 'IT and Digital Communications',
         centre: 'institute',
         phone: '+233 24 963 3123',
         email: '',
-        affiliation: '',
-        specialisms: [],
-        links: [],
+        affiliation:
+          'Kwame Nkrumah University of Science and Technology; Ghana Communication Technology University',
+        affiliationDisplay:
+          'B.Sc. Computer Engineering, Kwame Nkrumah University of Science and Technology (KNUST); M.Sc. Computer Science, Ghana Communication Technology University (GCTU)',
+        specialisms: [
+          'Enterprise software systems, APIs and digital platforms',
+          'IT infrastructure, cloud services and DevOps',
+          'Digital communications and institutional web presence',
+        ],
+        links: [
+          {
+            label: 'LinkedIn — Samuel Amidini Aningore',
+            url: 'https://www.linkedin.com/in/aningore-samuel-amidini-b79b31ba/',
+          },
+          {
+            label: 'GitHub — saningore',
+            url: 'https://github.com/saningore',
+          },
+        ],
         photo: 'assets/images/people/samuel-amidini-aningore.jpg',
-        bio: [],
+        bio: [
+          'Samuel Amidini Aningore is a software engineer and digital systems specialist with more than six years\u2019 experience designing, delivering and supporting production systems across enterprise and institutional settings. He holds a B.Sc. in Computer Engineering from the Kwame Nkrumah University of Science and Technology (KNUST) and an M.Sc. in Computer Science from Ghana Communication Technology University (GCTU). His work spans software architecture, web platforms, data systems, cloud and DevOps practices, and digital communications. He has delivered enterprise applications in HR, finance and operations domains, mentored emerging engineers, and taught software engineering at tertiary level. At SAFI, as Head of IT and Digital Communications, he leads the Institute\u2019s technology infrastructure, digital platforms and communications systems that underpin research, programmes and institutional operations.',
+        ],
+        published: true,
         order: 1,
+      },
+      {
+        id: 'samuel-akugri-asitanga',
+        name: 'Samuel Akugri Asitanga',
+        displayName: 'Mr Samuel Akugri Asitanga',
+        profileRoleBanner: 'Head of Indigenous Knowledge and Traditional Governance',
+        fullName: 'Samuel Akugri Asitanga',
+        professionalTitle: 'Lecturer',
+        publicationTitle:
+          'Samuel Akugri Asitanga (PhD Candidate) — Lecturer',
+        role: 'Head of Indigenous Knowledge and Traditional Governance',
+        safiRole:
+          'Head of Indigenous Knowledge and Traditional Governance. Associate Fellow (Research and Knowledge Exchange), contributing expertise in Kusaal linguistics, indigenous knowledge, culture and African language scholarship.',
+        appointment: 'Research',
+        appointments: [
+          {
+            label: 'Executive',
+            text: 'Head of Indigenous Knowledge and Traditional Governance',
+          },
+          {
+            label: 'Research',
+            text: 'Associate Fellow (Research and Knowledge Exchange)',
+          },
+        ],
+        tier: 'heads',
+        roleGroup: 'centre',
+        department: 'Indigenous Knowledge and Traditional Governance',
+        centre: 'indigenous',
+        phone: '',
+        email: '',
+        affiliation: 'University of Education, Winneba',
+        affiliationDisplay:
+          'Lecturer — University of Education, Winneba; PhD Candidate in Ghanaian Language Studies (Kusaal Education)',
+        specialisms: [
+          'Kusaal linguistics, dialectology and translation',
+          'Indigenous knowledge, culture and literature',
+          'Sociolinguistics, onomastics and African language scholarship',
+        ],
+        links: [
+          {
+            label: 'Google Scholar — Samuel A. Asitanga',
+            url: 'https://scholar.google.com/citations?user=0G8Op4IAAAAJ&hl=en',
+          },
+          {
+            label: 'ResearchGate — Samuel A. Asitanga',
+            url: 'https://www.researchgate.net/profile/Samuel-A-Asitanga',
+          },
+          {
+            label: 'ORCID 0009-0003-8698-9939',
+            url: 'https://orcid.org/0009-0003-8698-9939',
+          },
+          {
+            label: 'University of Education, Winneba — profile search',
+            url: 'https://www.uew.edu.gh/index.php/search/content?keys=Samuel+Akugri+Asitanga',
+          },
+          {
+            label: 'LinkedIn — Samuel Asitanga',
+            url: 'https://www.linkedin.com/in/samuel-asitanga-93511740b/',
+          },
+        ],
+        photo: 'assets/images/people/samuel-akugri-asitanga.jpg',
+        bio: [
+          'Mr Samuel Akugri Asitanga is a Lecturer and PhD Candidate in Ghanaian Language Studies (Kusaal Education) at the University of Education, Winneba. His research interests span Kusaal linguistics, indigenous knowledge, dialectology, translation, culture and literature. He has published on sociolinguistics, onomastics and naming systems in Kusaal, including work on phonological variation, personal names, and season names as expressions of climatic conditions and agrarian practices. Driven by intellectual curiosity and a deep commitment to indigenous language scholarship, he continually strives to deepen knowledge and advance African linguistic research. At SAFI, as Head of Indigenous Knowledge and Traditional Governance and Associate Fellow (Research and Knowledge Exchange), he brings this expertise to the Institute\u2019s work on culture, language and traditional governance in savanna communities.',
+        ],
+        published: true,
+        order: 2,
       },
     ],
     roleGroups: [
