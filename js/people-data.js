@@ -37,7 +37,7 @@
             text: 'Executive Director, responsible for institutional leadership, strategic development and partnerships.',
           },
           {
-            label: 'Research and programme leadership',
+            label: 'Research and Programme Leadership',
             text: 'Acting Director, Climate and Environment.',
           },
           {
@@ -53,6 +53,12 @@
         email: '',
         affiliation: 'Scotland Rural College, United Kingdom',
         affiliationDisplay: 'Academic fellow, Scotland Rural College, United Kingdom',
+        qualifications: [
+          'PhD in Environmental Sustainability (Science-Policy-Practice Linkages), University of Leeds, United Kingdom',
+          'MSc (with Thesis) in Renewable Natural Resources Management (Agroecology/Agroforestry/Sustainable Agriculture), Kwame Nkrumah University of Science and Technology, Ghana',
+          'BSc Hons in Biology (Aquatic Ecology, Fisheries, Epidemiology)',
+          'Higher Education Diploma (Qualified Teacher Status, Secondary & Further Education), University of Cape Coast, Ghana',
+        ],
         specialisms: [
           'Savanna landscapes: drylands, wetland, and river basins; social–ecological systems',
           'Climate resilience and sustainable food systems; research, innovation and policy impact',
@@ -133,10 +139,16 @@
         centre: 'institute',
         phone: '+233 24 493 3767',
         email: '',
-        affiliation:
-          'University of Professional Studies, Accra; University of Ghana Business School; Institute of Chartered Accountants, Ghana; Institute of Internal Auditors',
-        affiliationDisplay:
-          'University of Professional Studies, Accra (UPSA); University of Ghana Business School (UGBS); Institute of Chartered Accountants, Ghana (ICAG); Institute of Internal Auditors (IIA)',
+        affiliation: 'University of Ghana Business School (UGBS)',
+        affiliationDisplay: 'University of Ghana Business School (UGBS)',
+        affiliations: [
+          'University of Ghana Business School (UGBS)',
+          'Institute of Chartered Accountants, Ghana (ICAG)',
+          'Institute of Internal Auditors (IIA)',
+        ],
+        qualifications: [
+          'MBA in Projects and Finance, University of Ghana Business School (UGBS)',
+        ],
         specialisms: [
           'Financial management and accounting',
           'Auditing and investigations',
@@ -145,7 +157,7 @@
         links: [],
         photo: 'assets/images/people/francis-ayarna-anambe.jpg',
         bio: [
-          'Francis Ayarna Anambe is a Chartered Accountant with more than 20 years\u2019 experience spanning public sector financial management, auditing, marketing and administration, including roles at Tema Oil Refinery, Ghana Cocoa Board and GOIL. Following retirement, he moved into consultancy through Synergy Consulting Services and ICDC, contributing to assignments under the Ministry of Local Government and Rural Development involving donor and grant funding from organisations including UNDP, the World Bank and the International Development Association (IDA). At SAFI, he brings this experience to strengthening financial governance, institutional administration and the accountable management of research and development funding.',
+          'Francis Ayarna Anambe is a Chartered Accountant with more than 20 years\u2019 experience spanning public sector financial management, auditing, marketing and administration, including roles at Tema Oil Refinery, Ghana Cocoa Board and GOIL. He holds an MBA in Projects and Finance from the University of Ghana Business School (UGBS) and is affiliated with UGBS alongside professional membership of the Institute of Chartered Accountants, Ghana (ICAG) and the Institute of Internal Auditors (IIA). Following retirement, he moved into consultancy through Synergy Consulting Services and ICDC, contributing to assignments under the Ministry of Local Government and Rural Development involving donor and grant funding from organisations including UNDP, the World Bank and the International Development Association (IDA). At SAFI, he brings this experience to strengthening financial governance, institutional administration and the accountable management of research and development funding.',
         ],
         published: true,
         order: 2,
@@ -164,7 +176,7 @@
         affiliation: '',
         specialisms: [],
         links: [],
-        photo: '',
+        photo: 'assets/images/people/john-azaare.jpg',
         bio: [],
         order: 1,
       },
@@ -190,26 +202,26 @@
         id: 'magdalene-ayamga',
         name: 'Magdalene Ayamga',
         displayName: 'Magdalene Ayamga (PhD Candidate)',
-        profileRoleBanner: 'Associate Fellow & Deputy Director, Savanna Health Innovation Futures',
+        profileRoleBanner: 'Director: Sustainability | Resilience',
         fullName: 'Magdalene Ayamga',
         professionalTitle: 'Livelihood and Economic Development Officer',
         publicationTitle:
           'Magdalene Ayamga (PhD Candidate) — Livelihood and Economic Development Officer',
-        role: 'Associate Fellow & Deputy Director, Savanna Health Innovation Futures',
+        role: 'Director: Sustainability | Resilience',
         safiRole:
-          'Associate Fellow & Deputy Director, Savanna Health Innovation Futures. Contributes expertise in livelihoods, WASH, gender and community well-being.',
+          'Director: Sustainability | Resilience. Contributes expertise in livelihoods, WASH, gender and community well-being.',
         appointment: 'Research',
         appointments: [
           {
             label: 'Executive',
-            text: 'Deputy Director, Savanna Health Innovation Futures',
+            text: 'Director: Sustainability | Resilience',
           },
           { label: 'Research', text: 'Associate Fellow' },
           { label: 'Governance', text: 'Treasurer' },
         ],
-        tier: 'deputy-directors',
+        tier: 'directors',
         roleGroup: 'centre',
-        department: 'Savanna Health Innovation Futures',
+        department: 'Sustainability | Resilience',
         centre: 'health',
         phone: '+233 24 519 1901',
         email: '',
@@ -222,7 +234,7 @@
           'Gender equality, disability and social inclusion',
         ],
         links: [],
-        photo: '',
+        photo: 'assets/images/people/magdalene-ayamga.jpg',
         bio: [
           'Magdalene Ayamga is a development professional with experience in sustainable livelihoods, household economic empowerment, financial inclusion, and water, sanitation and hygiene (WASH). At World Vision Ghana, she supports savings groups, inclusive market access and entrepreneurship, integrating gender equality, disability and social inclusion into community interventions. She is pursuing a PhD examining menstrual hygiene management in Wa East District, Ghana, with a focus on community practices, policy effectiveness and sustainable approaches to menstrual health and well-being.',
         ],
@@ -248,14 +260,21 @@
         centre: 'institute',
         phone: '+233 24 963 3123',
         email: '',
-        affiliation:
-          'Kwame Nkrumah University of Science and Technology; Ghana Communication Technology University',
-        affiliationDisplay:
-          'B.Sc. Computer Engineering, Kwame Nkrumah University of Science and Technology (KNUST); M.Sc. Computer Science, Ghana Communication Technology University (GCTU)',
+        affiliation: 'Bista Solutions Limited; Codyza',
+        affiliationDisplay: 'Bista Solutions Limited; Codyza (remote)',
+        affiliations: [
+          'Bista Solutions Limited',
+          'Codyza — Team Leader Manager, Codyza Crew (remote)',
+        ],
+        qualifications: [
+          'MSc (with Thesis) in Computer Science, Ghana Communication Technology University (GCTU)',
+          'BSc in Computer Engineering, Kwame Nkrumah University of Science and Technology (KNUST)',
+        ],
         specialisms: [
           'Enterprise software systems, APIs and digital platforms',
           'IT infrastructure, cloud services and DevOps',
           'Digital communications and institutional web presence',
+          'Team leadership and mentoring',
         ],
         links: [
           {
@@ -269,7 +288,9 @@
         ],
         photo: 'assets/images/people/samuel-amidini-aningore.jpg',
         bio: [
-          'Samuel Amidini Aningore is a software engineer and digital systems specialist with more than six years\u2019 experience designing, delivering and supporting production systems across enterprise and institutional settings. He holds a B.Sc. in Computer Engineering from the Kwame Nkrumah University of Science and Technology (KNUST) and an M.Sc. in Computer Science from Ghana Communication Technology University (GCTU). His work spans software architecture, web platforms, data systems, cloud and DevOps practices, and digital communications. He has delivered enterprise applications in HR, finance and operations domains, mentored emerging engineers, and taught software engineering at tertiary level. At SAFI, as Head of IT and Digital Communications, he leads the Institute\u2019s technology infrastructure, digital platforms and communications systems that underpin research, programmes and institutional operations.',
+          'Samuel Amidini Aningore is a software engineer, digital systems specialist and technology leader with more than six years\u2019 experience designing, delivering and supporting production systems across enterprise and institutional settings. He holds a BSc in Computer Engineering from the Kwame Nkrumah University of Science and Technology (KNUST) and an MSc (with Thesis) in Computer Science from Ghana Communication Technology University (GCTU). His professional practice spans software architecture, web platforms, data systems, cloud and DevOps, and digital communications.',
+          'At Bista Solutions Limited, he contributes engineering expertise to enterprise software delivery. He also works remotely with Codyza as Team Leader Manager of the Codyza Crew, coordinating team members and leaders, providing guidance, and sustaining a productive environment for high-quality website and digital delivery.',
+          'He has delivered enterprise applications in HR, finance and operations domains, mentored emerging engineers, and taught software engineering at tertiary level. At SAFI, as Head of IT and Digital Communications, he leads the Institute\u2019s technology infrastructure, digital platforms and communications systems that underpin research, programmes and institutional operations\u2014bringing together technical excellence, team leadership and a commitment to practical digital capability.',
         ],
         published: true,
         order: 1,

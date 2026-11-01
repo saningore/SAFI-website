@@ -28,7 +28,7 @@
       id: 'research',
       label: 'Research',
       children: [
-        { label: 'Research overview', href: `${base}research.html`, pages: ['research'] },
+        { label: 'Research Overview', href: `${base}research.html`, pages: ['research'] },
         {
           label: 'Climate, Environment & Landscapes',
           href: `${base}research-climate-landscapes.html`,
@@ -61,23 +61,23 @@
       id: 'programmes',
       label: 'Programmes',
       children: [
-        { label: 'Programme overview', href: `${base}programmes.html`, pages: ['programmes'] },
+        { label: 'Programme Overview', href: `${base}programmes.html`, pages: ['programmes'] },
         {
-          label: 'Water & climate resilience (proposed)',
+          label: 'Water & Climate Resilience (Proposed)',
           href: `${base}programmes-unesco-collaboration.html`,
           pages: ['programmes-unesco'],
         },
         {
-          label: 'Eastern Corridor food logistics (proposed)',
+          label: 'Eastern Corridor Food Logistics (Proposed)',
           href: `${base}programmes-eastern-corridor.html`,
           pages: ['programmes-eastern-corridor'],
         },
         {
-          label: 'Red Volta forest recovery (proposed)',
+          label: 'Red Volta Forest Recovery (Proposed)',
           href: `${base}programmes-red-volta.html`,
           pages: ['programmes-red-volta'],
         },
-        { label: 'BAIRP programme concept', href: `${base}programmes-bairp.html`, pages: ['programmes-bairp'] },
+        { label: 'BAIRP Programme Concept', href: `${base}programmes-bairp.html`, pages: ['programmes-bairp'] },
       ],
     },
     { id: 'academy', label: 'Academy', href: `${base}academy.html` },
@@ -176,7 +176,7 @@
     <footer class="site-footer">
       <div class="container footer-grid">
         <div class="footer-brand">
-          <img src="${base}assets/images/safi-logo.png" width="56" height="56" alt="" style="margin-bottom:1rem;filter:brightness(0) invert(1);opacity:0.9;">
+          <img class="footer-logo-img" src="${base}assets/images/safi-logo.png" width="56" height="56" alt="SAFI">
           <p><strong>The Savannah Futures Institute</strong> connects knowledge, people and action to shape resilient savanna futures.</p>
           <p class="footer-tagline-inline">Healthy landscapes. Healthy people. Peaceful communities. Resilient savanna ecosystem.</p>
         </div>
@@ -190,7 +190,7 @@
           </ul>
         </div>
         <div class="footer-links">
-          <h4>Research &amp; programmes</h4>
+          <h4>Research &amp; Programmes</h4>
           <ul>
             <li><a href="${base}partnerships.html">Partnerships</a></li>
             <li><a href="${base}research.html">Research</a></li>

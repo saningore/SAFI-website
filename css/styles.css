@@ -1279,7 +1279,38 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
 }
 .people-research-operations-heading {
   margin-top: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+.people-research-operations-heading::after {
+  content: "";
+  display: block;
+  width: min(4.5rem, 24vw);
+  height: 4px;
+  margin: 0.85rem auto 0;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-primary) 100%);
+}
+.people-heads-heading {
+  margin-top: 0.25rem;
   margin-bottom: 1.25rem;
+}
+.people-executive-grid.people-heads-row {
+  display: grid;
+  flex-wrap: unset;
+  grid-template-columns: repeat(2, minmax(0, 17.5rem));
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  max-width: min(var(--container), 100%);
+  margin: 0 auto clamp(1.75rem, 3.5vw, 2.5rem);
+  gap: clamp(0.75rem, 2vw, 1.75rem);
+}
+.people-heads-row .people-executive-card {
+  justify-self: center;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  flex: unset;
 }
 .people-operations-tier-headings {
   display: grid;
@@ -1690,11 +1721,15 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
     "profile-name profile-photo"
     "profile-fields profile-photo"
     "profile-bio profile-bio";
-  gap: 2rem 2.75rem;
+  column-gap: 2.75rem;
+  row-gap: 0.85rem;
   align-items: start;
 }
-.people-profile-layout-name {
+.people-profile-layout-intro {
   grid-area: profile-name;
+  min-width: 0;
+}
+.people-profile-layout-name {
   font-family: var(--font-display);
   font-size: clamp(1.9rem, 3.8vw, 2.55rem);
   font-weight: 700;
@@ -1703,12 +1738,32 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
   margin: 0 0 0.25rem;
   text-align: left;
 }
+.people-profile-qualifications {
+  margin: 0.85rem 0 0;
+}
+.people-profile-qualifications .people-profile-spec-label {
+  margin-bottom: 0.45rem;
+}
+.people-profile-qualifications-list {
+  margin: 0;
+  padding: 0 0 0 1.15rem;
+  list-style: disc;
+}
+.people-profile-qualifications-list li {
+  margin: 0 0 0.4rem;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--color-text);
+}
+.people-profile-qualifications-list li:last-child {
+  margin-bottom: 0;
+}
 .people-profile-spec-primary {
   grid-area: profile-fields;
-  padding-top: 0.75rem;
+  padding-top: 0.15rem;
 }
 .people-profile-spec-primary .people-profile-spec-field:first-child {
-  margin-top: 0.5rem;
+  margin-top: 0;
 }
 .people-profile-spec-bio {
   grid-area: profile-bio;
@@ -1914,6 +1969,11 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
     max-width: 17.5rem;
   }
   .people-research-centre-row .people-executive-card { justify-self: center; max-width: 17.5rem; }
+  .people-heads-row {
+    grid-template-columns: 1fr;
+    max-width: 17.5rem;
+  }
+  .people-heads-row .people-executive-card { justify-self: center; max-width: 17.5rem; }
   .people-operations-tier-headings {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     row-gap: 0.75rem;
@@ -1970,6 +2030,13 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
 .site-footer { background: var(--color-primary-dark); color: rgba(255,255,255,0.75); padding-top: 4rem; }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 2.5rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
 .footer-brand .logo-mark { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: #fff; display: block; margin-bottom: 1rem; }
+.footer-logo-img {
+  display: block;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 1rem;
+  object-fit: contain;
+}
 .footer-brand p { font-size: 0.9375rem; line-height: 1.65; margin-bottom: 0.75rem; }
 .footer-tagline-inline { font-style: italic; color: rgba(255,255,255,0.5) !important; font-size: 0.875rem !important; }
 .footer-links h4 { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 1rem; }

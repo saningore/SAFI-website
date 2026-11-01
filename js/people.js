@@ -27,8 +27,10 @@
     'magdalene-ayamga',
   ];
   const RESEARCH_CENTRE_ROW_IDS = new Set(RESEARCH_CENTRE_ROW);
+  const HEADS_OF_UNITS_ROW = ['samuel-amidini-aningore', 'samuel-akugri-asitanga'];
+  const HEADS_OF_UNITS_ROW_IDS = new Set(HEADS_OF_UNITS_ROW);
   const RESEARCH_OPERATIONS_SUBHEADINGS = [
-    'Senior fellows',
+    'Senior Fellows',
     'Fellows',
     'Associate Fellows',
     'Early Career Researchers',
@@ -38,7 +40,7 @@
     'agoswin-musah': 'Director: Cultural Innovations',
     'desmond-bugbilla': 'Director: Peace | Security | Borderlands',
     'john-azaare': 'Director: Savanna Health Innovation',
-    'magdalene-ayamga': 'Deputy Director: Savanna Health Innovation Futures',
+    'magdalene-ayamga': 'Director: Sustainability | Resilience',
   };
   const PLACEHOLDER_SVG =
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>';
@@ -302,9 +304,22 @@
   function peopleBelowOrganogram(list) {
     return list
       .filter(
-        (person) => !EXEC_ORGANOGRAM_IDS.has(person.id) && !RESEARCH_CENTRE_ROW_IDS.has(person.id)
+        (person) =>
+          !EXEC_ORGANOGRAM_IDS.has(person.id) &&
+          !RESEARCH_CENTRE_ROW_IDS.has(person.id) &&
+          !HEADS_OF_UNITS_ROW_IDS.has(person.id)
       )
       .sort(comparePeople);
+  }
+
+  function renderHeadsOfUnitsBlock(list) {
+    const members = HEADS_OF_UNITS_ROW.map((id) => personById(list, id)).filter(Boolean);
+    if (!members.length) return '';
+    return `
+      <h2 id="people-heads-heading" class="people-directory-heading people-heads-heading">Heads of Units</h2>
+      <div class="people-executive-grid people-heads-row">
+        ${members.map(renderDirectoryLeadCard).join('')}
+      </div>`;
   }
 
   function renderResearchCentreSection(list) {
@@ -317,6 +332,7 @@
           ${members.map(renderResearchCentreLeadCard).join('')}
         </div>
         <h2 id="people-research-operations-heading" class="people-directory-heading people-research-operations-heading">Research Operations</h2>
+        ${renderHeadsOfUnitsBlock(list)}
         <div class="people-operations-tier-headings" role="presentation">
           ${RESEARCH_OPERATIONS_SUBHEADINGS.map(
             (label, index) => `
@@ -345,7 +361,7 @@
   function renderDirectorySection(list) {
     const rest = peopleBelowOrganogram(list);
     const research = renderResearchCentreSection(list);
-    const bands = TIERS.filter((tier) => tier.id && !tier.featured)
+    const bands = TIERS.filter((tier) => tier.id && !tier.featured && tier.id !== 'heads')
       .map((tier) => {
         const people = peopleInTier(rest, tier.id);
         if (!people.length) return '';

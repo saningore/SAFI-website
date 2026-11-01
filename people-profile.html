@@ -16,7 +16,10 @@
         <div class="container">
           <nav class="breadcrumbs breadcrumbs--light" aria-label="Breadcrumb"><a href="index.html">Home</a> <span>&rsaquo;</span> <a href="people.html#listing">People</a></nav>
           <div class="people-profile-layout">
-            <h1 class="people-profile-layout-name" id="profile-name"></h1>
+            <div class="people-profile-layout-intro">
+              <h1 class="people-profile-layout-name" id="profile-name"></h1>
+              <div class="people-profile-qualifications" id="profile-qualifications" hidden></div>
+            </div>
             <aside class="people-profile-layout-aside" aria-label="Portrait">
               <div class="people-profile-photo-stack">
                 <div class="people-profile-photo people-profile-photo--spec" id="profile-photo"></div>
@@ -40,7 +43,7 @@
     <section class="section" id="people-profile-missing" hidden>
       <div class="container">
         <div class="people-empty">
-          <h3>Profile not found</h3>
+          <h3>Profile Not Found</h3>
           <p>This profile is not published or the link may be outdated.</p>
           <p><a href="people.html#listing" class="btn btn-primary">View all people</a></p>
         </div>

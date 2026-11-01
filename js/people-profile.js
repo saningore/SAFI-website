@@ -69,8 +69,17 @@
   }
 
   function buildAffiliationHtml(person) {
-    if (person.affiliation) {
-      const text = person.affiliationDisplay || person.affiliation.toUpperCase();
+    const affiliations = (person.affiliations || []).filter(Boolean);
+    if (affiliations.length > 1) {
+      return `<ul class="people-profile-spec-list">${affiliations
+        .map((item) => `<li>${escapeHtml(item)}</li>`)
+        .join('')}</ul>`;
+    }
+    if (affiliations.length === 1) {
+      return `<p>${escapeHtml(affiliations[0])}</p>`;
+    }
+    if (person.affiliationDisplay || person.affiliation) {
+      const text = person.affiliationDisplay || person.affiliation;
       return `<p>${escapeHtml(text)}</p>`;
     }
     if (!person.published) return pending('To be added');
@@ -97,6 +106,16 @@
     return '';
   }
 
+  function buildQualificationsHtml(person) {
+    const qualifications = (person.qualifications || []).filter(Boolean);
+    if (!qualifications.length) return '';
+    return `
+      <h2 class="people-profile-spec-label" id="profile-qualifications-heading">Qualifications</h2>
+      <ul class="people-profile-qualifications-list">
+        ${qualifications.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
+      </ul>`;
+  }
+
   function buildLinksHtml(person) {
     const links = (person.links || []).filter((link) => link && link.url);
     if (person.linkedin) links.push({ label: 'LinkedIn', url: person.linkedin });
@@ -119,16 +138,16 @@
     return [
       renderSpecField(
         1,
-        'Professional title and publication name',
+        'Professional Title and Publication Name',
         publication ? `<p>${escapeHtml(publication)}</p>` : pending('To be added')
       ),
       renderSpecField(
         2,
-        'SAFI role',
+        'SAFI Role',
         safiRole ? `<p>${escapeHtml(safiRole)}</p>` : pending('To be added')
       ),
-      renderSpecField(3, 'Formal appointment', buildFormalAppointmentHtml(person) || pending('To be added')),
-      renderSpecField(4, 'Affiliation', buildAffiliationHtml(person)),
+      renderSpecField(3, 'Formal Appointment', buildFormalAppointmentHtml(person) || pending('To be added')),
+      renderSpecField(4, 'Affiliations', buildAffiliationHtml(person)),
       renderSpecField(5, 'Biography', buildBioHtml(person) || pending('To be added')),
       renderSpecField(
         6,
@@ -160,6 +179,18 @@
   }
 
   document.getElementById('profile-name').textContent = publicName;
+
+  const qualificationsEl = document.getElementById('profile-qualifications');
+  const qualificationsHtml = buildQualificationsHtml(person);
+  if (qualificationsEl) {
+    if (qualificationsHtml) {
+      qualificationsEl.innerHTML = qualificationsHtml;
+      qualificationsEl.hidden = false;
+    } else {
+      qualificationsEl.innerHTML = '';
+      qualificationsEl.hidden = true;
+    }
+  }
 
   const roleBanner = document.getElementById('profile-role-banner');
   const bannerText = person.profileRoleBanner || person.role || '';
