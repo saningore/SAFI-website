@@ -1738,6 +1738,18 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
   margin: 0 0 0.25rem;
   text-align: left;
 }
+.people-profile-title-block {
+  margin: 0.75rem 0 0;
+}
+.people-profile-title-block .people-profile-spec-label {
+  margin-bottom: 0.35rem;
+}
+.people-profile-title-block .people-profile-spec-value {
+  margin: 0;
+}
+.people-profile-title-block .people-profile-spec-value p {
+  margin: 0;
+}
 .people-profile-qualifications {
   margin: 0.85rem 0 0;
 }

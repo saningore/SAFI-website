@@ -106,6 +106,14 @@
     return '';
   }
 
+  function buildTitleBlockHtml(person) {
+    const publication = buildPublicationTitle(person);
+    if (!publication) return '';
+    return `
+      <h2 class="people-profile-spec-label" id="profile-title-heading">Professional Title and Publication Name</h2>
+      <div class="people-profile-spec-value"><p>${escapeHtml(publication)}</p></div>`;
+  }
+
   function buildQualificationsHtml(person) {
     const qualifications = (person.qualifications || []).filter(Boolean);
     if (!qualifications.length) return '';
@@ -132,29 +140,23 @@
   }
 
   function buildSpecFields(person) {
-    const publication = buildPublicationTitle(person);
     const safiRole = buildSafiRole(person);
 
     return [
       renderSpecField(
         1,
-        'Professional Title and Publication Name',
-        publication ? `<p>${escapeHtml(publication)}</p>` : pending('To be added')
-      ),
-      renderSpecField(
-        2,
         'SAFI Role',
         safiRole ? `<p>${escapeHtml(safiRole)}</p>` : pending('To be added')
       ),
-      renderSpecField(3, 'Formal Appointment', buildFormalAppointmentHtml(person) || pending('To be added')),
-      renderSpecField(4, 'Affiliations', buildAffiliationHtml(person)),
-      renderSpecField(5, 'Biography', buildBioHtml(person) || pending('To be added')),
+      renderSpecField(2, 'Other Appointment(s)', buildFormalAppointmentHtml(person) || pending('To be added')),
+      renderSpecField(3, 'Affiliations', buildAffiliationHtml(person)),
+      renderSpecField(4, 'Biography', buildBioHtml(person) || pending('To be added')),
       renderSpecField(
-        6,
+        5,
         'Specialisms',
         buildSpecialismsHtml(person) || pending('To be added.')
       ),
-      renderSpecField(7, 'Links', buildLinksHtml(person)),
+      renderSpecField(6, 'Links', buildLinksHtml(person)),
     ];
   }
 
@@ -179,6 +181,18 @@
   }
 
   document.getElementById('profile-name').textContent = publicName;
+
+  const titleBlockEl = document.getElementById('profile-title-block');
+  const titleBlockHtml = buildTitleBlockHtml(person);
+  if (titleBlockEl) {
+    if (titleBlockHtml) {
+      titleBlockEl.innerHTML = titleBlockHtml;
+      titleBlockEl.hidden = false;
+    } else {
+      titleBlockEl.innerHTML = '';
+      titleBlockEl.hidden = true;
+    }
+  }
 
   const qualificationsEl = document.getElementById('profile-qualifications');
   const qualificationsHtml = buildQualificationsHtml(person);
@@ -209,9 +223,9 @@
   }
 
   const specFields = buildSpecFields(person);
-  document.getElementById('profile-spec-primary').innerHTML = specFields.slice(0, 4).join('');
-  document.getElementById('profile-spec-bio').innerHTML = specFields[4] || '';
-  document.getElementById('profile-spec-secondary').innerHTML = specFields.slice(5).join('');
+  document.getElementById('profile-spec-primary').innerHTML = specFields.slice(0, 3).join('');
+  document.getElementById('profile-spec-bio').innerHTML = specFields[3] || '';
+  document.getElementById('profile-spec-secondary').innerHTML = specFields.slice(4).join('');
 
   root.hidden = false;
 })();

@@ -165,6 +165,8 @@
       {
         id: 'john-azaare',
         name: 'Dr. John Azaare',
+        displayName: 'Dr John Azaare',
+        profileRoleBanner: 'Director: Savanna Health Innovation',
         role: 'Director of Savanna Health Innovation Futures',
         appointment: 'Research',
         tier: 'directors',
@@ -173,11 +175,22 @@
         centre: 'health',
         phone: '+233 20 138 9664',
         email: '',
-        affiliation: '',
+        affiliation: 'University of Ghana, Legon',
+        affiliationDisplay: 'University of Ghana, Legon',
+        affiliations: ['University of Ghana, Legon'],
+        qualifications: [
+          'PhD in Public Health (Health Systems and Policy Management), University of Ghana, Legon, Ghana',
+          'MPhil in Health Services Administration',
+          'BSc Hons in Nursing',
+          'RN Diploma (Distinction), University of Ghana, Legon, Accra',
+          'Certificate in Healthcare Leadership and Management, Ghana Institute of Management and Public Administration (GIMPA), Legon, Accra',
+          'RGN (Diploma), Presbyterian College of Nursing and Midwifery',
+        ],
         specialisms: [],
         links: [],
         photo: 'assets/images/people/john-azaare.jpg',
         bio: [],
+        published: true,
         order: 1,
       },
       {
@@ -325,8 +338,13 @@
         phone: '',
         email: '',
         affiliation: 'University of Education, Winneba',
-        affiliationDisplay:
-          'Lecturer — University of Education, Winneba; PhD Candidate in Ghanaian Language Studies (Kusaal Education)',
+        affiliationDisplay: 'Lecturer — University of Education, Winneba',
+        affiliations: ['University of Education, Winneba'],
+        qualifications: [
+          'PhD (ongoing) in Ghanaian Language Studies (Kusaal Education), University of Education, Winneba, Ghana',
+          'MPhil (with Thesis) in Ghanaian Language Studies (Kusaal Education with Linguistics), University of Education, Winneba, Ghana',
+          'B.A. in Ghanaian Language Studies (Kusaal Education with German Studies), University of Education, Winneba, Ghana',
+        ],
         specialisms: [
           'Kusaal linguistics, dialectology and translation',
           'Indigenous knowledge, culture and literature',
