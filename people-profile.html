@@ -6,36 +6,31 @@
   <meta name="description" content="Profile — The Savannah Futures Institute">
   <title>Profile | The Savannah Futures Institute</title>
   <link rel="icon" href="assets/images/safi-logo.png" type="image/png">
-  <link rel="stylesheet" href="css/styles.css?v=body-justify-2026">
+  <link rel="stylesheet" href="css/styles.css?v=profile-cv-2026">
 </head>
 <body class="inner-page people-profile-page">
   <div id="site-header"></div>
   <main id="main">
     <div id="people-profile-root" hidden>
-      <section class="people-profile-hero people-profile-spec-hero">
+      <section class="people-profile-hero people-profile-cv-hero">
         <div class="container">
           <nav class="breadcrumbs breadcrumbs--light" aria-label="Breadcrumb"><a href="index.html">Home</a> <span>&rsaquo;</span> <a href="people.html#listing">People</a></nav>
-          <div class="people-profile-layout">
-            <div class="people-profile-layout-intro">
-              <h1 class="people-profile-layout-name" id="profile-name"></h1>
-              <div class="people-profile-title-block" id="profile-title-block" hidden></div>
-              <div class="people-profile-qualifications" id="profile-qualifications" hidden></div>
+          <div class="people-profile-cv-layout">
+            <div class="people-profile-cv-main">
+              <header class="people-profile-cv-intro">
+                <h1 class="people-profile-cv-name" id="profile-name"></h1>
+                <p class="people-profile-cv-tagline" id="profile-tagline" hidden></p>
+                <p class="people-profile-cv-roleline" id="profile-roleline" hidden></p>
+              </header>
+              <div class="people-profile-cv-content" id="profile-content" aria-label="Profile details"></div>
             </div>
-            <aside class="people-profile-layout-aside" aria-label="Portrait">
+            <aside class="people-profile-cv-aside" aria-label="Portrait">
               <div class="people-profile-photo-stack">
                 <div class="people-profile-photo people-profile-photo--spec" id="profile-photo"></div>
                 <p class="people-profile-role-banner" id="profile-role-banner"></p>
               </div>
             </aside>
-            <div class="people-profile-spec-primary" id="profile-spec-primary" aria-label="Appointment details"></div>
-            <div class="people-profile-spec-bio" id="profile-spec-bio" aria-label="Biography"></div>
           </div>
-        </div>
-      </section>
-
-      <section class="section people-profile-spec-body">
-        <div class="container">
-          <div class="people-profile-spec-secondary" id="profile-spec-secondary" aria-label="Biography and links"></div>
           <p class="people-profile-back"><a href="people.html#listing">&larr; Back to people</a></p>
         </div>
       </section>
@@ -53,9 +48,9 @@
   </main>
   <div id="site-footer"></div>
   <script src="js/layout.js" data-page="about-people"></script>
-  <script src="js/people-data.js?v=photos-grey-bg"></script>
+  <script src="js/people-data.js?v=profile-cv-2026"></script>
   <script src="js/people-utils.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/people-profile.js"></script>
+  <script src="js/people-profile.js?v=profile-cv-2026"></script>
 </body>
 </html>

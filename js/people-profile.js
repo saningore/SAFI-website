@@ -2,7 +2,7 @@
   'use strict';
 
   const LINKS_PENDING =
-    'Optional institutional profile, ORCID and LinkedIn links to be supplied.';
+    'Institutional profile, ORCID and LinkedIn links to be added when supplied.';
 
   const data = window.SAFI_PEOPLE_DATA || { people: [] };
 
@@ -12,6 +12,7 @@
     }
     return person.profileHeadline || person.name;
   }
+
   const params = new URLSearchParams(window.location.search);
   const id = params.get('id');
   const root = document.getElementById('people-profile-root');
@@ -32,96 +33,163 @@
     return `<p class="people-field-pending">${escapeHtml(text)}</p>`;
   }
 
-  function renderSpecField(number, label, bodyHtml) {
+  function renderSection(id, label, bodyHtml) {
+    if (!bodyHtml) return '';
     return `
-      <section class="people-profile-spec-field" aria-labelledby="profile-field-${number}">
-        <h2 class="people-profile-spec-label" id="profile-field-${number}">${escapeHtml(label)}</h2>
-        <div class="people-profile-spec-value">${bodyHtml}</div>
+      <section class="people-profile-cv-section" aria-labelledby="profile-section-${id}">
+        <h2 class="people-profile-cv-heading" id="profile-section-${id}">${escapeHtml(label)}</h2>
+        <div class="people-profile-cv-section-body">${bodyHtml}</div>
       </section>`;
   }
 
-  function buildPublicationTitle(person) {
-    if (person.publicationTitle) return person.publicationTitle;
-    if (person.professionalTitle) return `${person.name} — ${person.professionalTitle}`;
-    return person.name || '';
+  function renderSubheading(text) {
+    return `<h3 class="people-profile-cv-subheading">${escapeHtml(text)}</h3>`;
   }
 
-  function buildSafiRole(person) {
-    if (person.safiRole) return person.safiRole;
-    return [person.role, ...(person.secondaryRoles || [])].filter(Boolean).join('; ');
+  function buildListHtml(items, className) {
+    const cleaned = (items || []).filter(Boolean);
+    if (!cleaned.length) return '';
+    return `<ul class="${className}">${cleaned
+      .map((item) => `<li>${escapeHtml(item)}</li>`)
+      .join('')}</ul>`;
   }
 
-  function buildFormalAppointmentHtml(person) {
-    const items = (person.appointments || []).filter((item) => item && item.text);
-    if (items.length) {
-      return items
-        .map((item) => {
-          if (!item.label) return `<p class="people-profile-appointment-line">${escapeHtml(item.text)}</p>`;
-          return `<p class="people-profile-appointment-line"><strong>${escapeHtml(item.label)}:</strong> ${escapeHtml(item.text)}</p>`;
-        })
-        .join('');
+  function buildTagline(person) {
+    if (person.professionalTagline) return person.professionalTagline;
+    if (person.professionalTitle) {
+      return String(person.professionalTitle)
+        .replace(/;\s*/g, ' | ')
+        .replace(/\s+and\s+/gi, ' | ');
     }
-    if (person.formalAppointment) {
-      return `<p>${escapeHtml(person.formalAppointment)}</p>`;
-    }
-    if (!person.published) return pending('To be added');
     return '';
   }
 
-  function buildAffiliationHtml(person) {
-    const affiliations = (person.affiliations || []).filter(Boolean);
-    if (affiliations.length > 1) {
-      return `<ul class="people-profile-spec-list">${affiliations
-        .map((item) => `<li>${escapeHtml(item)}</li>`)
-        .join('')}</ul>`;
+  function buildRoleLine(person) {
+    if (person.roleLine) return person.roleLine;
+    const parts = [person.role, ...(person.secondaryRoles || [])].filter(Boolean);
+    if (parts.length) return parts.join(' | ');
+    if (person.safiRole) {
+      const firstSentence = String(person.safiRole).split('.')[0].trim();
+      return firstSentence || person.safiRole;
     }
-    if (affiliations.length === 1) {
-      return `<p>${escapeHtml(affiliations[0])}</p>`;
-    }
-    if (person.affiliationDisplay || person.affiliation) {
-      const text = person.affiliationDisplay || person.affiliation;
-      return `<p>${escapeHtml(text)}</p>`;
-    }
-    if (!person.published) return pending('To be added');
-    return pending('To be added');
+    return '';
+  }
+
+  function buildQualificationsHtml(person) {
+    return buildListHtml(person.qualifications, 'people-profile-cv-list');
   }
 
   function buildBioHtml(person) {
-    const paragraphs = person.bio || [];
-    if (paragraphs.length) {
-      return paragraphs.map((t) => `<p>${escapeHtml(t)}</p>`).join('');
-    }
-    if (!person.published) return pending('Biography will be added when approved for publication.');
-    return '';
+    const paragraphs = (person.bio || []).filter(Boolean);
+    if (!paragraphs.length) return '';
+    return paragraphs.map((t) => `<p>${escapeHtml(t)}</p>`).join('');
   }
 
   function buildSpecialismsHtml(person) {
     const specialisms = person.specialisms || [];
-    if (specialisms.length) {
-      return `<ul class="people-profile-spec-list">${specialisms
-        .map((t) => `<li>${escapeHtml(t)}</li>`)
+    if (!specialisms.length) return '';
+
+    return `<ul class="people-profile-cv-list people-profile-cv-specialisms">${specialisms
+      .map((item) => {
+        if (item && typeof item === 'object') {
+          const title = item.title || '';
+          const detail = item.detail || item.text || '';
+          if (title && detail) {
+            return `<li><strong>${escapeHtml(title)}:</strong> ${escapeHtml(detail)}</li>`;
+          }
+          return `<li>${escapeHtml(title || detail)}</li>`;
+        }
+        return `<li>${escapeHtml(item)}</li>`;
+      })
+      .join('')}</ul>`;
+  }
+
+  function buildCurrentAppointmentsHtml(person) {
+    const items = (person.currentAppointments || person.appointments || []).filter(
+      (item) => item && (item.text || typeof item === 'string')
+    );
+
+    if (items.length) {
+      return `<ul class="people-profile-cv-list">${items
+        .map((item) => {
+          if (typeof item === 'string') return `<li>${escapeHtml(item)}</li>`;
+          if (!item.label) return `<li>${escapeHtml(item.text)}</li>`;
+          return `<li><strong>${escapeHtml(item.label)}:</strong> ${escapeHtml(item.text)}</li>`;
+        })
         .join('')}</ul>`;
     }
-    if (!person.published) return pending('To be added.');
+
+    if (person.formalAppointment) {
+      return `<p>${escapeHtml(person.formalAppointment)}</p>`;
+    }
+
+    if (person.safiRole) {
+      return `<p>${escapeHtml(person.safiRole)}</p>`;
+    }
+
     return '';
   }
 
-  function buildTitleBlockHtml(person) {
-    const publication = buildPublicationTitle(person);
-    if (!publication) return '';
+  function buildPreviousAppointmentsHtml(person) {
+    const rows = (person.previousAppointments || []).filter(
+      (row) => row && (row.period || row.appointment)
+    );
+    if (!rows.length) return '';
+
     return `
-      <h2 class="people-profile-spec-label" id="profile-title-heading">Professional Title and Publication Name</h2>
-      <div class="people-profile-spec-value"><p>${escapeHtml(publication)}</p></div>`;
+      <div class="people-profile-cv-table-wrap">
+        <table class="people-profile-cv-table">
+          <thead>
+            <tr>
+              <th scope="col">Period</th>
+              <th scope="col">Appointment and Institution</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows
+              .map(
+                (row) => `
+              <tr>
+                <th scope="row">${escapeHtml(row.period || '')}</th>
+                <td>${escapeHtml(row.appointment || '')}</td>
+              </tr>`
+              )
+              .join('')}
+          </tbody>
+        </table>
+      </div>`;
   }
 
-  function buildQualificationsHtml(person) {
-    const qualifications = (person.qualifications || []).filter(Boolean);
-    if (!qualifications.length) return '';
-    return `
-      <h2 class="people-profile-spec-label" id="profile-qualifications-heading">Qualifications</h2>
-      <ul class="people-profile-qualifications-list">
-        ${qualifications.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
-      </ul>`;
+  function buildFormalAppointmentsHtml(person) {
+    const currentHtml = buildCurrentAppointmentsHtml(person);
+    const previousHtml = buildPreviousAppointmentsHtml(person);
+    if (!currentHtml && !previousHtml) return '';
+
+    let html = '';
+    if (currentHtml) {
+      html += renderSubheading('Current SAFI Appointments');
+      html += currentHtml;
+    }
+    if (previousHtml) {
+      html += renderSubheading('Previous Professional Appointments');
+      html += previousHtml;
+    }
+    return html;
+  }
+
+  function buildRecognitionHtml(person) {
+    return buildListHtml(person.recognition, 'people-profile-cv-list');
+  }
+
+  function buildAffiliationHtml(person) {
+    const affiliations = (person.affiliations || []).filter(Boolean);
+    if (affiliations.length) {
+      return buildListHtml(affiliations, 'people-profile-cv-list');
+    }
+    if (person.affiliationDisplay || person.affiliation) {
+      return `<p>${escapeHtml(person.affiliationDisplay || person.affiliation)}</p>`;
+    }
+    return '';
   }
 
   function buildLinksHtml(person) {
@@ -136,28 +204,25 @@
         )
         .join('')}</ul>`;
     }
-    return `<p class="people-field-pending">${escapeHtml(LINKS_PENDING)}</p>`;
+    return pending(person.linksNote || LINKS_PENDING);
   }
 
-  function buildSpecFields(person) {
-    const safiRole = buildSafiRole(person);
-
+  function buildContentHtml(person) {
     return [
-      renderSpecField(
-        1,
-        'SAFI Role',
-        safiRole ? `<p>${escapeHtml(safiRole)}</p>` : pending('To be added')
+      renderSection('qualifications', 'Qualifications', buildQualificationsHtml(person)),
+      renderSection('biography', 'Biography', buildBioHtml(person)),
+      renderSection('specialisms', 'Specialisms', buildSpecialismsHtml(person)),
+      renderSection('appointments', 'Formal Appointments', buildFormalAppointmentsHtml(person)),
+      renderSection(
+        'recognition',
+        'Selected Professional Recognition',
+        buildRecognitionHtml(person)
       ),
-      renderSpecField(2, 'Other Appointment(s)', buildFormalAppointmentHtml(person) || pending('To be added')),
-      renderSpecField(3, 'Affiliations', buildAffiliationHtml(person)),
-      renderSpecField(4, 'Biography', buildBioHtml(person) || pending('To be added')),
-      renderSpecField(
-        5,
-        'Specialisms',
-        buildSpecialismsHtml(person) || pending('To be added.')
-      ),
-      renderSpecField(6, 'Links', buildLinksHtml(person)),
-    ];
+      renderSection('affiliations', 'Affiliations', buildAffiliationHtml(person)),
+      renderSection('links', 'Professional Links', buildLinksHtml(person)),
+    ]
+      .filter(Boolean)
+      .join('');
   }
 
   if (!id || !root) {
@@ -182,28 +247,22 @@
 
   document.getElementById('profile-name').textContent = publicName;
 
-  const titleBlockEl = document.getElementById('profile-title-block');
-  const titleBlockHtml = buildTitleBlockHtml(person);
-  if (titleBlockEl) {
-    if (titleBlockHtml) {
-      titleBlockEl.innerHTML = titleBlockHtml;
-      titleBlockEl.hidden = false;
-    } else {
-      titleBlockEl.innerHTML = '';
-      titleBlockEl.hidden = true;
-    }
+  const taglineEl = document.getElementById('profile-tagline');
+  const tagline = buildTagline(person);
+  if (tagline) {
+    taglineEl.textContent = tagline;
+    taglineEl.hidden = false;
+  } else {
+    taglineEl.hidden = true;
   }
 
-  const qualificationsEl = document.getElementById('profile-qualifications');
-  const qualificationsHtml = buildQualificationsHtml(person);
-  if (qualificationsEl) {
-    if (qualificationsHtml) {
-      qualificationsEl.innerHTML = qualificationsHtml;
-      qualificationsEl.hidden = false;
-    } else {
-      qualificationsEl.innerHTML = '';
-      qualificationsEl.hidden = true;
-    }
+  const roleLineEl = document.getElementById('profile-roleline');
+  const roleLine = buildRoleLine(person);
+  if (roleLine) {
+    roleLineEl.textContent = roleLine;
+    roleLineEl.hidden = false;
+  } else {
+    roleLineEl.hidden = true;
   }
 
   const roleBanner = document.getElementById('profile-role-banner');
@@ -222,10 +281,7 @@
     photoEl.innerHTML = `<span class="people-avatar-placeholder">${PLACEHOLDER_SVG}</span>`;
   }
 
-  const specFields = buildSpecFields(person);
-  document.getElementById('profile-spec-primary').innerHTML = specFields.slice(0, 3).join('');
-  document.getElementById('profile-spec-bio').innerHTML = specFields[3] || '';
-  document.getElementById('profile-spec-secondary').innerHTML = specFields.slice(4).join('');
-
+  document.getElementById('profile-content').innerHTML = buildContentHtml(person);
+  if (missing) missing.hidden = true;
   root.hidden = false;
 })();

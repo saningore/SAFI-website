@@ -1692,7 +1692,7 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
 .people-profile-bio p { color: var(--color-text-muted); line-height: 1.75; margin-bottom: 1.25rem; }
 .people-profile-back { margin-top: 2rem; }
 
-/* People profile — spec layout (fields 1–5 left, portrait right) */
+/* People profile — CV layout matching updated profile documents */
 .people-profile-page {
   font-size: 1.125rem;
 }
@@ -1703,109 +1703,59 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
   background: transparent;
   border-bottom: none;
 }
-.people-profile-page .people-profile-spec-body {
-  background: transparent;
-  padding-top: 1.25rem;
+.people-profile-cv-hero {
+  padding-bottom: 3rem;
 }
-.people-profile-spec-hero {
-  padding-bottom: 1rem;
-}
-.people-profile-spec-hero .breadcrumbs {
+.people-profile-cv-hero .breadcrumbs {
   margin-bottom: 1.25rem;
   font-size: 0.875rem;
 }
-.people-profile-layout {
+.people-profile-cv-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(168px, 220px);
-  grid-template-areas:
-    "profile-name profile-photo"
-    "profile-fields profile-photo"
-    "profile-bio profile-bio";
   column-gap: 2.75rem;
-  row-gap: 0.85rem;
+  row-gap: 1.25rem;
   align-items: start;
 }
-.people-profile-layout-intro {
-  grid-area: profile-name;
+.people-profile-cv-main {
   min-width: 0;
 }
-.people-profile-layout-name {
+.people-profile-cv-intro {
+  min-width: 0;
+  padding-top: 0.15rem;
+  margin-bottom: 1.35rem;
+}
+.people-profile-cv-name {
   font-family: var(--font-display);
   font-size: clamp(1.9rem, 3.8vw, 2.55rem);
   font-weight: 700;
   line-height: 1.12;
   color: var(--color-primary-dark);
-  margin: 0 0 0.25rem;
+  margin: 0 0 0.55rem;
   text-align: left;
 }
-.people-profile-title-block {
-  margin: 0.75rem 0 0;
-}
-.people-profile-title-block .people-profile-spec-label {
-  margin-bottom: 0.35rem;
-}
-.people-profile-title-block .people-profile-spec-value {
-  margin: 0;
-}
-.people-profile-title-block .people-profile-spec-value p {
-  margin: 0;
-}
-.people-profile-qualifications {
-  margin: 0.85rem 0 0;
-}
-.people-profile-qualifications .people-profile-spec-label {
-  margin-bottom: 0.45rem;
-}
-.people-profile-qualifications-list {
-  margin: 0;
-  padding: 0 0 0 1.15rem;
-  list-style: disc;
-}
-.people-profile-qualifications-list li {
-  margin: 0 0 0.4rem;
-  font-size: 1.0625rem;
-  line-height: 1.55;
+.people-profile-cv-tagline {
+  margin: 0 0 0.45rem;
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-weight: 600;
+  line-height: 1.45;
   color: var(--color-text);
+  text-align: left;
 }
-.people-profile-qualifications-list li:last-child {
-  margin-bottom: 0;
+.people-profile-cv-roleline {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  text-align: left;
 }
-.people-profile-spec-primary {
-  grid-area: profile-fields;
-  padding-top: 0.15rem;
-}
-.people-profile-spec-primary .people-profile-spec-field:first-child {
-  margin-top: 0;
-}
-.people-profile-spec-bio {
-  grid-area: profile-bio;
-  grid-column: 1 / -1;
-  width: 100%;
-  min-width: 0;
-  padding-top: 1rem;
-}
-.people-profile-spec-bio .people-profile-spec-field {
-  width: 100%;
-  max-width: none;
-  margin-bottom: 0;
-}
-.people-profile-spec-bio .people-profile-spec-value {
-  width: 100%;
-  max-width: none;
-}
-.people-profile-page .people-profile-spec-hero .people-profile-spec-value p {
-  text-align: justify;
-  text-justify: inter-word;
-  hyphens: manual;
-  text-wrap: wrap;
-  width: 100%;
-  max-width: none;
-}
-.people-profile-layout-aside {
-  grid-area: profile-photo;
+.people-profile-cv-aside {
   justify-self: end;
   width: 100%;
   max-width: 220px;
+  position: sticky;
+  top: calc(var(--header-height) + 1rem);
 }
 .people-profile-photo-stack {
   display: flex;
@@ -1819,7 +1769,7 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
   padding: 0;
   text-align: center;
   font-family: var(--font-display);
-  font-size: clamp(1.125rem, 2vw, 1.3125rem);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
   font-weight: 700;
   color: var(--color-text);
   line-height: 1.3;
@@ -1836,68 +1786,104 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
 .people-profile-photo--spec img {
   object-position: center 15%;
 }
-.people-profile-spec-primary .people-profile-spec-field {
-  margin-bottom: 1.15rem;
-}
-.people-profile-spec-primary .people-profile-spec-field:last-child {
-  margin-bottom: 0;
-}
-.people-profile-spec-body {
-  padding-top: 0;
-  padding-bottom: 3rem;
-}
-.people-profile-spec-secondary {
+.people-profile-cv-content {
   max-width: none;
-  width: 100%;
 }
-.people-profile-spec-field {
-  margin-bottom: 1.5rem;
+.people-profile-page .people-profile-back {
+  margin-top: 2rem;
 }
-.people-profile-spec-field:last-child {
+.people-profile-cv-section {
+  margin-bottom: 1.85rem;
+}
+.people-profile-cv-section:last-child {
   margin-bottom: 0;
 }
-.people-profile-spec-label {
+.people-profile-cv-heading {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-primary-dark);
+  margin: 0 0 0.65rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid rgba(40, 92, 69, 0.18);
+}
+.people-profile-cv-subheading {
   font-family: var(--font-body);
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
   font-weight: 700;
   line-height: 1.35;
-  letter-spacing: 0;
-  text-transform: none;
   color: var(--color-primary-dark);
-  margin: 0 0 0.35rem;
+  margin: 1.1rem 0 0.55rem;
 }
-.people-profile-spec-value {
-  font-size: 1.125rem;
-  line-height: 1.68;
+.people-profile-cv-section-body > .people-profile-cv-subheading:first-child {
+  margin-top: 0;
+}
+.people-profile-cv-section-body p {
+  margin: 0 0 0.95rem;
   color: var(--color-text);
+  font-size: 1.0625rem;
+  line-height: 1.75;
 }
-.people-profile-spec-value p {
-  margin: 0 0 0.65rem;
-  color: var(--color-text);
-}
-.people-profile-spec-value p:last-child {
+.people-profile-cv-section-body p:last-child {
   margin-bottom: 0;
 }
-.people-profile-appointment-line strong {
+.people-profile-cv-list {
+  margin: 0;
+  padding: 0 0 0 1.2rem;
+  list-style: disc;
+}
+.people-profile-cv-list li {
+  margin: 0 0 0.45rem;
+  padding: 0;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+.people-profile-cv-list li:last-child {
+  margin-bottom: 0;
+}
+.people-profile-cv-list strong {
   font-weight: 700;
   color: var(--color-primary-dark);
 }
-.people-profile-spec-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.people-profile-cv-table-wrap {
   width: 100%;
+  overflow-x: auto;
+  margin-top: 0.25rem;
+  border: 1px solid rgba(40, 92, 69, 0.14);
+  border-radius: var(--radius);
+  background: var(--color-surface);
 }
-.people-profile-spec-list li {
-  margin-bottom: 0.35rem;
-  padding: 0;
-  text-align: justify;
-  text-justify: inter-word;
-  hyphens: manual;
+.people-profile-cv-table {
   width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9875rem;
+  line-height: 1.5;
 }
-.people-profile-spec-list li:last-child {
-  margin-bottom: 0;
+.people-profile-cv-table th,
+.people-profile-cv-table td {
+  padding: 0.7rem 0.9rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(40, 92, 69, 0.1);
+}
+.people-profile-cv-table thead th {
+  background: rgba(40, 92, 69, 0.07);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.people-profile-cv-table tbody th {
+  width: 8.5rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  white-space: nowrap;
+  background: rgba(247, 243, 234, 0.55);
+}
+.people-profile-cv-table tbody tr:last-child th,
+.people-profile-cv-table tbody tr:last-child td {
+  border-bottom: none;
 }
 .people-profile-link-list {
   list-style: none;
@@ -1914,16 +1900,22 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
 .people-profile-link-list a:hover {
   color: var(--color-primary-light);
 }
-#main .people-profile-spec-value p,
-#main .people-profile-spec-value li,
-#main .people-profile-appointment-line {
+#main .people-profile-cv-section-body p,
+#main .people-profile-cv-list li,
+#main .people-profile-cv-table td {
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
   text-wrap: normal;
   max-width: none;
 }
-#main .people-profile-layout-name {
+#main .people-profile-cv-name,
+#main .people-profile-cv-tagline,
+#main .people-profile-cv-roleline,
+#main .people-profile-cv-heading,
+#main .people-profile-cv-subheading,
+#main .people-profile-cv-table thead th,
+#main .people-profile-cv-table tbody th {
   text-align: left;
   text-justify: auto;
   hyphens: manual;
@@ -1933,32 +1925,46 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
   text-justify: auto;
   hyphens: manual;
 }
-#main .people-profile-spec-value .people-field-pending {
+#main .people-profile-cv-section-body .people-field-pending {
   text-align: start;
   color: var(--color-text-muted);
   font-weight: 500;
 }
 
 @media (max-width: 860px) {
-  .people-profile-layout {
+  .people-profile-cv-layout {
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "profile-name"
-      "profile-photo"
-      "profile-fields"
-      "profile-bio";
-    gap: 0;
+    justify-items: center;
+    text-align: center;
   }
-  .people-profile-layout-aside {
+  .people-profile-cv-main {
+    width: 100%;
+    display: contents;
+  }
+  .people-profile-cv-intro {
+    width: 100%;
+    order: 1;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  .people-profile-cv-aside {
+    order: 2;
     justify-self: center;
-    margin: 0.75rem 0 1.25rem;
+    position: static;
+    margin: 0.35rem 0 1rem;
   }
-  .people-profile-layout-name {
-    margin-bottom: 0.75rem;
+  .people-profile-cv-content {
+    order: 3;
+    width: 100%;
+    text-align: left;
   }
-  .people-profile-spec-primary {
-    padding-top: 1rem;
-    margin-top: 0.25rem;
+  .people-profile-cv-name,
+  .people-profile-cv-tagline,
+  .people-profile-cv-roleline {
+    text-align: center;
+  }
+  .people-profile-page .people-profile-back {
+    order: 4;
   }
 }
 
@@ -2724,8 +2730,8 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
     text-justify: inter-word;
     hyphens: auto;
   }
-  .people-profile-page #main .people-profile-spec-value p,
-  .people-profile-page #main .people-profile-spec-value li {
+  .people-profile-page #main .people-profile-cv-section-body p,
+  .people-profile-page #main .people-profile-cv-list li {
     text-align: justify;
     text-justify: inter-word;
     hyphens: manual;
