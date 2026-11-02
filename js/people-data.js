@@ -282,17 +282,24 @@
       },
       {
         id: 'john-azaare',
-        name: 'Dr. John Azaare',
-        displayName: 'Dr John Azaare, PhD',
+        name: 'John Azaare',
+        displayName: 'John Azaare, PhD',
         profileRoleBanner: 'Director: Savanna Health Innovation',
-        professionalTagline: 'Director | Health Systems | Policy and Innovation',
+        fullName: 'John Azaare',
+        professionalTitle: 'Health systems researcher and policy analyst',
+        professionalTagline:
+          'Director | Health Systems Researcher | Policy Analyst',
         roleLine: 'Director of Savanna Health Innovation Futures, SAFI',
+        publicationTitle:
+          'John Azaare (PhD) — Health systems researcher and policy analyst',
         role: 'Director of Savanna Health Innovation Futures',
+        safiRole:
+          'Director of Savanna Health Innovation Futures. Oversees the team\u2019s implementation of population health research and innovation projects within a broader One Health framework.',
         appointment: 'Research',
         currentAppointments: [
           {
             label: 'Director of Savanna Health Innovation Futures',
-            text: 'Research and programme leadership for savanna health systems innovation.',
+            text: 'Oversees the team\u2019s implementation of population health research and innovation projects within a broader One Health framework.',
           },
         ],
         tier: 'directors',
@@ -301,35 +308,55 @@
         centre: 'health',
         phone: '+233 20 138 9664',
         email: '',
-        affiliation: 'University of Ghana, Legon',
-        affiliationDisplay: 'University of Ghana, Legon',
+        affiliation: 'University for Development Studies, Tamale, Ghana',
+        affiliationDisplay: 'University for Development Studies, Tamale, Ghana',
         affiliations: [
           'The Savannah Futures Institute (SAFI), Ghana.',
-          'University of Ghana, Legon',
+          'University for Development Studies, Tamale, Ghana',
         ],
         qualifications: [
           'PhD in Public Health (Health Systems and Policy Management), University of Ghana, Legon, Ghana',
-          'MPhil in Health Services Administration',
-          'BSc Hons in Nursing',
+          'MPhil in Health Services Administration, University of Ghana, Legon, Accra',
+          'BSc (Nursing), University of Cape Coast, Cape Coast',
           'RN Diploma (Distinction), University of Ghana, Legon, Accra',
           'Certificate in Healthcare Leadership and Management, Ghana Institute of Management and Public Administration (GIMPA), Legon, Accra',
           'RGN (Diploma), Presbyterian College of Nursing and Midwifery',
         ],
-        specialisms: [],
-        links: [],
+        specialisms: [
+          'Health policy analysis',
+          'Policy impact evaluation',
+          'Healthcare cost evaluation',
+          'Systematic review and meta-analysis',
+          'Maternal and child health research',
+        ],
+        links: [
+          {
+            label: 'ORCID 0000-0001-7167-8175',
+            url: 'https://orcid.org/0000-0001-7167-8175',
+          },
+        ],
         photo: 'assets/images/people/john-azaare.jpg',
-        bio: [],
+        bio: [
+          'Dr Azaare is an academic and a health systems and policy researcher with 15+ years of experience in health services and projects management and clinical care. He has consulted for and worked with development partners including the WHO, UNFPA, UNICEF, Ghana AIDS Commission, World Bank and Global Fund. He has authored and co-authored book chapters and articles in international journals and publishers. He\u2019s passionate about equity and access to healthcare and thus, one health and policy impact on population health.',
+        ],
         published: true,
         order: 1,
       },
       {
         id: 'desmond-bugbilla',
-        name: 'Dr. Desmond Bugbilla',
-        displayName: 'Desmond Bugbilla PhD',
+        name: 'Desmond Bugbilla',
+        displayName: 'Desmond Bugbilla, PhD',
         profileRoleBanner: 'Director: Peace and Borderlands',
-        professionalTagline: 'Director | Peace | Security and Borderlands',
+        fullName: 'Desmond Bugbilla',
+        professionalTitle: 'Customs Officer | Researcher | Strategy and Innovation',
+        professionalTagline:
+          'Director | Peace | Security and Borderlands',
         roleLine: 'Director of Peace, Security and Borderlands Futures, SAFI',
+        publicationTitle:
+          'Desmond Bugbilla (PhD) — Strategy and Innovation Management',
         role: 'Director of Peace, Security and Borderlands Futures',
+        safiRole:
+          'Director, Peace, Security and Borderlands. Bridges open innovation with practical challenges in security, peace and border management.',
         appointment: 'Research',
         currentAppointments: [
           {
@@ -343,12 +370,38 @@
         centre: 'peace',
         phone: '+233 20 856 7222',
         email: '',
-        affiliation: '',
-        affiliations: ['The Savannah Futures Institute (SAFI), Ghana.'],
-        specialisms: [],
+        affiliation:
+          'Kwame Nkrumah University of Science and Technology (KNUST); Ghana Institute of Management and Public Administration (GIMPA)',
+        affiliationDisplay:
+          'Lecturer, Kwame Nkrumah University of Science and Technology (KNUST) and Ghana Institute of Management and Public Administration (GIMPA)',
+        affiliations: [
+          'The Savannah Futures Institute (SAFI), Ghana.',
+          'Lecturer, Kwame Nkrumah University of Science and Technology (KNUST) and Ghana Institute of Management and Public Administration (GIMPA)',
+          'Chief Revenue Officer, Ghana Revenue Authority \u2014 Customs Division',
+        ],
+        qualifications: [
+          'PhD in Business Administration (Strategy and Innovation Management), Ghana Institute of Management and Public Administration (GIMPA)',
+          'MPhil in Business Consulting and Enterprise Risk Management, Kwame Nkrumah University of Science and Technology (KNUST)',
+          'BSc in Accounting, Ghana Institute of Management and Public Administration (GIMPA)',
+          'Certified Project Management Professional (PMP), Project Management Institute (PMI)',
+        ],
+        specialisms: [
+          'Strategy and Innovation Management',
+          'Security and Peace',
+          'International Trade and Risk Management',
+        ],
+        recognition: [
+          'Certified Project Management Professional (PMP), Project Management Institute (PMI).',
+          'Professional Member, Chartered Institute of Supply Chain Management\u2013Ghana (Subject Matter Expert \u2014 Port Operations).',
+          'Eminent Peace Ambassador, International Association of World Peace Advocates.',
+        ],
         links: [],
-        photo: '',
-        bio: [],
+        linksNote: 'Institutional profile, ORCID and LinkedIn links to be added when supplied.',
+        photo: 'assets/images/people/desmond-bugbilla.jpg',
+        bio: [
+          'Desmond Bugbilla, PhD, is a Customs Officer and a researcher with a doctorate in business administration specialising in Strategy and Innovation Management. His research borders on open innovation in the public sector. He applies these open innovation principles to building and strengthening institutional effectiveness in complex organisational environments. He also teaches internal security and border management, and international security and terrorism, at the Kwame Nkrumah University of Science and Technology, bridging open innovation with practical challenges in security, peace, and border management.',
+        ],
+        published: true,
         order: 2,
       },
       {
