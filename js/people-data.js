@@ -21,7 +21,7 @@
       {
         id: 'john-atibilla',
         name: 'Dr John M. Atibila',
-        displayName: 'Dr John M. Atibila, PhD',
+        displayName: 'John M. Atibila, PhD',
         profileRoleBanner: 'Executive Director',
         fullName: 'John Mbabugri Atibila',
         professionalTitle: 'Senior Fellow | Sustainability Strategist | Innovation and Impact Advisor',
@@ -337,7 +337,7 @@
         ],
         photo: 'assets/images/people/john-azaare.jpg',
         bio: [
-          'Dr Azaare is an academic and a health systems and policy researcher with 15+ years of experience in health services and projects management and clinical care. He has consulted for and worked with development partners including the WHO, UNFPA, UNICEF, Ghana AIDS Commission, World Bank and Global Fund. He has authored and co-authored book chapters and articles in international journals and publishers. He\u2019s passionate about equity and access to healthcare and thus, one health and policy impact on population health.',
+          'John Azaare is an academic and a health systems and policy researcher with 15+ years of experience in health services and projects management and clinical care. He has consulted for and worked with development partners including the WHO, UNFPA, UNICEF, Ghana AIDS Commission, World Bank and Global Fund. He has authored and co-authored book chapters and articles in international journals and publishers. He\u2019s passionate about equity and access to healthcare and thus, one health and policy impact on population health.',
         ],
         published: true,
         order: 1,
@@ -448,6 +448,12 @@
         affiliations: [
           'The Savannah Futures Institute (SAFI), Ghana.',
           'World Vision Ghana — Livelihood and Economic Development Officer.',
+        ],
+        qualifications: [
+          'PhD (ongoing) in Development Management and Governance, University of Business and Development Studies',
+          'MPhil in Environmental Management and Sustainability, University for Development Studies, Nyankpala',
+          'BA in Integrated Community Development, University for Development Studies, Wa',
+          'West Africa Senior School Certificate in Home Economics, Zuarungu Senior Secondary School',
         ],
         specialisms: [
           'Sustainable livelihoods, financial inclusion and inclusive markets',
@@ -577,7 +583,7 @@
         ],
         qualifications: [
           'PhD (ongoing) in Ghanaian Language Studies (Kusaal Education), University of Education, Winneba, Ghana',
-          'MPhil (with Thesis) in Ghanaian Language Studies (Kusaal Education with Linguistics), University of Education, Winneba, Ghana',
+          'MPhil in Ghanaian Language Studies (Kusaal Education with Linguistics), University of Education, Winneba, Ghana',
           'B.A. in Ghanaian Language Studies (Kusaal Education with German Studies), University of Education, Winneba, Ghana',
         ],
         specialisms: [
