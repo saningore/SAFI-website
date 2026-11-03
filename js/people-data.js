@@ -28,12 +28,12 @@
         professionalTagline:
           'Senior Fellow | Sustainability Strategist | Innovation and Impact Advisor',
         roleLine:
-          'Executive Director, SAFI | Acting Director, Climate, Environment and Landscapes',
+          'Executive Director, SAFI | Director, Climate, Environment and Landscapes',
         publicationTitle:
           'Dr John M. Atibila — Senior Fellow; Sustainability Strategist and Innovation and Impact Advisor',
         role: 'Executive Director',
-        safiRole: 'Executive Director; Acting Director, Climate, Environment and Landscapes.',
-        secondaryRoles: ['Acting Director, Climate, Environment and Landscapes'],
+        safiRole: 'Executive Director; Director, Climate, Environment and Landscapes.',
+        secondaryRoles: ['Director, Climate, Environment and Landscapes'],
         appointment: 'Executive',
         currentAppointments: [
           {
@@ -41,7 +41,7 @@
             text: 'Institutional leadership, strategic development, research direction and partnerships.',
           },
           {
-            label: 'Acting Director, Climate, Environment and Landscapes',
+            label: 'Director, Climate, Environment and Landscapes',
             text: 'Research and programme leadership.',
           },
           {
@@ -129,7 +129,7 @@
           'PhD in Environmental Sustainability (Science\u2013Policy\u2013Practice Linkages), University of Leeds, United Kingdom.',
           'MSc (Research) in Renewable Natural Resources Management (Agroecology, Agroforestry and Sustainable Agriculture), Kwame Nkrumah University of Science and Technology, Ghana.',
           'BSc (Honours) in Biology (Aquatic Ecology, Fisheries and Epidemiology), University of Cape Coast, Ghana.',
-          'Higher Education Diploma (Qualified Teacher Status, Secondary and Further Education), University of Cape Coast, Ghana.',
+          'Higher Education Diploma - Concurrently with the BSc Degree (Qualified Teacher Status, Secondary and Further Education), University of Cape Coast, Ghana.',
         ],
         specialisms: [
           {
@@ -453,7 +453,6 @@
           'PhD (ongoing) in Development Management and Governance, University of Business and Development Studies',
           'MPhil in Environmental Management and Sustainability, University for Development Studies, Nyankpala',
           'BA in Integrated Community Development, University for Development Studies, Wa',
-          'West Africa Senior School Certificate in Home Economics, Zuarungu Senior Secondary School',
         ],
         specialisms: [
           'Sustainable livelihoods, financial inclusion and inclusive markets',
@@ -473,7 +472,7 @@
         id: 'samuel-amidini-aningore',
         name: 'Samuel Amidini Aningore',
         displayName: 'Samuel Amidini Aningore',
-        profileRoleBanner: 'Head of IT and Digital Communications',
+        profileRoleBanner: 'Head IT and\nDigital Communications',
         fullName: 'Samuel Amidini Aningore',
         professionalTitle: 'Software Engineer',
         professionalTagline: 'Software Engineer | Digital Systems | Institutional Platforms',
@@ -504,7 +503,7 @@
           'Codyza — Team Leader Manager, Codyza Crew (remote)',
         ],
         qualifications: [
-          'MSc (with Thesis) in Computer Science, Ghana Communication Technology University (GCTU)',
+          'MSc (Research) in Computer Science, Ghana Communication Technology University (GCTU)',
           'BSc in Computer Engineering, Kwame Nkrumah University of Science and Technology (KNUST)',
         ],
         specialisms: [
@@ -525,7 +524,7 @@
         ],
         photo: 'assets/images/people/samuel-amidini-aningore.jpg',
         bio: [
-          'Samuel Amidini Aningore is a software engineer, digital systems specialist and technology leader with more than six years\u2019 experience designing, delivering and supporting production systems across enterprise and institutional settings. He holds a BSc in Computer Engineering from the Kwame Nkrumah University of Science and Technology (KNUST) and an MSc (with Thesis) in Computer Science from Ghana Communication Technology University (GCTU). His professional practice spans software architecture, web platforms, data systems, cloud and DevOps, and digital communications.',
+          'Samuel Amidini Aningore is a software engineer, digital systems specialist and technology leader with more than six years\u2019 experience designing, delivering and supporting production systems across enterprise and institutional settings. He holds a BSc in Computer Engineering from the Kwame Nkrumah University of Science and Technology (KNUST) and an MSc (Research) in Computer Science from Ghana Communication Technology University (GCTU). His professional practice spans software architecture, web platforms, data systems, cloud and DevOps, and digital communications.',
           'At Bista Solutions Limited, he contributes engineering expertise to enterprise software delivery. He also works remotely with Codyza as Team Leader Manager of the Codyza Crew, coordinating team members and leaders, providing guidance, and sustaining a productive environment for high-quality website and digital delivery.',
           'He has delivered enterprise applications in HR, finance and operations domains, mentored emerging engineers, and taught software engineering at tertiary level. At SAFI, as Head of IT and Digital Communications, he leads the Institute\u2019s technology infrastructure, digital platforms and communications systems that underpin research, programmes and institutional operations\u2014bringing together technical excellence, team leadership and a commitment to practical digital capability.',
         ],

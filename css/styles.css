@@ -523,7 +523,9 @@ ul { list-style: none; }
 .content-body .split-media--climate,
 .content-body .split-media--food,
 .content-body .split-media--peace,
-.content-body .split-media--knowledge {
+.content-body .split-media--knowledge,
+.content-body .split-media--platforms,
+.content-body .split-media--partnerships {
   margin: 0 0 2rem;
   max-width: none;
   width: 100%;
@@ -532,7 +534,9 @@ ul { list-style: none; }
 .content-body .split-media--climate img,
 .content-body .split-media--food img,
 .content-body .split-media--peace img,
-.content-body .split-media--knowledge img {
+.content-body .split-media--knowledge img,
+.content-body .split-media--platforms img,
+.content-body .split-media--partnerships img {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: center 42%;
@@ -548,6 +552,29 @@ ul { list-style: none; }
 }
 .content-body .split-media--knowledge img {
   object-position: center 48%;
+}
+.content-body .split-media--platforms img {
+  object-position: center 42%;
+}
+.topic-media-split .split-media--platforms-inline,
+.topic-media-split .split-media--partnerships-inline {
+  margin: 0;
+  width: 100%;
+  max-width: none;
+}
+.topic-media-split .split-media--platforms-inline img,
+.topic-media-split .split-media--partnerships-inline img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 42%;
+  box-shadow: var(--shadow);
+}
+.topic-media-split .split-media--platforms-inline figcaption,
+.topic-media-split .split-media--partnerships-inline figcaption {
+  margin-top: 0.65rem;
+}
+.content-body .split-media--partnerships img {
+  object-position: center 35%;
 }
 .topic-media-split-copy .topic-media-title {
   font-family: var(--font-display);
@@ -617,7 +644,7 @@ ul { list-style: none; }
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   gap: 1.75rem;
   align-items: start;
-  margin: 1rem 0 2rem;
+  margin: 1rem 0 1rem;
 }
 .topic-media-split .media-video--inline {
   margin: 0;
@@ -655,8 +682,18 @@ ul { list-style: none; }
   color: var(--color-accent);
   margin: 0 0 0.75rem;
 }
+.content-body .topic-media-split-copy h2 {
+  margin: 1.25rem 0 0.65rem;
+}
+.content-body .topic-media-split-copy h2:first-child {
+  margin-top: 0;
+}
 .topic-media-split-copy p {
   margin: 0 0 0.85rem;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 .topic-media-split-copy p:last-child {
   margin-bottom: 0;
@@ -730,6 +767,9 @@ ul { list-style: none; }
 }
 .content-body .split-media--climate + h2 {
   margin-top: 0.5rem;
+}
+.content-body .topic-media-split + h2 {
+  margin-top: 1.25rem;
 }
 #main .page-hero .lead {
   text-align: left;
@@ -1573,7 +1613,7 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
 }
 #main .people-card-appointment { font-size: 0.75rem; line-height: 1.4; margin-bottom: 0.45rem; }
 #main .people-card-contact { font-size: 0.8125rem; line-height: 1.5; margin-bottom: 0.15rem; }
-#main .people-profile-hero:not(.people-profile-spec-hero) p,
+#main .people-profile-hero:not(.people-profile-spec-hero) p:not(.people-profile-role-banner),
 #main .people-profile-contact li,
 #main .people-profile-appointment-list li,
 #main .people-profile-bio .people-field-pending {
@@ -1764,15 +1804,23 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
   width: 100%;
 }
 .people-profile-role-banner {
-  margin: 0.75rem 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.75rem auto 0;
   width: 100%;
+  max-width: 220px;
   padding: 0;
   text-align: center;
   font-family: var(--font-display);
-  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-size: clamp(0.95rem, 1.7vw, 1.1rem);
   font-weight: 700;
   color: var(--color-text);
   line-height: 1.3;
+}
+.people-profile-role-banner-line {
+  display: block;
+  white-space: nowrap;
 }
 .people-profile-photo.people-profile-photo--spec {
   width: 100%;
@@ -1900,30 +1948,36 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
 .people-profile-link-list a:hover {
   color: var(--color-primary-light);
 }
-#main .people-profile-cv-section-body p,
-#main .people-profile-cv-list li,
-#main .people-profile-cv-table td {
+.people-profile-page #main .people-profile-cv-section-body,
+.people-profile-page #main .people-profile-cv-section-body p,
+.people-profile-page #main .people-profile-cv-list li,
+.people-profile-page #main .people-profile-cv-table td,
+.people-profile-page #main .people-profile-bio p {
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
-  text-wrap: normal;
+  -webkit-hyphens: auto;
+  text-wrap: wrap;
   max-width: none;
 }
-#main .people-profile-cv-name,
-#main .people-profile-cv-tagline,
-#main .people-profile-cv-roleline,
-#main .people-profile-cv-heading,
-#main .people-profile-cv-subheading,
-#main .people-profile-cv-table thead th,
-#main .people-profile-cv-table tbody th {
+.people-profile-page #main .people-profile-cv-name,
+.people-profile-page #main .people-profile-cv-tagline,
+.people-profile-page #main .people-profile-cv-roleline,
+.people-profile-page #main .people-profile-cv-heading,
+.people-profile-page #main .people-profile-cv-subheading,
+.people-profile-page #main .people-profile-cv-table thead th,
+.people-profile-page #main .people-profile-cv-table tbody th {
   text-align: left;
   text-justify: auto;
   hyphens: manual;
+  -webkit-hyphens: none;
 }
+.people-profile-page #main .people-profile-role-banner,
 #main .people-profile-role-banner {
   text-align: center;
   text-justify: auto;
   hyphens: manual;
+  -webkit-hyphens: none;
 }
 #main .people-profile-cv-section-body .people-field-pending {
   text-align: start;
@@ -2435,9 +2489,9 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
 }
 .impact-livestock-copy p {
   margin: 0;
-  font-size: 0.9375rem;
+  font-size: 1.0625rem;
   color: var(--color-text-muted);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 .impact-feature-cta {
   margin: 1.5rem 0 0;
@@ -2730,11 +2784,13 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
     text-justify: inter-word;
     hyphens: auto;
   }
+  .people-profile-page #main .people-profile-cv-section-body,
   .people-profile-page #main .people-profile-cv-section-body p,
   .people-profile-page #main .people-profile-cv-list li {
     text-align: justify;
     text-justify: inter-word;
-    hyphens: manual;
+    hyphens: auto;
+    -webkit-hyphens: auto;
     text-wrap: wrap;
   }
   #main .programme-card-home-body p:not(.programme-card-tagline) {

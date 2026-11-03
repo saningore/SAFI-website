@@ -241,7 +241,10 @@
   document.title = `${publicName} | The Savannah Futures Institute`;
   const meta = document.querySelector('meta[name="description"]');
   if (meta) {
-    const banner = person.profileRoleBanner || person.role || 'Team member';
+    const banner = String(person.profileRoleBanner || person.role || 'Team member')
+      .replace(/\s*\n\s*/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
     meta.content = `${publicName} — ${banner} at The Savannah Futures Institute.`;
   }
 
@@ -268,7 +271,13 @@
   const roleBanner = document.getElementById('profile-role-banner');
   const bannerText = person.profileRoleBanner || person.role || '';
   if (bannerText) {
-    roleBanner.textContent = bannerText;
+    const lines = String(bannerText)
+      .split(/\n/)
+      .map((line) => line.trim())
+      .filter(Boolean);
+    roleBanner.innerHTML = lines
+      .map((line) => `<span class="people-profile-role-banner-line">${escapeHtml(line)}</span>`)
+      .join('');
     roleBanner.hidden = false;
   } else {
     roleBanner.hidden = true;

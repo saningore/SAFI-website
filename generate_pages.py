@@ -322,7 +322,7 @@ centres = {
     },
     "research-indigenous-knowledge.html": {
         "id": "research-knowledge",
-        "title": "Centre for Indigenous Knowledge, Governance and Cultural Futures",
+        "title": "Centre for Indigenous Knowledge and Cultural Innovations",
         "meta_title": "Indigenous Knowledge Governance and Culture | SAFI",
         "meta_desc": "Explore SAFI's approach to indigenous knowledge, traditional governance, language, heritage and community-led learning.",
         "lead": "How can living knowledge, institutions and historical experience help shape the future?",

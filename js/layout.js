@@ -80,12 +80,12 @@
         { label: 'BAIRP Programme Concept', href: `${base}programmes-bairp.html`, pages: ['programmes-bairp'] },
       ],
     },
-    { id: 'academy', label: 'Academy', href: `${base}academy.html` },
     {
       id: 'resources',
-      label: 'Resources',
+      label: 'Knowledge Hub',
       children: [
-        { label: 'Knowledge Hub', href: `${base}knowledge.html`, pages: ['knowledge'] },
+        { label: 'Overview', href: `${base}knowledge.html`, pages: ['knowledge'] },
+        { label: 'Academy', href: `${base}academy.html`, pages: ['academy'] },
         { label: 'Publications', href: `${base}publications.html`, pages: ['publications'] },
         { label: 'News & Insights', href: `${base}insights.html`, pages: ['insights'] },
       ],
@@ -107,7 +107,7 @@
       return page === 'programmes' || page.startsWith('programmes-');
     }
     if (item.id === 'resources') {
-      return page === 'knowledge' || page === 'publications' || page === 'insights';
+      return page === 'knowledge' || page === 'academy' || page === 'publications' || page === 'insights';
     }
     if (item.id === 'partnerships' && page === 'partnerships') return true;
     if (item.id === 'impact' && page === 'impact') return true;
