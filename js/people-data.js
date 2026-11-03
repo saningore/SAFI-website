@@ -337,7 +337,8 @@
         ],
         photo: 'assets/images/people/john-azaare.jpg',
         bio: [
-          'John Azaare is an academic and a health systems and policy researcher with 15+ years of experience in health services and projects management and clinical care. He has consulted for and worked with development partners including the WHO, UNFPA, UNICEF, Ghana AIDS Commission, World Bank and Global Fund. He has authored and co-authored book chapters and articles in international journals and publishers. He\u2019s passionate about equity and access to healthcare and thus, one health and policy impact on population health.',
+          'Dr Azaare is an academic with a combined 21 years of experience in health systems and policy research, health services administration, projects management and clinical care. He has consulted for and worked with development partners including the WHO, UNFPA, Global Fund and Ghana AIDS Commission with a wide range of experience in health policy and health labour market analysis in Ghana, Eswatini, Mozambique, Zambia and Zimbabwe. He previously worked with the Christian Health Association of Ghana/ Presbyterian Health Service, North, Ghana.',
+          'Dr Azaare is currently a faculty member of the University for Development Studies School of Public Health, Tamale, Ghana, where he lectures Health Systems Management and Policy, Public Health Project Management, Healthcare Quality Evaluation and Systematic Review and Meta-Analysis. He also mentors graduate students and medical professionals in on-going projects and has authored and co-authored journal articles and book chapters in international journals and publishers. He is passionate about healthcare equity and access and thus, one-health and policy impact on population health.',
         ],
         published: true,
         order: 1,
