@@ -334,6 +334,14 @@
             label: 'ORCID 0000-0001-7167-8175',
             url: 'https://orcid.org/0000-0001-7167-8175',
           },
+          {
+            label: 'Google Scholar — John Azaare',
+            url: 'https://scholar.google.com/citations?hl=&user=Vx9N1JEAAAAJ',
+          },
+          {
+            label: 'LinkedIn — John Azaare',
+            url: 'https://www.linkedin.com/in/john-azaare-phd-4b815b26a/',
+          },
         ],
         photo: 'assets/images/people/john-azaare.jpg',
         bio: [
