@@ -209,7 +209,10 @@
         </div>
       </div>
       <div class="footer-bottom container">
-        <p>&copy; <span id="year"></span> The Savannah Futures Institute. Registered in Ghana as a Company Limited by Guarantee.</p>
+        <div class="footer-bottom-copy">
+          <p>&copy; <span id="year"></span> The Savannah Futures Institute. Registered in Ghana as a Company Limited by Guarantee (LBG) and licensed as a Civil Society Organisation (NPO).</p>
+          <p class="footer-registration">LBG &middot; NPO Licence <code>NPOS/GR01/LN04346/26</code> &middot; <a href="${base}about.html#legal-identity">Registration details</a></p>
+        </div>
         <p class="footer-legal">African-led research, innovation and action · Accra, Ghana</p>
       </div>
     </footer>`;

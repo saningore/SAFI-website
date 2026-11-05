@@ -2115,7 +2115,81 @@ a.centre-card:hover .card-link, a.programme-card-home:hover .card-link { color: 
 .footer-links a { display: block; padding: 0.3rem 0; font-size: 0.875rem; color: rgba(255,255,255,0.7); }
 .footer-links a:hover { color: #fff; }
 .footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; padding: 1.5rem 0 2rem; font-size: 0.8125rem; }
+.footer-bottom-copy { max-width: 46rem; }
+.footer-bottom-copy p { margin: 0 0 0.35rem; }
+.footer-registration { color: rgba(255,255,255,0.55); }
+.footer-registration code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.78);
+}
+.footer-registration a { color: var(--color-accent-light); text-decoration: underline; text-underline-offset: 2px; }
+.footer-registration a:hover { color: #fff; }
 .footer-legal { color: rgba(255,255,255,0.45); }
+
+.registration-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0 0.5rem;
+}
+.registration-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 1.25rem 1.35rem 1.35rem;
+}
+.registration-card h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin: 0 0 1rem;
+  line-height: 1.35;
+}
+.registration-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+}
+.registration-list > div {
+  display: grid;
+  grid-template-columns: minmax(6.5rem, 8.5rem) minmax(0, 1fr);
+  gap: 0.65rem 1rem;
+  align-items: start;
+}
+.registration-list dt {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  line-height: 1.45;
+}
+.registration-list dd {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  text-align: left;
+  text-justify: auto;
+  hyphens: manual;
+}
+.registration-list code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  letter-spacing: 0.02em;
+  word-break: break-word;
+}
+@media (max-width: 900px) {
+  .registration-grid { grid-template-columns: 1fr; }
+  .registration-list > div { grid-template-columns: 1fr; gap: 0.2rem; }
+}
 
 /* Homepage — specification sections */
 .proposition-bar {
