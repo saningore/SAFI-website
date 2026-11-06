@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="People at The Savannah Futures Institute — leadership, centre teams and advisers working across Africa's savannas.">
+  <meta name="description" content="People at The Savannah Futures Institute — this page is currently being updated.">
   <title>People | The Savannah Futures Institute</title>
   <link rel="icon" href="assets/images/safi-logo.png" type="image/png">
   <link rel="stylesheet" href="css/styles.css?v=profile-cv-2026">
@@ -18,59 +18,18 @@
       </div>
     </section>
 
-    <section class="people-listing-section" id="listing" aria-labelledby="people-listing-heading">
-      <h2 id="people-listing-heading" class="visually-hidden">Team Directory</h2>
-
-      <div class="people-listing-panel-wrap">
-        <div class="container">
-          <div class="people-listing-panel">
-            <form class="people-search" id="people-search-form" role="search">
-              <label class="visually-hidden" for="people-search-input">Search by keyword</label>
-              <input type="search" id="people-search-input" name="q" placeholder="Search by keyword" autocomplete="off">
-              <button type="submit" class="btn btn-primary" id="people-search-btn">Search</button>
-            </form>
-
-            <div class="people-filters-row">
-              <div class="people-filter">
-                <label for="filter-centre">Centres</label>
-                <select id="filter-centre" name="centre"></select>
-              </div>
-              <div class="people-filter">
-                <label for="filter-role">Group</label>
-                <select id="filter-role" name="role"></select>
-              </div>
-              <div class="people-filter-actions">
-                <button type="button" class="btn btn-primary" id="people-apply">Apply filters</button>
-                <button type="button" class="people-reset" id="people-reset">Reset</button>
-              </div>
-            </div>
-          </div>
+    <section class="page-content">
+      <div class="container">
+        <div class="empty-state">
+          <h3>BEING UPDATED</h3>
+          <p>This page is currently being updated. Please check back soon.</p>
+          <p style="margin-top:1.5rem;"><a href="about.html" class="btn btn-secondary">Back to About</a></p>
         </div>
-      </div>
-
-      <div class="container people-listing-body">
-        <div class="people-results-bar">
-          <p class="people-meta" id="people-meta" aria-live="polite"></p>
-          <div class="people-sort">
-            <label for="people-sort">Sort by</label>
-            <select id="people-sort" name="sort" aria-label="Sort profiles">
-              <option value="listed" selected>Directory order</option>
-              <option value="name-asc">Name A–Z</option>
-              <option value="name-desc">Name Z–A</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="people-directory" id="people-grid"></div>
-        <nav class="people-pagination" id="people-pagination" aria-label="Directory pagination" hidden></nav>
       </div>
     </section>
   </main>
   <div id="site-footer"></div>
   <script src="js/layout.js" data-page="about-people"></script>
-  <script src="js/people-data.js?v=profile-cv-2026"></script>
-  <script src="js/people-utils.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/people.js"></script>
 </body>
 </html>
