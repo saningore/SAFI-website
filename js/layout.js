@@ -21,7 +21,6 @@
         { label: 'About SAFI', href: `${base}about.html`, pages: ['about'] },
         { label: 'Mission & Vision', href: `${base}about.html#mission-vision`, pages: ['about'] },
         { label: 'People', href: `${base}people.html`, pages: ['about-people'] },
-        { label: 'Governance', href: `${base}governance.html`, pages: ['about-governance'] },
       ],
     },
     {
@@ -90,7 +89,6 @@
         { label: 'News & Insights', href: `${base}insights.html`, pages: ['insights'] },
       ],
     },
-    { id: 'impact', label: 'Impact', href: `${base}impact.html` },
     { id: 'partnerships', label: 'Partnerships', href: `${base}partnerships.html` },
     { id: 'contact', label: 'Contact', href: `${base}contact.html` },
   ];
@@ -110,7 +108,6 @@
       return page === 'knowledge' || page === 'academy' || page === 'publications' || page === 'insights';
     }
     if (item.id === 'partnerships' && page === 'partnerships') return true;
-    if (item.id === 'impact' && page === 'impact') return true;
     if (item.id === 'contact' && page === 'contact') return true;
     return false;
   }
@@ -185,7 +182,6 @@
           <ul>
             <li><a href="${base}about.html">About</a></li>
             <li><a href="${base}people.html">People</a></li>
-            <li><a href="${base}governance.html">Governance</a></li>
             <li><a href="${base}contact.html">Contact</a></li>
           </ul>
         </div>
@@ -195,7 +191,6 @@
             <li><a href="${base}partnerships.html">Partnerships</a></li>
             <li><a href="${base}research.html">Research</a></li>
             <li><a href="${base}programmes.html">Programmes</a></li>
-            <li><a href="${base}impact.html">Impact</a></li>
           </ul>
         </div>
         <div class="footer-links">
@@ -210,8 +205,8 @@
       </div>
       <div class="footer-bottom container">
         <div class="footer-bottom-copy">
-          <p>&copy; <span id="year"></span> The Savannah Futures Institute. Registered in Ghana as a Company Limited by Guarantee (LBG) and licensed as a Civil Society Organisation (NPO).</p>
-          <p class="footer-registration">LBG &middot; NPO Licence <code>NPOS/GR01/LN04346/26</code> &middot; <a href="${base}about.html#legal-identity">Registration details</a></p>
+          <p>&copy; <span id="year"></span> The Savannah Futures Institute. Registered in Ghana as a Company Limited by Guarantee (LBG) and licensed as a national non-profit organisation.</p>
+          <p class="footer-registration">LBG <code>CG028890426</code> &middot; NPO Licence <code>NPOS/GR01/LN04346/26</code> &middot; <a href="${base}about.html#legal-identity">Registration details</a></p>
         </div>
         <p class="footer-legal">African-led research, innovation and action · Accra, Ghana</p>
       </div>

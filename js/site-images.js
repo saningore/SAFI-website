@@ -27,7 +27,7 @@
       'assets/images/people/livestock-ostrich-family.png',
       'assets/images/people/livestock-sheep-herd.png',
     ],
-    fieldResearch: 'assets/images/people/field-palms-research-site.png',
+    fieldResearch: 'assets/images/people/food-honey-harvest.jpg',
     village: 'assets/images/people/savanna-harmattan-village.png',
     institute: 'assets/images/people/leadership-group-five.png',
     enterprise: 'assets/images/people/rural-settlement-motorcycle.png',

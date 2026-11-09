@@ -13,35 +13,14 @@
   const PAGE_SIZE = 18;
   const EXEC_LEAD_PHOTO = 112;
   const EXEC_ORG_CENTER_PHOTO = 112;
-  const EXEC_ORGANOGRAM = [
-    { id: 'francis-ayarna', slot: 'left' },
-    { id: 'john-atibilla', slot: 'center' },
-    { id: 'samuel-amidini-aningore', slot: 'right' },
-  ];
-  const EXEC_ORGANOGRAM_IDS = new Set(EXEC_ORGANOGRAM.map((entry) => entry.id));
-  const RESEARCH_CENTRE_ROW = [
-    'john-atibilla',
-    'agoswin-musah',
+  const EXECUTIVE_DIRECTOR_ID = 'john-atibilla';
+  const INSTITUTIONAL_SUPPORT_IDS = ['francis-ayarna', 'samuel-amidini-aningore', 'philemon-a-azangbeo'];
+  const LEAD_ROW_IDS = ['magdalene-ayamga', 'agoswin-musah'];
+  const SECOND_ROW_IDS = [
     'desmond-bugbilla',
     'john-azaare',
-    'magdalene-ayamga',
+    'samuel-akugri-asitanga',
   ];
-  const RESEARCH_CENTRE_ROW_IDS = new Set(RESEARCH_CENTRE_ROW);
-  const HEADS_OF_UNITS_ROW = ['samuel-amidini-aningore', 'samuel-akugri-asitanga'];
-  const HEADS_OF_UNITS_ROW_IDS = new Set(HEADS_OF_UNITS_ROW);
-  const RESEARCH_OPERATIONS_SUBHEADINGS = [
-    'Senior Fellows',
-    'Fellows',
-    'Associate Fellows',
-    'Early Career Researchers',
-  ];
-  const RESEARCH_CENTRE_ROLE_OVERRIDES = {
-    'john-atibilla': 'Director: Climate | Environment | Food Systems',
-    'agoswin-musah': 'Director: Cultural Innovations',
-    'desmond-bugbilla': 'Director: Peace | Security | Borderlands',
-    'john-azaare': 'Director: Savanna Health Innovation',
-    'magdalene-ayamga': 'Director: Sustainability | Resilience',
-  };
   const PLACEHOLDER_SVG =
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>';
 
@@ -75,11 +54,6 @@
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;');
-  }
-
-  function whatsappHref(person) {
-    const digits = String(person.phone || '').replace(/\D/g, '');
-    return digits ? `https://wa.me/${digits}` : '';
   }
 
   function centreLabel(id) {
@@ -160,13 +134,6 @@
     render();
   }
 
-  function appointmentLabel(person) {
-    if (person.formalAppointment) return person.formalAppointment;
-    if (person.appointment) return `${person.appointment} appointment`;
-    if (person.roleGroup) return roleGroupLabel(person.roleGroup);
-    return '';
-  }
-
   function personSearchText(person) {
     const appointmentText = (person.appointments || []).flatMap((item) => [item.label, item.text]);
     return [
@@ -213,10 +180,6 @@
     });
   }
 
-  function peopleInTier(list, tierId) {
-    return list.filter((person) => person.tier === tierId).sort(comparePeople);
-  }
-
   function photoHtml(person, size, loading) {
     if (person.photo) {
       return `<img src="${escapeHtml(person.photo)}" alt="" width="${size}" height="${size}" loading="${loading || 'lazy'}">`;
@@ -224,168 +187,87 @@
     return `<span class="people-avatar-placeholder">${PLACEHOLDER_SVG}</span>`;
   }
 
-  function renderCard(person) {
-    const href = profileHref(person);
-    const appointment = appointmentLabel(person);
-    const wa = whatsappHref(person);
-    const tel = String(person.phone || '').replace(/\s/g, '');
-    const contact = [];
-    if (wa && person.phone) {
-      contact.push(
-        `<a href="${wa}" rel="noopener noreferrer">WhatsApp</a> <a href="tel:${escapeHtml(tel)}">${escapeHtml(person.phone)}</a>`
-      );
-    }
-    const emailLine = person.email
-      ? `<p class="people-card-contact"><a href="mailto:${escapeHtml(person.email)}">${escapeHtml(person.email)}</a></p>`
-      : '<p class="people-card-contact people-field-pending">Official email to be added</p>';
-
-    return `
-      <article class="people-card reveal" data-id="${escapeHtml(person.id)}">
-        <div class="people-card-inner">
-          <div class="people-card-photo">${photoHtml(person, 72)}</div>
-          <div class="people-card-body">
-            <h3><a href="${href}">${escapeHtml(displayName(person))}</a></h3>
-            ${person.role
-              ? `<p class="people-card-role">${escapeHtml(person.role)}</p>`
-              : '<p class="people-card-role people-field-pending">Role to be added</p>'}
-            ${appointment
-              ? `<p class="people-card-appointment">${escapeHtml(appointment)}</p>`
-              : '<p class="people-card-contact people-field-pending">Appointment to be added</p>'}
-            ${contact.length ? `<p class="people-card-contact">${contact.join('')}</p>` : ''}
-            ${emailLine}
-          </div>
-        </div>
-      </article>`;
-  }
-
   function personById(list, id) {
     return list.find((person) => person.id === id);
   }
 
-  function renderExecutiveLead(person, slot, roleOverride) {
+  function renderExecutiveLead(person, slot, roleLines) {
     const href = profileHref(person);
     const isCenter = slot === 'center';
     const photoSize = isCenter ? EXEC_ORG_CENTER_PHOTO : EXEC_LEAD_PHOTO;
     const cardClass = isCenter ? ' people-executive-card--center' : '';
-    const role = roleOverride || person.role;
+    const lines = roleLines && roleLines.length ? roleLines : (person.role ? [person.role] : []);
+    const role = lines.length
+      ? `<p class="people-feature-role">${lines.map((line) => `<span class="people-feature-role-line">${escapeHtml(line)}</span>`).join('')}</p>`
+      : '';
     return `
       <article class="people-executive-card people-feature people-feature--lead${cardClass} reveal" data-id="${escapeHtml(person.id)}">
         <a class="people-feature-photo" href="${href}">${photoHtml(person, photoSize, 'eager')}</a>
         <div class="people-feature-body">
           <h2 class="people-feature-name"><a href="${href}">${escapeHtml(displayName(person))}</a></h2>
-          ${role ? `<p class="people-feature-role">${escapeHtml(role)}</p>` : ''}
+          ${role}
         </div>
       </article>`;
-  }
-
-  function renderExecutiveOrgSlot(list, { id, slot }) {
-    const person = personById(list, id);
-    if (!person) {
-      return `<div class="people-executive-org-slot people-executive-org-slot--${slot} people-executive-org-slot--empty" hidden></div>`;
-    }
-    return `
-      <div class="people-executive-org-slot people-executive-org-slot--${slot}">
-        ${renderExecutiveLead(person, slot)}
-      </div>`;
-  }
-
-  function renderExecutiveSection(list) {
-    const hasAnyone = EXEC_ORGANOGRAM.some(({ id }) => personById(list, id));
-    if (!hasAnyone) return '';
-    return `
-      <div class="people-executive-block" aria-labelledby="people-executive-heading">
-        <h2 id="people-executive-heading" class="people-executive-heading">Administration Unit</h2>
-        <div class="people-executive-org" role="list">
-          ${EXEC_ORGANOGRAM.map((entry) => renderExecutiveOrgSlot(list, entry)).join('')}
-        </div>
-      </div>`;
-  }
-
-  function peopleBelowOrganogram(list) {
-    return list
-      .filter(
-        (person) =>
-          !EXEC_ORGANOGRAM_IDS.has(person.id) &&
-          !RESEARCH_CENTRE_ROW_IDS.has(person.id) &&
-          !HEADS_OF_UNITS_ROW_IDS.has(person.id)
-      )
-      .sort(comparePeople);
-  }
-
-  function renderHeadsOfUnitsBlock(list) {
-    const members = HEADS_OF_UNITS_ROW.map((id) => personById(list, id)).filter(Boolean);
-    if (!members.length) return '';
-    return `
-      <h2 id="people-heads-heading" class="people-directory-heading people-heads-heading">Heads of Units</h2>
-      <div class="people-executive-grid people-heads-row">
-        ${members.map(renderDirectoryLeadCard).join('')}
-      </div>`;
-  }
-
-  function renderResearchCentreSection(list) {
-    const members = RESEARCH_CENTRE_ROW.map((id) => personById(list, id)).filter(Boolean);
-    if (!members.length) return '';
-    return `
-      <section class="people-directory-band people-research-centre-band" aria-labelledby="people-research-centre-heading">
-        <h2 id="people-research-centre-heading" class="people-directory-heading">Research Centre Management</h2>
-        <div class="people-executive-grid people-research-centre-row">
-          ${members.map(renderResearchCentreLeadCard).join('')}
-        </div>
-        <h2 id="people-research-operations-heading" class="people-directory-heading people-research-operations-heading">Research Operations</h2>
-        ${renderHeadsOfUnitsBlock(list)}
-        <div class="people-operations-tier-headings" role="presentation">
-          ${RESEARCH_OPERATIONS_SUBHEADINGS.map(
-            (label, index) => `
-            <div class="people-operations-tier-column people-operations-tier-column--${index + 1}">
-              <h3 class="people-operations-subheading">${escapeHtml(label)}</h3>
-              <p class="people-operations-tier-status">Actively recruiting</p>
-            </div>`
-          ).join('')}
-        </div>
-        <p class="people-operations-recruiting-summary">
-          We are actively recruiting outstanding colleagues across these categories of research personnel.
-          If you would like to express an interest in joining SAFI, please <a href="contact.html">contact us</a>.
-        </p>
-      </section>`;
-  }
-
-  function renderResearchCentreLeadCard(person) {
-    const roleOverride = RESEARCH_CENTRE_ROLE_OVERRIDES[person.id];
-    return renderExecutiveLead(person, 'flank', roleOverride);
   }
 
   function renderDirectoryLeadCard(person) {
     return renderExecutiveLead(person, 'flank');
   }
 
-  function renderDirectorySection(list) {
-    const rest = peopleBelowOrganogram(list);
-    const research = renderResearchCentreSection(list);
-    const bands = TIERS.filter((tier) => tier.id && !tier.featured && tier.id !== 'heads')
-      .map((tier) => {
-        const people = peopleInTier(rest, tier.id);
-        if (!people.length) return '';
-        return `
-          <section class="people-directory-band" aria-labelledby="band-${escapeHtml(tier.id)}">
-            <h2 id="band-${escapeHtml(tier.id)}" class="people-directory-heading">${escapeHtml(tier.label)}</h2>
-            <div class="people-executive-grid">
-              ${people.map(renderDirectoryLeadCard).join('')}
-            </div>
-          </section>`;
-      })
-      .filter(Boolean)
-      .join('');
-
-    if (!research && !bands) return '';
-    return `<div class="people-directory-below">${research}${bands}</div>`;
+  function peopleInOrder(list, ids) {
+    const byId = new Map(list.map((person) => [person.id, person]));
+    return ids.map((id) => byId.get(id)).filter(Boolean);
   }
 
-  function renderBand(tier, people) {
-    return `
-      <section class="people-band" aria-labelledby="band-${escapeHtml(tier.id)}">
-        <h2 id="band-${escapeHtml(tier.id)}" class="people-band-title">${escapeHtml(tier.label)}</h2>
-        <div class="people-grid">${people.map(renderCard).join('')}</div>
-      </section>`;
+  function renderDirectory(list) {
+    const director = personById(list, EXECUTIVE_DIRECTOR_ID);
+    const supportIds = new Set(INSTITUTIONAL_SUPPORT_IDS);
+    const listed = state.sort === 'listed';
+    const placed = new Set([
+      EXECUTIVE_DIRECTOR_ID,
+      ...INSTITUTIONAL_SUPPORT_IDS,
+      ...LEAD_ROW_IDS,
+      ...SECOND_ROW_IDS,
+    ]);
+    const support = listed
+      ? peopleInOrder(list, INSTITUTIONAL_SUPPORT_IDS)
+      : list.filter((person) => supportIds.has(person.id)).sort(comparePeople);
+    const beside = listed ? peopleInOrder(list, LEAD_ROW_IDS) : [];
+    const second = listed ? peopleInOrder(list, SECOND_ROW_IDS) : [];
+    const extras = listed
+      ? list.filter((person) => !placed.has(person.id)).sort(comparePeople)
+      : list
+          .filter((person) => person.id !== EXECUTIVE_DIRECTOR_ID && !supportIds.has(person.id))
+          .sort(comparePeople);
+
+    const researchHeading = director
+      ? `<h2 class="people-research-innovation-heading">Research and Innovations</h2>`
+      : '';
+    const lead = director
+      ? `<div class="people-flat-lead">${renderExecutiveLead(director, 'center', [
+          'Executive Director',
+          'Director: Climate | Landscapes | Food Systems',
+        ])}</div>`
+      : '';
+    const leadRowCards = [lead, ...beside.map(renderDirectoryLeadCard)].filter(Boolean);
+    const leadRowBlock = leadRowCards.length
+      ? `<div class="people-lead-row">${leadRowCards.join('')}</div>`
+      : '';
+    const supportBlock = support.length
+      ? `<section class="people-institutional" aria-labelledby="people-institutional-heading">
+          <h2 id="people-institutional-heading" class="people-institutional-heading">Institutional Support</h2>
+          <div class="people-institutional-row">${support.map(renderDirectoryLeadCard).join('')}</div>
+        </section>`
+      : '';
+    const secondCards = second.map(renderDirectoryLeadCard).join('');
+    const extrasBlock = extras.length
+      ? `<div class="people-org-main"><div class="people-org-column">${extras.map(renderDirectoryLeadCard).join('')}</div></div>`
+      : '';
+    if (!leadRowBlock && !supportBlock && !secondCards && !extrasBlock) return '';
+    const lower = secondCards || supportBlock || extrasBlock
+      ? `<div class="people-org-lower">${secondCards}${supportBlock}${extrasBlock}</div>`
+      : '';
+    return `<div class="people-org">${researchHeading}${leadRowBlock}${lower}</div>`;
   }
 
   function renderEmpty() {
@@ -446,7 +328,7 @@
     if (total === 0) {
       els.grid.innerHTML = renderEmpty();
     } else {
-      const html = renderExecutiveSection(list) + renderDirectorySection(list);
+      const html = renderDirectory(list);
       els.grid.innerHTML = html.trim() ? html : renderEmpty();
     }
 

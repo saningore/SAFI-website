@@ -28,12 +28,12 @@
         professionalTagline:
           'Senior Fellow | Sustainability Strategist | Innovation and Impact Advisor',
         roleLine:
-          'Executive Director, SAFI | Director, Climate, Environment and Landscapes',
+          'Executive Director, SAFI | Director: Climate | Landscapes | Food Systems',
         publicationTitle:
           'Dr John M. Atibila — Senior Fellow; Sustainability Strategist and Innovation and Impact Advisor',
-        role: 'Executive Director',
-        safiRole: 'Executive Director; Director, Climate, Environment and Landscapes.',
-        secondaryRoles: ['Director, Climate, Environment and Landscapes'],
+        role: 'Executive Director & Director: Climate | Landscapes | Food Systems',
+        safiRole: 'Executive Director; Director: Climate | Landscapes | Food Systems.',
+        secondaryRoles: ['Director: Climate | Landscapes | Food Systems'],
         appointment: 'Executive',
         currentAppointments: [
           {
@@ -41,7 +41,7 @@
             text: 'Institutional leadership, strategic development, research direction and partnerships.',
           },
           {
-            label: 'Director, Climate, Environment and Landscapes',
+            label: 'Director: Climate | Landscapes | Food Systems',
             text: 'Research and programme leadership.',
           },
           {
@@ -168,19 +168,19 @@
         id: 'agoswin-musah',
         name: 'Dr. Anthony Agoswin Musah',
         displayName: 'Anthony A. Musah, PhD',
-        profileRoleBanner: 'Director of Cultural Innovations',
+        profileRoleBanner: 'Director: Cultural Innovations',
         fullName: 'Anthony Agoswin Musah',
         professionalTitle: 'Senior Research Fellow',
         professionalTagline: 'Senior Research Fellow | Linguistics | Culture and Peace Studies',
-        roleLine: 'Director of Cultural Innovations, SAFI',
+        roleLine: 'Director: Cultural Innovations, SAFI',
         publicationTitle: 'Anthony A. Musah (PhD)',
-        role: 'Director of Cultural Innovations',
+        role: 'Director: Cultural Innovations',
         safiRole:
           'Director: Cultural Innovations, bringing expertise in indigenous languages, culture and peace studies to SAFI\u2019s research and community engagement.',
         appointment: 'Executive',
         currentAppointments: [
           {
-            label: 'Director of Cultural Innovations',
+            label: 'Director: Cultural Innovations',
             text: 'Bringing expertise in indigenous languages, culture and peace studies to SAFI\u2019s research and community engagement.',
           },
           {
@@ -231,24 +231,24 @@
       {
         id: 'francis-ayarna',
         name: 'Francis Ayarna Anambe',
-        displayName: 'Francis Ayarna Anambe, CA (Ghana)',
-        profileRoleBanner: 'Director of Finance and Administration',
+        displayName: 'Francis Ayarna Anambe, CA (Gh)',
+        profileRoleBanner: 'Director: Finance | Administration',
         fullName: 'Francis Ayarna Anambe',
         professionalTitle: 'Chartered Accountant',
         professionalTagline: 'Chartered Accountant | Financial Governance | Institutional Administration',
-        roleLine: 'Director of Finance and Administration, SAFI',
-        publicationTitle: 'Francis Ayarna Anambe, CA (Ghana) — Chartered Accountant',
-        role: 'Director of Finance and Administration',
+        roleLine: 'Director: Finance | Administration, SAFI',
+        publicationTitle: 'Francis Ayarna Anambe, CA (Gh) — Chartered Accountant',
+        role: 'Director: Finance | Administration',
         safiRole:
           'Leads SAFI\u2019s financial planning, accounting, audit coordination and administration, ensuring sound financial management, accountability and statutory compliance.',
         appointment: 'Executive',
         currentAppointments: [
           {
-            label: 'Director of Finance and Administration',
+            label: 'Director: Finance | Administration',
             text: 'Financial planning, accounting, audit coordination and administration; Executive Management Team.',
           },
         ],
-        formalAppointment: 'Director of Finance and Administration — Executive Management Team.',
+        formalAppointment: 'Director: Finance | Administration — Executive Management Team.',
         tier: 'executive-team',
         roleGroup: 'executive',
         department: 'Finance and Administration',
@@ -289,16 +289,16 @@
         professionalTitle: 'Health systems researcher and policy analyst',
         professionalTagline:
           'Director | Health Systems Researcher | Policy Analyst',
-        roleLine: 'Director of Savanna Health Innovation Futures, SAFI',
+        roleLine: 'Director: Savanna Health Innovation, SAFI',
         publicationTitle:
           'John Azaare (PhD) — Health systems researcher and policy analyst',
-        role: 'Director of Savanna Health Innovation Futures',
+        role: 'Director: Savanna Health Innovation',
         safiRole:
-          'Director of Savanna Health Innovation Futures. Oversees the team\u2019s implementation of population health research and innovation projects within a broader One Health framework.',
+          'Director: Savanna Health Innovation. Oversees the team\u2019s implementation of population health research and innovation projects within a broader One Health framework.',
         appointment: 'Research',
         currentAppointments: [
           {
-            label: 'Director of Savanna Health Innovation Futures',
+            label: 'Director: Savanna Health Innovation',
             text: 'Oversees the team\u2019s implementation of population health research and innovation projects within a broader One Health framework.',
           },
         ],
@@ -355,21 +355,21 @@
         id: 'desmond-bugbilla',
         name: 'Desmond Bugbilla',
         displayName: 'Desmond Bugbilla, PhD',
-        profileRoleBanner: 'Director: Peace and Borderlands',
+        profileRoleBanner: 'Director: Peace | Security | Borderlands',
         fullName: 'Desmond Bugbilla',
         professionalTitle: 'Customs Officer | Researcher | Strategy and Innovation',
         professionalTagline:
-          'Director | Peace | Security and Borderlands',
-        roleLine: 'Director of Peace, Security and Borderlands Futures, SAFI',
+          'Director: Peace | Security | Borderlands',
+        roleLine: 'Director: Peace | Security | Borderlands, SAFI',
         publicationTitle:
           'Desmond Bugbilla (PhD) — Strategy and Innovation Management',
-        role: 'Director of Peace, Security and Borderlands Futures',
+        role: 'Director: Peace | Security | Borderlands',
         safiRole:
           'Director, Peace, Security and Borderlands. Bridges open innovation with practical challenges in security, peace and border management.',
         appointment: 'Research',
         currentAppointments: [
           {
-            label: 'Director of Peace, Security and Borderlands Futures',
+            label: 'Director: Peace | Security | Borderlands',
             text: 'Research and programme leadership for peace, security and borderlands futures.',
           },
         ],
@@ -416,7 +416,7 @@
       {
         id: 'magdalene-ayamga',
         name: 'Magdalene Ayamga',
-        displayName: 'Magdalene Ayamga (PhD Candidate)',
+        displayName: 'Magdalene Ayamga (PhD Cand)',
         profileRoleBanner: 'Director: Sustainability | Resilience',
         fullName: 'Magdalene Ayamga',
         professionalTitle: 'Livelihood and Economic Development Officer',
@@ -424,7 +424,7 @@
           'Livelihood and Economic Development Officer | Gender | Community Well-being',
         roleLine: 'Director: Sustainability | Resilience, SAFI',
         publicationTitle:
-          'Magdalene Ayamga (PhD Candidate) — Livelihood and Economic Development Officer',
+          'Magdalene Ayamga (PhD Cand) — Livelihood and Economic Development Officer',
         role: 'Director: Sustainability | Resilience',
         safiRole:
           'Director: Sustainability | Resilience. Contributes expertise in livelihoods, WASH, gender and community well-being.',
@@ -480,24 +480,24 @@
       {
         id: 'samuel-amidini-aningore',
         name: 'Samuel Amidini Aningore',
-        displayName: 'Samuel Amidini Aningore',
-        profileRoleBanner: 'Head IT and\nDigital Communications',
+        displayName: 'Samuel Amidini Aningore(MSc)',
+        profileRoleBanner: 'Head: IT | Digital Communications',
         fullName: 'Samuel Amidini Aningore',
         professionalTitle: 'Software Engineer',
         professionalTagline: 'Software Engineer | Digital Systems | Institutional Platforms',
-        roleLine: 'Head of IT and Digital Communications, SAFI',
+        roleLine: 'Head: IT | Digital Communications, SAFI',
         publicationTitle: 'Samuel Amidini Aningore — Software Engineer',
-        role: 'Head of IT and Digital Communications',
+        role: 'Head: IT | Digital Communications',
         safiRole:
           'Leads SAFI\u2019s information technology, digital platforms and communications\u2014ensuring reliable systems, secure digital infrastructure and an effective online presence that support research, programmes and institutional operations.',
         appointment: 'Executive',
         currentAppointments: [
           {
-            label: 'Head of IT and Digital Communications',
+            label: 'Head: IT | Digital Communications',
             text: 'Leads information technology, digital platforms and communications supporting research, programmes and institutional operations.',
           },
         ],
-        formalAppointment: 'Head of IT and Digital Communications — Heads of Units.',
+        formalAppointment: 'Head: IT | Digital Communications — Heads of Units.',
         tier: 'heads',
         roleGroup: 'executive',
         department: 'IT and Digital Communications',
@@ -535,7 +535,7 @@
         bio: [
           'Samuel Amidini Aningore is a software engineer, digital systems specialist and technology leader with more than six years\u2019 experience designing, delivering and supporting production systems across enterprise and institutional settings. He holds a BSc in Computer Engineering from the Kwame Nkrumah University of Science and Technology (KNUST) and an MSc (Research) in Computer Science from Ghana Communication Technology University (GCTU). His professional practice spans software architecture, web platforms, data systems, cloud and DevOps, and digital communications.',
           'At Bista Solutions Limited, he contributes engineering expertise to enterprise software delivery. He also works remotely with Codyza as Team Leader Manager of the Codyza Crew, coordinating team members and leaders, providing guidance, and sustaining a productive environment for high-quality website and digital delivery.',
-          'He has delivered enterprise applications in HR, finance and operations domains, mentored emerging engineers, and taught software engineering at tertiary level. At SAFI, as Head of IT and Digital Communications, he leads the Institute\u2019s technology infrastructure, digital platforms and communications systems that underpin research, programmes and institutional operations\u2014bringing together technical excellence, team leadership and a commitment to practical digital capability.',
+          'He has delivered enterprise applications in HR, finance and operations domains, mentored emerging engineers, and taught software engineering at tertiary level. At SAFI, as Head: IT | Digital Communications, he leads the Institute\u2019s technology infrastructure, digital platforms and communications systems that underpin research, programmes and institutional operations\u2014bringing together technical excellence, team leadership and a commitment to practical digital capability.',
         ],
         published: true,
         order: 1,
@@ -543,23 +543,23 @@
       {
         id: 'samuel-akugri-asitanga',
         name: 'Samuel Akugri Asitanga',
-        displayName: 'Mr Samuel Akugri Asitanga',
-        profileRoleBanner: 'Head of Indigenous Knowledge and Traditional Governance',
+        displayName: 'Samuel A. Asitanga(PhD Cand)',
+        profileRoleBanner: 'Head: Indigenous Knowledge | Governance',
         fullName: 'Samuel Akugri Asitanga',
         professionalTitle: 'Lecturer',
         professionalTagline:
           'Lecturer | Kusaal Linguistics | Indigenous Knowledge',
         roleLine:
-          'Head of Indigenous Knowledge and Traditional Governance, SAFI',
+          'Head: Indigenous Knowledge | Governance, SAFI',
         publicationTitle:
-          'Samuel Akugri Asitanga (PhD Candidate) — Lecturer',
-        role: 'Head of Indigenous Knowledge and Traditional Governance',
+          'Samuel A. Asitanga(PhD Cand) — Lecturer',
+        role: 'Head: Indigenous Knowledge | Governance',
         safiRole:
-          'Head of Indigenous Knowledge and Traditional Governance. Associate Fellow (Research and Knowledge Exchange), contributing expertise in Kusaal linguistics, indigenous knowledge, culture and African language scholarship.',
+          'Head: Indigenous Knowledge | Governance. Associate Fellow (Research and Knowledge Exchange), contributing expertise in Kusaal linguistics, indigenous knowledge, culture and African language scholarship.',
         appointment: 'Research',
         currentAppointments: [
           {
-            label: 'Head of Indigenous Knowledge and Traditional Governance',
+            label: 'Head: Indigenous Knowledge | Governance',
             text: 'Contributing expertise in Kusaal linguistics, indigenous knowledge, culture and African language scholarship.',
           },
           {
@@ -570,7 +570,7 @@
         appointments: [
           {
             label: 'Executive',
-            text: 'Head of Indigenous Knowledge and Traditional Governance',
+            text: 'Head: Indigenous Knowledge | Governance',
           },
           {
             label: 'Research',
@@ -623,10 +623,37 @@
         ],
         photo: 'assets/images/people/samuel-akugri-asitanga.jpg',
         bio: [
-          'Mr Samuel Akugri Asitanga is a Lecturer and PhD Candidate in Ghanaian Language Studies (Kusaal Education) at the University of Education, Winneba. His research interests span Kusaal linguistics, indigenous knowledge, dialectology, translation, culture and literature. He has published on sociolinguistics, onomastics and naming systems in Kusaal, including work on phonological variation, personal names, and season names as expressions of climatic conditions and agrarian practices. Driven by intellectual curiosity and a deep commitment to indigenous language scholarship, he continually strives to deepen knowledge and advance African linguistic research. At SAFI, as Head of Indigenous Knowledge and Traditional Governance and Associate Fellow (Research and Knowledge Exchange), he brings this expertise to the Institute\u2019s work on culture, language and traditional governance in savanna communities.',
+          'Samuel Akugri Asitanga is a Lecturer and PhD Candidate in Ghanaian Language Studies (Kusaal Education) at the University of Education, Winneba. His research interests span Kusaal linguistics, indigenous knowledge, dialectology, translation, culture and literature. He has published on sociolinguistics, onomastics and naming systems in Kusaal, including work on phonological variation, personal names, and season names as expressions of climatic conditions and agrarian practices. Driven by intellectual curiosity and a deep commitment to indigenous language scholarship, he continually strives to deepen knowledge and advance African linguistic research. At SAFI, as Head: Indigenous Knowledge | Governance and Associate Fellow (Research and Knowledge Exchange), he brings this expertise to the Institute\u2019s work on culture, language and traditional governance in savanna communities.',
         ],
         published: true,
         order: 2,
+      },
+      {
+        id: 'philemon-a-azangbeo',
+        name: 'Philemon A. Azangbeo',
+        displayName: 'Philemon A. Azangbeo',
+        profileRoleBanner: 'Admin Assistant',
+        fullName: 'Philemon A. Azangbeo',
+        roleLine: 'Admin Assistant, SAFI',
+        role: 'Admin Assistant',
+        safiRole: 'Admin Assistant.',
+        appointment: 'Executive',
+        currentAppointments: [
+          {
+            label: 'Admin Assistant',
+            text: 'Administration support.',
+          },
+        ],
+        tier: 'executive-team',
+        roleGroup: 'operations',
+        department: 'Finance and Administration',
+        centre: 'institute',
+        phone: '',
+        email: '',
+        links: [],
+        bio: [],
+        published: true,
+        order: 3,
       },
     ],
     roleGroups: [
