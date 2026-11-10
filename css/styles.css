@@ -2190,14 +2190,31 @@ body.people-page #main .people-executive-card--center .people-feature-body p {
 
 @media (max-width: 860px) {
   .people-profile-cv-layout {
-    grid-template-columns: 1fr;
-    justify-items: center;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: stretch;
     text-align: center;
+    width: 100%;
+    min-width: 0;
   }
   .people-profile-cv-main {
     width: 100%;
+    min-width: 0;
     display: contents;
   }
+  .people-profile-cv-intro,
+  .people-profile-cv-content,
+  .people-profile-cv-aside,
+  .people-profile-role-banner,
+  .people-profile-photo-stack {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .people-profile-role-banner-line,
+  .people-profile-cv-table thead th,
+  .people-profile-cv-table tbody th {
+    white-space: normal;
+  }
+  .people-profile-cv-table tbody th { width: auto; }
   .people-profile-cv-intro {
     width: 100%;
     order: 1;
@@ -2993,6 +3010,15 @@ body.people-page #main .people-executive-card--center .people-feature-body p {
   #why-savannas.section { padding-top: 0.5rem; padding-bottom: 1.25rem; }
   .hero-intro { padding-bottom: 0.5rem; }
   .hero-intro > .container { width: min(100% - 2rem, var(--container)); }
+  .hero-intro-inner .section-label.section-label--eyebrow {
+    letter-spacing: 0.04em;
+    font-size: clamp(1.05rem, 4.6vw, 1.35rem);
+    text-wrap: balance;
+  }
+  .hero-intro-inner .hero-intro-heading {
+    text-align: left;
+    text-wrap: balance;
+  }
   #strategic-priorities.section { padding-top: 1.25rem; padding-bottom: 1rem; }
   .section-white:has(+ .section-alt),
   .section-alt:has(+ .section-white) { padding-bottom: 1.75rem; }
@@ -3118,6 +3144,12 @@ body.people-page #main .people-executive-card--center .people-feature-body p {
   }
   #main .impact-metric span {
     text-align: center;
+  }
+  #main .hero-intro-inner .hero-intro-heading {
+    text-align: left;
+    text-justify: auto;
+    hyphens: manual;
+    text-wrap: balance;
   }
 }
 
@@ -3408,4 +3440,56 @@ body.people-page #main .people-executive-card--center .people-feature-body p {
   .org-card { text-align: center; }
   #main .org-card p { text-align: center; }
   .org + .org-legend { margin-top: 1rem; }
+}
+
+/* People directory: stack the org chart once three columns no longer fit.
+   This block stays after the desktop column rules so it wins on small screens. */
+@media (max-width: 900px) {
+  .people-page .people-directory,
+  .people-page .people-org {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+  .people-lead-row,
+  .people-org-lower,
+  .people-institutional-row {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .people-org-main,
+  .people-institutional,
+  .people-org-lower > .people-org-main {
+    grid-column: 1;
+    grid-row: auto;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 1.5rem;
+  }
+  .people-institutional { margin-top: 2rem; }
+  .people-institutional-heading {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    transform: none;
+  }
+  .people-institutional-row > .people-executive-card,
+  .people-institutional-row > .people-executive-card:first-child,
+  .people-institutional-row > .people-executive-card:nth-child(2),
+  .people-institutional-row > .people-executive-card:nth-child(3),
+  .people-lead-row > .people-executive-card,
+  .people-org-lower > .people-executive-card,
+  .people-flat-lead,
+  .people-flat-lead .people-executive-card {
+    grid-column: auto;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    transform: none;
+  }
+  .people-page .people-feature.people-feature--lead .people-feature-name,
+  .people-page .people-feature.people-feature--lead .people-feature-role {
+    overflow-wrap: anywhere;
+  }
 }
